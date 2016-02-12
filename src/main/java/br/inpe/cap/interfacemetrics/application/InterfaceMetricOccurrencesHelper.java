@@ -24,12 +24,14 @@ public class InterfaceMetricOccurrencesHelper {
 		repository =  new InterfaceMetricRepository();
 		this.interfaceMetric = interfaceMetric;
 		this.aqeApproach = getAQEApproach();
+		interfaceMetric.setExpandedParams(this.aqeApproach.getParamsTerms());
 	}
 
 	public InterfaceMetricOccurrencesHelper(InterfaceMetric interfaceMetric, boolean mock) throws Exception {
 		repository =  new InterfaceMetricRepository(mock);
 		this.interfaceMetric = interfaceMetric;
 		this.aqeApproach = getAQEApproach();
+		interfaceMetric.setExpandedParams(this.aqeApproach.getParamsTerms());
 	}
 
 	private AQEApproach getAQEApproach() throws Exception {
@@ -102,42 +104,10 @@ public class InterfaceMetricOccurrencesHelper {
 	}
 
 	private boolean matchParam(OccurrencesCombination combination, InterfaceMetric occurence) {
-		if(combination.isSameParams() && !combination.isDisorder())
-			return interfaceMetric.getParams().equals(occurence.getParams());
-
-		if (aqeApproach.getParamsTerms().size() != occurence.getTotalParams())
-			return false;
-		
-		boolean match = true;
-		for(int i = 0; i < aqeApproach.getParamsTerms().size(); i++){
-			QueryTerm term = aqeApproach.getParamsTerms().get(i);
-			
-			if(combination.isSameParams() && combination.isDisorder()){
-				boolean paramFound = false;
-				for(String param : occurence.getParamsNames()){
-					if(term.getExpandedTerms().get(0).equals(param)){
-						paramFound = true;
-					}
-				}
-				match = paramFound;
-			} else if (!combination.isSameParams() && !combination.isDisorder()){
-				
-				//combination.printCombination();
-				//System.out.println(aqeApproach.getParamsTerms().size());
-				//System.out.println(occurence.getParamsNames().length);
-				
-				match = term.getExpandedTerms().contains(occurence.getParamsNames()[i]);
-			} else {
-				boolean paramFound = false;
-				for(String param : occurence.getParamsNames()){
-					if(term.getExpandedTerms().contains((param))){
-						paramFound = true;
-					}
-				}
-				match = paramFound;
-			}
-		}
-		return match;
+		if(combination.isSameParams())
+			return interfaceMetric.isSameParams(occurence.getParamsNames(), combination.isDisorder());
+		else
+			return interfaceMetric.isSameExpandedParams(occurence.getParamsNames(), combination.isDisorder());
 	}
 
 	public String getOccurrencesSQL(String table) throws Exception {

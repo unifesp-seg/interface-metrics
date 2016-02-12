@@ -1,10 +1,15 @@
 package br.inpe.cap.interfacemetrics.domain;
 
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Stack;
 
 import org.apache.commons.lang.StringUtils;
 
 import br.unifesp.ppgcc.sourcereraqe.infrastructure.JavaTermExtractor;
+import br.unifesp.ppgcc.sourcereraqe.infrastructure.QueryTerm;
 
 public class InterfaceMetric {
 
@@ -41,6 +46,8 @@ public class InterfaceMetric {
 	private int s0returnName0paramsDisorder;
 	private int s0return0nameParamsDisorder;
 	private int s0return0name0paramsDisorder;
+	
+	private List<QueryTerm> expandedParams = new ArrayList<QueryTerm>();
 	
 	public InterfaceMetric() {
 	}
@@ -248,6 +255,68 @@ public class InterfaceMetric {
 			s0return0name0paramsDisorder = total;
 	}
 	
+	public boolean isSameParams(String[] paramsNames, boolean isDisorder) {
+		if (this.getParamsNames().length != paramsNames.length)
+			return false;
+
+		if(!isDisorder){
+			for(int i = 0; i < this.getParamsNames().length; i++)
+				if(!this.getParamsNames()[i].equals(paramsNames[i]))
+					return false;
+			return true;
+		}else{
+			ArrayList<String> list = new ArrayList<String>(Arrays.asList(paramsNames));
+			Stack<String> stack = new Stack<String>();
+			stack.addAll(Arrays.asList(this.getParamsNames()));
+
+			while(!stack.isEmpty()){
+				String param = stack.pop();
+				int i = list.indexOf(param);
+				if(i >= 0 )
+					list.remove(i);
+			}
+			
+			return list.isEmpty();
+		}
+	}
+	
+	public boolean isSameExpandedParams(String[] paramsNames, boolean isDisorder) {
+		if (this.getExpandedParams().size() != paramsNames.length)
+			return false;
+
+		if (!isDisorder) {
+			for (int i = 0; i < this.getExpandedParams().size(); i++) {
+				boolean match = false;
+				for (String term : this.getExpandedParams().get(i).getExpandedTerms()) {
+					if (term.equals(paramsNames[i])){
+						match = true;
+						break;
+					}
+				}
+				if (!match)
+					return false;
+			}
+			return true;
+		}else{
+			ArrayList<String> list = new ArrayList<String>(Arrays.asList(paramsNames));
+			Stack<QueryTerm> stack = new Stack<QueryTerm>();
+			stack.addAll(this.getExpandedParams());
+
+			while(!stack.isEmpty()){
+				QueryTerm expandedParam = stack.pop();
+				for(String term : expandedParam.getExpandedTerms()){
+					int i = list.indexOf(term);
+					if(i >= 0 ){
+						list.remove(i);
+						break;
+					}
+				}
+			}
+			
+			return list.isEmpty();
+		}
+	}
+	
 	@Override
 	public boolean equals(Object o) {
 		return (o instanceof InterfaceMetric && this.id.longValue() == ((InterfaceMetric)o).getId());
@@ -316,5 +385,13 @@ public class InterfaceMetric {
 
 	public boolean isHasTypeSamePackage() {
 		return hasTypeSamePackage;
+	}
+
+	public List<QueryTerm> getExpandedParams() {
+		return expandedParams;
+	}
+
+	public void setExpandedParams(List<QueryTerm> expandedParams) {
+		this.expandedParams = expandedParams;
 	}
 }
