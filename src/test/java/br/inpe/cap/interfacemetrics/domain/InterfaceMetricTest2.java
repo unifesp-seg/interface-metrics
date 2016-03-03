@@ -29,7 +29,7 @@ public class InterfaceMetricTest2 {
 	}
 
 	@Test()
-	public void compareParams() throws Exception {
+	public void compareParamsOrder() throws Exception {
 		InterfaceMetric i01 = repository.findById(614664);//'(int,java.lang.String,java.lang.String)'
 		InterfaceMetric i02 = repository.findById(614685);//'(int,java.lang.String,java.lang.String)'
 		InterfaceMetric i03 = repository.findById(605670);//'(int,int,java.lang.String)'
@@ -45,28 +45,28 @@ public class InterfaceMetricTest2 {
 		InterfaceMetric i13 = repository.findById(606295);//'(java.lang.String,int)'
 		InterfaceMetric i14 = repository.findById(606296);//'(java.lang.String,int)'
 
-		//sameParams !isDisorder
-		assertTrue(i01.isSameParams(i02.getParamsNames(),false));
-		assertFalse(i01.isSameParams(i03.getParamsNames(),false));
-		assertTrue(i03.isSameParams(i04.getParamsNames(),false));
-		assertFalse(i03.isSameParams(i05.getParamsNames(),false));
-		assertFalse(i01.isSameParams(i13.getParamsNames(),false));
-		assertTrue(i07.isSameParams(i08.getParamsNames(),false));
-		assertTrue(i09.isSameParams(i10.getParamsNames(),false));
-		
-		//sameParams isDisorder
+		//sameParams isParamsOrder
 		assertTrue(i01.isSameParams(i02.getParamsNames(),true));
-		assertTrue(i01.isSameParams(i05.getParamsNames(),true));
-		assertTrue(i02.isSameParams(i06.getParamsNames(),true));
 		assertFalse(i01.isSameParams(i03.getParamsNames(),true));
-		assertFalse(i04.isSameParams(i06.getParamsNames(),true));
+		assertTrue(i03.isSameParams(i04.getParamsNames(),true));
+		assertFalse(i03.isSameParams(i05.getParamsNames(),true));
 		assertFalse(i01.isSameParams(i13.getParamsNames(),true));
-		assertFalse(i01.isSameParams(i14.getParamsNames(),true));
-		assertTrue(i11.isSameParams(i12.getParamsNames(),false));
+		assertTrue(i07.isSameParams(i08.getParamsNames(),true));
+		assertTrue(i09.isSameParams(i10.getParamsNames(),true));
+		
+		//sameParams !isParamsOrder
+		assertTrue(i01.isSameParams(i02.getParamsNames(),false));
+		assertTrue(i01.isSameParams(i05.getParamsNames(),false));
+		assertTrue(i02.isSameParams(i06.getParamsNames(),false));
+		assertFalse(i01.isSameParams(i03.getParamsNames(),false));
+		assertFalse(i04.isSameParams(i06.getParamsNames(),false));
+		assertFalse(i01.isSameParams(i13.getParamsNames(),false));
+		assertFalse(i01.isSameParams(i14.getParamsNames(),false));
+		assertTrue(i11.isSameParams(i12.getParamsNames(),true));
 	}
 
 	@Test()
-	public void compareExpandedParams() throws Exception {
+	public void compareExpandedParamsOrder() throws Exception {
 		InterfaceMetric i01 = repository.findById(614664);//'(int,java.lang.String,java.lang.String)'
 		InterfaceMetric i02 = repository.findById(614685);//'(int,java.lang.String,java.lang.String)'
 		InterfaceMetric i03 = repository.findById(605670);//'(int,int,java.lang.String)'
@@ -90,23 +90,23 @@ public class InterfaceMetricTest2 {
 		helper = new InterfaceMetricOccurrencesHelper(i02);
 		helper = new InterfaceMetricOccurrencesHelper(i04);
 		
-		//sameParams !isDisorder
-		assertTrue(i11.isSameExpandedParams(i12.getParamsNames(),false));
-		assertTrue(i11.isSameExpandedParams(i13.getParamsNames(),false));
-		assertFalse(i11.isSameExpandedParams(i09.getParamsNames(),false));
-		assertTrue(i13.isSameExpandedParams(i14.getParamsNames(),false));
-		assertTrue(i13.isSameExpandedParams(i12.getParamsNames(),false));
-		assertFalse(i13.isSameExpandedParams(i10.getParamsNames(),false));
-		assertTrue(i07.isSameExpandedParams(i08.getParamsNames(),false));
-		assertFalse(i07.isSameExpandedParams(i11.getParamsNames(),false));
-		assertFalse(i07.isSameExpandedParams(i13.getParamsNames(),false));
+		//sameParams isParamsOrder
+		assertTrue(i11.isSameExpandedParams(i12.getParamsNames(),true));
+		assertTrue(i11.isSameExpandedParams(i13.getParamsNames(),true));
+		assertFalse(i11.isSameExpandedParams(i09.getParamsNames(),true));
+		assertTrue(i13.isSameExpandedParams(i14.getParamsNames(),true));
+		assertTrue(i13.isSameExpandedParams(i12.getParamsNames(),true));
+		assertFalse(i13.isSameExpandedParams(i10.getParamsNames(),true));
+		assertTrue(i07.isSameExpandedParams(i08.getParamsNames(),true));
+		assertFalse(i07.isSameExpandedParams(i11.getParamsNames(),true));
+		assertFalse(i07.isSameExpandedParams(i13.getParamsNames(),true));
 		
-		//sameParams isDisorder
-		assertTrue(i01.isSameExpandedParams(i02.getParamsNames(),true));
-		assertTrue(i01.isSameExpandedParams(i05.getParamsNames(),true));
-		assertTrue(i02.isSameExpandedParams(i06.getParamsNames(),true));
-		assertFalse(i01.isSameExpandedParams(i03.getParamsNames(),true));
-		assertFalse(i04.isSameExpandedParams(i06.getParamsNames(),true));
-		assertFalse(i01.isSameExpandedParams(i13.getParamsNames(),true));
+		//sameParams !isParamsOrder
+		assertTrue(i01.isSameExpandedParams(i02.getParamsNames(),false));
+		assertTrue(i01.isSameExpandedParams(i05.getParamsNames(),false));
+		assertTrue(i02.isSameExpandedParams(i06.getParamsNames(),false));
+		assertFalse(i01.isSameExpandedParams(i03.getParamsNames(),false));
+		assertFalse(i04.isSameExpandedParams(i06.getParamsNames(),false));
+		assertFalse(i01.isSameExpandedParams(i13.getParamsNames(),false));
 	}
 }

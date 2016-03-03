@@ -77,7 +77,7 @@ public class InterfaceMetricsServiceTest {
 		List<InterfaceMetric> tests = repository.findAllOrderedById();
 		assertEquals(26, tests.size());
 
-		service.execute();
+		service.execute(true);
 
 		tests = repository.findAllOrderedById();
 		assertEquals(26, tests.size());
@@ -121,13 +121,4 @@ public class InterfaceMetricsServiceTest {
 		assertEquals(tests.get(9).getTotalParams(), 2);
 		assertEquals(tests.get(10).getTotalParams(), 2);
 	}
-
-	/*
-	 * private int sTotalParams; private int sTotalWordsMethod; private int
-	 * sTotalWordsClass; private int sSameReturn; private int sSimilarReturn;
-	 * private int sSameClassMethodName; private int sSimilarClassMethodName;
-	 * private int sSameMethodName; private int sSimilarMethodName; private int
-	 * sSameParams; private int sSameParamsDisorder; private int sSimilarParams;
-	 * private int sSimilarParamsDisorder;
-	 */
 }

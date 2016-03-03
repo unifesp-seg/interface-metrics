@@ -82,20 +82,24 @@ public class InterfaceMetricOccurrencesHelper {
 	}
 
 	private boolean matchReturn(OccurrencesCombination combination, InterfaceMetric occurence) {
-		if(combination.isSameReturn())
+		if(!combination.isExpandReturn())
 			return interfaceMetric.getReturnType().equals(occurence.getReturnType());
 		
 		return aqeApproach.getReturnTypeTerms().get(0).getExpandedTerms().contains(occurence.getReturnType());
 	}
 
 	private boolean matchMethodName(OccurrencesCombination combination, InterfaceMetric occurence) {
-		if(combination.isSameMethodName())
+		if(combination.isIgnoreMethodNameOnSearch())
+			return true;
+		
+		if(!combination.isExpandMethodName())
 			return interfaceMetric.getMethodName().equals(occurence.getMethodName());
 
 		if (aqeApproach.getMethodNameTerms().size() != occurence.getTotalWordsMethod())
 			return false;
 		
 		boolean match = true;
+		
 		for(int i = 0; i < aqeApproach.getMethodNameTerms().size(); i++){
 			QueryTerm term = aqeApproach.getMethodNameTerms().get(i);
 			match = term.getExpandedTerms().contains(occurence.getWordsMethod()[i]);
@@ -104,10 +108,10 @@ public class InterfaceMetricOccurrencesHelper {
 	}
 
 	private boolean matchParam(OccurrencesCombination combination, InterfaceMetric occurence) {
-		if(combination.isSameParams())
-			return interfaceMetric.isSameParams(occurence.getParamsNames(), combination.isDisorder());
+		if(!combination.isExpandParams())
+			return interfaceMetric.isSameParams(occurence.getParamsNames(), !combination.isExpandParamsOrder());
 		else
-			return interfaceMetric.isSameExpandedParams(occurence.getParamsNames(), combination.isDisorder());
+			return interfaceMetric.isSameExpandedParams(occurence.getParamsNames(), !combination.isExpandParamsOrder());
 	}
 
 	public String getOccurrencesSQL(String table) throws Exception {

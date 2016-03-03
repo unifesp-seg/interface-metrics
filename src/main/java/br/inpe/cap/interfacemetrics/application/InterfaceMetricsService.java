@@ -27,10 +27,14 @@ public class InterfaceMetricsService {
 		repository =  new InterfaceMetricRepository(mock);
 	}
 
-	public void execute() throws Exception {
+	public void execute(boolean dbPrepared) throws Exception {
 
-		//Prepare DB
-		//repository.clearProcessing();
+		// Prepare DB
+		if (!dbPrepared) {
+			this.printPreparingDB();
+			repository.clearProcessing();
+			return;
+		}
 		
 		//Print
 		this.printTotalHeader();
@@ -68,6 +72,10 @@ public class InterfaceMetricsService {
 		helper.updateOccurrences();
 	}
 
+	private void printPreparingDB() {
+		System.out.println("\nPreparing DB...");
+	}
+	
 	private void printTotalHeader() throws Exception{
 		total = repository.countAllNotProccessed();
 		System.out.println("\nTotal não processados: " + total);

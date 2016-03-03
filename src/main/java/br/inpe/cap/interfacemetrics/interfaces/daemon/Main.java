@@ -15,13 +15,12 @@ public class Main {
 		LogUtils.getLogger().info("");
 		
 		try {
-//			@SuppressWarnings("resource")
-//			ApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
 
 			LogUtils.getLogger().info("Service");
-//			InterfaceMetricsService service = (InterfaceMetricsService) ctx.getBean("interfaceMetricsService");
 			InterfaceMetricsService service = new InterfaceMetricsService();
-			service.execute();
+
+			//EXECUTE EXECUTE EXECUTE 
+			service.execute(true);
 
 		} catch (Exception e) {
 			LogUtils.getLogger().error(e);

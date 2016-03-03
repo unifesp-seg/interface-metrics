@@ -1,6 +1,7 @@
 package br.inpe.cap.interfacemetrics.application;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -38,4 +39,35 @@ public class InterfaceMetricsServiceTest2 {
 		assertEquals(2, storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, true)).intValue());
 		
 	}
+
+	@Test
+	public void processMethod2() throws Exception {
+		InterfaceMetric interfaceMetric = repository.findById(607111);
+		service.processMethod(interfaceMetric);
+		InterfaceMetric storage = repository.findById(interfaceMetric.getId());
+		int rnpo = storage.getOccurrencesTotal(new OccurrencesCombination(true, true, true, false));
+		int rn1po = storage.getOccurrencesTotal(new OccurrencesCombination(true, false, true, false));
+		assertTrue(rn1po - rnpo >= 0);
+	}
+
+	@Test
+	public void processMethod3() throws Exception {
+		InterfaceMetric interfaceMetric = repository.findById(610507);
+		service.processMethod(interfaceMetric);
+		InterfaceMetric storage = repository.findById(interfaceMetric.getId());
+		int r0_n0_p0_0 = storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, false));
+		int r0_n1_p0_0 = storage.getOccurrencesTotal(new OccurrencesCombination(false, true, false, false));
+		assertTrue(r0_n1_p0_0 - r0_n0_p0_0 >= 0);
+	}
+
+	@Test
+	public void processMethod4() throws Exception {
+		InterfaceMetric interfaceMetric = repository.findById(615049);
+		service.processMethod(interfaceMetric);
+		InterfaceMetric storage = repository.findById(interfaceMetric.getId());
+		int rnpo = storage.getOccurrencesTotal(new OccurrencesCombination(true, true, true, false));
+		int rn1po = storage.getOccurrencesTotal(new OccurrencesCombination(true, false, true, false));
+		assertTrue(rn1po - rnpo >= 0);
+	}
+	
 }

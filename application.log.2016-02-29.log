@@ -1,0 +1,17 @@
+Seg, 29/02/2016 05:56:18 - 
+Seg, 29/02/2016 05:56:18 - Aplicativo iniciado
+Seg, 29/02/2016 05:56:18 - 
+Seg, 29/02/2016 05:56:18 - Service
+Seg, 29/02/2016 07:38:56 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Seg, 29/02/2016 07:38:56 - 
+Seg, 29/02/2016 07:38:56 - Aplicativo finalizado. Tempo de execucao: 102 minutos.
+Seg, 29/02/2016 07:38:56 - 
+Seg, 29/02/2016 07:48:37 - 
+Seg, 29/02/2016 07:48:37 - Aplicativo iniciado
+Seg, 29/02/2016 07:48:37 - 
+Seg, 29/02/2016 07:48:37 - Service
+Seg, 29/02/2016 09:29:51 - 
+Seg, 29/02/2016 09:29:51 - Aplicativo finalizado. Tempo de execucao: 101 minutos.
+Seg, 29/02/2016 09:29:51 - 

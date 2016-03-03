@@ -135,23 +135,26 @@ public class InterfaceMetricRepository {
 		sql += "is_static = ?, ";
 		sql += "has_type_same_package = ?, ";
 
-		sql += "return_name_params = ?, ";
-		sql += "return_name_0params = ?, ";
-		sql += "return_0name_params = ?, ";
-		sql += "return_0name_0params = ?, ";
-		sql += "s0return_name_params = ?, ";
-		sql += "s0return_name_0params = ?, ";
-		sql += "s0return_0name_params = ?, ";
-		sql += "s0return_0name_0params = ?, ";
-		sql += "return_name_params_disorder = ?, ";
-		sql += "return_name_0params_disorder = ?, ";
-		sql += "return_0name_params_disorder = ?, ";
-		sql += "return_0name_0params_disorder = ?, ";
-		sql += "s0return_name_params_disorder = ?, ";
-		sql += "s0return_name_0params_disorder = ?, ";
-		sql += "s0return_0name_params_disorder = ?, ";
-		sql += "s0return_0name_0params_disorder = ? ";
-		
+		sql += "r0_n0_p0_0 = ?, ";
+		sql += "r0_n0_p1_0 = ?, ";
+		sql += "r0_n1_p0_0 = ?, ";
+		sql += "r0_n1_p1_0 = ?, ";
+		sql += "r1_n0_p0_0 = ?, ";
+		sql += "r1_n0_p1_0 = ?, ";
+		sql += "r1_n1_p0_0 = ?, ";
+		sql += "r1_n1_p1_0 = ?, ";
+		sql += "r0_n0_p0_1 = ?, ";
+		sql += "r0_n0_p1_1 = ?, ";
+		sql += "r0_n1_p0_1 = ?, ";
+		sql += "r0_n1_p1_1 = ?, ";
+		sql += "r1_n0_p0_1 = ?, ";
+		sql += "r1_n0_p1_1 = ?, ";
+		sql += "r1_n1_p0_1 = ?, ";
+		sql += "r1_n1_p1_1 = ?, ";
+
+		sql += "r0_xx_p0_1 = ?, ";
+		sql += "r1_xx_p1_1 = ?  ";
+
 		sql += "WHERE project_type = 'CRAWLED' ";
 		sql += allLines ? "" : "and id = ? ";
 //		sql += allLines ? "" : "WHERE id = ? ";
@@ -173,7 +176,7 @@ public class InterfaceMetricRepository {
 			ps.setInt(i++, interfaceMetric.getOccurrencesTotal(combination));
 
 		if (!allLines)
-			ps.setLong(24, interfaceMetric.getId());
+			ps.setLong(26, interfaceMetric.getId());
 
 		ps.executeUpdate();
 

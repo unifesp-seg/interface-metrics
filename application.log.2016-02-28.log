@@ -1,0 +1,61 @@
+Dom, 28/02/2016 12:00:39 - 
+Dom, 28/02/2016 12:00:39 - Aplicativo iniciado
+Dom, 28/02/2016 12:00:39 - 
+Dom, 28/02/2016 12:00:39 - Service
+Dom, 28/02/2016 12:00:43 - 
+Dom, 28/02/2016 12:00:43 - Aplicativo finalizado. Tempo de execucao: 3 segundos.
+Dom, 28/02/2016 12:00:43 - 
+Dom, 28/02/2016 12:09:48 - 
+Dom, 28/02/2016 12:09:48 - Aplicativo iniciado
+Dom, 28/02/2016 12:09:48 - 
+Dom, 28/02/2016 12:09:48 - Service
+Dom, 28/02/2016 12:09:55 - 
+Dom, 28/02/2016 12:09:55 - Aplicativo finalizado. Tempo de execucao: 7 segundos.
+Dom, 28/02/2016 12:09:55 - 
+Dom, 28/02/2016 12:11:59 - 
+Dom, 28/02/2016 12:11:59 - Aplicativo iniciado
+Dom, 28/02/2016 12:11:59 - 
+Dom, 28/02/2016 12:11:59 - Service
+Dom, 28/02/2016 12:12:03 - 
+Dom, 28/02/2016 12:12:03 - Aplicativo finalizado. Tempo de execucao: 4 segundos.
+Dom, 28/02/2016 12:12:03 - 
+Dom, 28/02/2016 12:12:15 - 
+Dom, 28/02/2016 12:12:15 - Aplicativo iniciado
+Dom, 28/02/2016 12:12:15 - 
+Dom, 28/02/2016 12:12:15 - Service
+Dom, 28/02/2016 12:25:38 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Dom, 28/02/2016 12:25:38 - 
+Dom, 28/02/2016 12:25:38 - Aplicativo finalizado. Tempo de execucao: 13 minutos.
+Dom, 28/02/2016 12:25:38 - 
+Dom, 28/02/2016 14:27:24 - 
+Dom, 28/02/2016 14:27:24 - Aplicativo iniciado
+Dom, 28/02/2016 14:27:24 - 
+Dom, 28/02/2016 14:27:24 - Service
+Dom, 28/02/2016 16:15:51 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Dom, 28/02/2016 16:15:51 - 
+Dom, 28/02/2016 16:15:51 - Aplicativo finalizado. Tempo de execucao: 108 minutos.
+Dom, 28/02/2016 16:15:51 - 
+Dom, 28/02/2016 18:34:15 - 
+Dom, 28/02/2016 18:34:15 - Aplicativo iniciado
+Dom, 28/02/2016 18:34:15 - 
+Dom, 28/02/2016 18:34:15 - Service
+Dom, 28/02/2016 20:28:05 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Dom, 28/02/2016 20:28:05 - 
+Dom, 28/02/2016 20:28:05 - Aplicativo finalizado. Tempo de execucao: 113 minutos.
+Dom, 28/02/2016 20:28:05 - 
+Dom, 28/02/2016 21:03:18 - 
+Dom, 28/02/2016 21:03:18 - Aplicativo iniciado
+Dom, 28/02/2016 21:03:18 - 
+Dom, 28/02/2016 21:03:18 - Service
+Dom, 28/02/2016 23:09:40 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Dom, 28/02/2016 23:09:40 - 
+Dom, 28/02/2016 23:09:40 - Aplicativo finalizado. Tempo de execucao: 126 minutos.
+Dom, 28/02/2016 23:09:40 - 
