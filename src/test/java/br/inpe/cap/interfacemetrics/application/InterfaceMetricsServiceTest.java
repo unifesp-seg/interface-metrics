@@ -77,7 +77,7 @@ public class InterfaceMetricsServiceTest {
 		List<InterfaceMetric> tests = repository.findAllOrderedById();
 		assertEquals(26, tests.size());
 
-		service.execute(true);
+		service.execute(true, 1);
 
 		tests = repository.findAllOrderedById();
 		assertEquals(26, tests.size());

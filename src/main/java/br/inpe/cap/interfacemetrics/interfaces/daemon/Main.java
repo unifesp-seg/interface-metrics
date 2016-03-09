@@ -3,6 +3,8 @@ package br.inpe.cap.interfacemetrics.interfaces.daemon;
 import br.inpe.cap.interfacemetrics.application.InterfaceMetricsService;
 import br.inpe.cap.interfacemetrics.infrastructure.util.LogUtils;
 
+import com.mysql.jdbc.exceptions.jdbc4.CommunicationsException;
+
 public class Main {
 
 	private static long startTime = -1;
@@ -19,11 +21,22 @@ public class Main {
 			LogUtils.getLogger().info("Service");
 			InterfaceMetricsService service = new InterfaceMetricsService();
 
-			//EXECUTE EXECUTE EXECUTE 
-			service.execute(true);
+			boolean communicationsException = false;
+			do{
+				try{
+
+					//EXECUTE EXECUTE EXECUTE 
+					service.execute(true, 1);
+
+					communicationsException = false;
+				} catch (CommunicationsException ex){
+					communicationsException = true;
+				}
+			}while(communicationsException);
 
 		} catch (Exception e) {
-			LogUtils.getLogger().error(e);
+			LogUtils.getLogger().error(e
+					);
 			e.printStackTrace();
 		}
 

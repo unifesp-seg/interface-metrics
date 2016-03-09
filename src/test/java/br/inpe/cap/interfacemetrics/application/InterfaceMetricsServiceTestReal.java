@@ -9,7 +9,7 @@ import br.inpe.cap.interfacemetrics.domain.InterfaceMetric;
 import br.inpe.cap.interfacemetrics.domain.OccurrencesCombination;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricRepository;
 
-public class InterfaceMetricsServiceTest2 {
+public class InterfaceMetricsServiceTestReal {
 
 	private InterfaceMetricRepository repository = new InterfaceMetricRepository();
 	private InterfaceMetricsService service = new InterfaceMetricsService();

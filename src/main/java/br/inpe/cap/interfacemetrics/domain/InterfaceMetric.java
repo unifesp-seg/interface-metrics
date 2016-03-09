@@ -22,6 +22,7 @@ public class InterfaceMetric {
 	private String returnType;
 	private String relationType;
 	private boolean processed;
+	private boolean processedParams;
 	
 	private int totalParams;
 	private int totalWordsMethod;
@@ -68,6 +69,7 @@ public class InterfaceMetric {
 		returnType = rs.getString("return_type");
 		relationType = rs.getString("relation_type");
 		processed = rs.getInt("processed") == 1 ? true : false;
+		processedParams = rs.getInt("processed_params") == 1 ? true : false;
 
 		totalParams = rs.getInt("total_params");
 		totalWordsMethod = rs.getInt("total_words_method");
@@ -140,7 +142,24 @@ public class InterfaceMetric {
 		String p = params;
 		p = StringUtils.replace(p,"(","");
 		p = StringUtils.replace(p,")","");
-		return StringUtils.split(p,",");
+		p = StringUtils.replace(p," ","");
+		
+		//Fix Generic situation. i.e.: Map<java.lang.String, <?>, Path>, Map<A, B, C, D, <E>>
+		String[] names = StringUtils.split(p,",");
+		List<String> aux = new ArrayList<String>();
+		for (int i = 0; i < names.length; i++) {
+			String n = names[i];
+			while(StringUtils.countMatches(n, "<") != StringUtils.countMatches(n, ">")){
+				if(i+1 == names.length)
+					break;
+				n += ","+names[++i];
+			}
+			aux.add(n);
+		}
+		
+		String[] paramsNames = new String[aux.size()];
+		paramsNames = aux.toArray(paramsNames);
+		return paramsNames;
 	}
 	
 	public String[] getWordsMethod(){
@@ -312,6 +331,14 @@ public class InterfaceMetric {
 		this.processed = processed;
 	}
 
+	public boolean isProcessedParams() {
+		return processedParams;
+	}
+
+	public void setProcessedParams(boolean processedParams) {
+		this.processedParams = processedParams;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -334,6 +361,10 @@ public class InterfaceMetric {
 
 	public String getParams() {
 		return params;
+	}
+
+	public void setParams(String params) {
+		this.params = params;
 	}
 
 	public String getReturnType() {

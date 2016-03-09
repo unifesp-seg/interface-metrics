@@ -83,6 +83,49 @@ public class InterfaceMetricRepository {
 		return total;
 	}
 	
+	public List<InterfaceMetric> findAllNotProcessedParam() throws Exception {
+		Connection conn = getConnection();
+		Statement stmt = conn.createStatement();
+
+		String limit = ConfigProperties.getProperty("interface-metrics.processed.max-result");
+		String sql = "SELECT * FROM " + table + "";
+		sql += " where (processed_params <> 1 or processed_params is null)";
+		sql += " limit " + limit;
+
+		ResultSet rs = stmt.executeQuery(sql);
+
+		List<InterfaceMetric> list = new ArrayList<InterfaceMetric>();
+
+		while (rs.next()) {
+			InterfaceMetric interfaceMetric = new InterfaceMetric(rs);
+			list.add(interfaceMetric);
+		}
+
+		stmt.close();
+		conn.close();
+
+		return list;
+	}
+
+	public int countAllNotProccessedParams() throws Exception {
+		Connection conn = getConnection();
+		Statement stmt = conn.createStatement();
+
+		String sql = "SELECT count(*) as total FROM " + table + "";
+		sql += " where (processed_params <> 1 or processed_params is null)";
+		ResultSet rs = stmt.executeQuery(sql);
+
+		int total = 0;
+		while (rs.next()) {
+			total = rs.getInt("total");
+		}
+
+		stmt.close();
+		conn.close();
+
+		return total;
+	}
+
 	public List<InterfaceMetric> findAllOrderedById() throws Exception {
 		Connection conn = getConnection();
 		Statement stmt = conn.createStatement();
@@ -155,9 +198,7 @@ public class InterfaceMetricRepository {
 		sql += "r0_xx_p0_1 = ?, ";
 		sql += "r1_xx_p1_1 = ?  ";
 
-		sql += "WHERE project_type = 'CRAWLED' ";
-		sql += allLines ? "" : "and id = ? ";
-//		sql += allLines ? "" : "WHERE id = ? ";
+		sql += allLines ? "WHERE project_type = 'CRAWLED' " : "WHERE id = ? ";
 
 		Connection conn = getConnection();
 		PreparedStatement ps = conn.prepareStatement(sql);
@@ -177,6 +218,33 @@ public class InterfaceMetricRepository {
 
 		if (!allLines)
 			ps.setLong(26, interfaceMetric.getId());
+
+		ps.executeUpdate();
+
+		ps.close();
+		conn.close();
+	}
+
+	public void clearProcessedParams() throws Exception {
+		this.updateProcessedParams(null, true);
+	}
+
+	public void updateProcessedParams(InterfaceMetric interfaceMetric) throws Exception {
+		this.updateProcessedParams(interfaceMetric, false);
+	}
+
+	private void updateProcessedParams(InterfaceMetric interfaceMetric, boolean allLines) throws Exception {
+		String sql = "UPDATE " + table + " SET processed_params = ? ";
+		sql += allLines ? "" : "WHERE id = ? ";
+
+		Connection conn = getConnection();
+		PreparedStatement ps = conn.prepareStatement(sql);
+
+		boolean processedParams = interfaceMetric == null ? false : interfaceMetric.isProcessedParams();
+		
+		ps.setInt(1, processedParams ? 1 : 0);
+		if (!allLines)
+			ps.setLong(2, interfaceMetric.getId());
 
 		ps.executeUpdate();
 

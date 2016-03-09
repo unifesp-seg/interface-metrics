@@ -133,4 +133,25 @@ public class InterfaceMetricTest {
 		assertEquals(15, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false, true)).intValue());
 		assertEquals(16, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  true)).intValue());
 	}
+	
+	@Test()
+	public void getParamsNames() throws Exception {
+		String params = "Map<java.lang.String, <?>, Path>, Map<A, B, C, D, <E>>";
+		InterfaceMetric i0 = new InterfaceMetric();
+		i0.setParams(params);
+
+		assertEquals(i0.getParams(), params);
+		assertEquals(2, i0.getParamsNames().length);
+		assertEquals("Map<java.lang.String,<?>,Path>",i0.getParamsNames()[0]);
+		assertEquals("Map<A,B,C,D,<E>>",i0.getParamsNames()[1]);
+
+		params = "Map<java.lang.String, <?>, Path>, Map<A, B, C, D, <E";
+		i0 = new InterfaceMetric();
+		i0.setParams(params);
+
+		assertEquals(i0.getParams(), params);
+		assertEquals(2, i0.getParamsNames().length);
+		assertEquals("Map<java.lang.String,<?>,Path>",i0.getParamsNames()[0]);
+		assertEquals("Map<A,B,C,D,<E",i0.getParamsNames()[1]);
+	}
 }
