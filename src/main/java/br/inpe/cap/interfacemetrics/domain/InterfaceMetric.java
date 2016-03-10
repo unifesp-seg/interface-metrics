@@ -143,9 +143,9 @@ public class InterfaceMetric {
 		p = StringUtils.replace(p,"(","");
 		p = StringUtils.replace(p,")","");
 		p = StringUtils.replace(p," ","");
+		String[] names = StringUtils.split(p,",");
 		
 		//Fix Generic situation. i.e.: Map<java.lang.String, <?>, Path>, Map<A, B, C, D, <E>>
-		String[] names = StringUtils.split(p,",");
 		List<String> aux = new ArrayList<String>();
 		for (int i = 0; i < names.length; i++) {
 			String n = names[i];

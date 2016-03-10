@@ -26,7 +26,7 @@ public class Main {
 				try{
 
 					//EXECUTE EXECUTE EXECUTE 
-					service.execute(true, 1);
+					service.execute(true, ExecutionType.INTERFACE_METRICS);
 
 					communicationsException = false;
 				} catch (CommunicationsException ex){

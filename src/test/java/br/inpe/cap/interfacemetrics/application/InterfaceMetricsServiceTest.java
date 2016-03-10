@@ -10,6 +10,7 @@ import org.junit.Test;
 import br.inpe.cap.interfacemetrics.domain.InterfaceMetric;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.util.ConfigProperties;
+import br.inpe.cap.interfacemetrics.interfaces.daemon.ExecutionType;
 
 public class InterfaceMetricsServiceTest {
 
@@ -77,7 +78,7 @@ public class InterfaceMetricsServiceTest {
 		List<InterfaceMetric> tests = repository.findAllOrderedById();
 		assertEquals(26, tests.size());
 
-		service.execute(true, 1);
+		service.execute(true, ExecutionType.INTERFACE_METRICS);
 
 		tests = repository.findAllOrderedById();
 		assertEquals(26, tests.size());

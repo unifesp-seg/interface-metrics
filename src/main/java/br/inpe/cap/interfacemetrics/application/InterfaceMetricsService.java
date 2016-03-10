@@ -7,6 +7,7 @@ import java.util.List;
 import br.inpe.cap.interfacemetrics.domain.InterfaceMetric;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricParamsRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricRepository;
+import br.inpe.cap.interfacemetrics.interfaces.daemon.ExecutionType;
 
 public class InterfaceMetricsService {
 
@@ -31,30 +32,30 @@ public class InterfaceMetricsService {
 		paramsRepository = new InterfaceMetricParamsRepository(mock);
 	}
 
-	public void execute(boolean dbPrepared, int execution) throws Exception {
+	public void execute(boolean dbPrepared, ExecutionType executionType) throws Exception {
 
 		// Prepare DB
 		if (!dbPrepared) {
 			this.printPreparingDB();
-			this.clearProcessing(execution);
+			this.clearProcessing(executionType);
 			return;
 		}
 		
 		//Print
-		total = this.getNotProcessedTotal(execution);
+		total = this.getNotProcessedTotal(executionType);
 		totalPartial = 0;
 		this.printTotalHeader(total);
 		
 		List<InterfaceMetric> list = null;
 		do {
-			list = this.getNotProcessedList(execution);
+			list = this.getNotProcessedList(executionType);
 
 			//Print
 			totalPartial += list.size();
 			this.printPartialHeader();
 
 			for (InterfaceMetric interfaceMetric : list) {
-				this.process(interfaceMetric, execution);
+				this.process(interfaceMetric, executionType);
 
 				//Print
 				this.printRecord();
@@ -65,39 +66,39 @@ public class InterfaceMetricsService {
 		this.printFinish();
 	}
 
-	private int getNotProcessedTotal(int execution) throws Exception {
+	private int getNotProcessedTotal(ExecutionType executionType) throws Exception {
 		int total = 0;
-		if(execution == 1){
+		if(executionType.isInterfaceMetrics()){
 			total = repository.countAllNotProccessed();
-		} else if(execution == 2){
+		} else if(executionType.isParams()){
 			total = repository.countAllNotProccessedParams();
 		}
 		return total;
 	}
 
-	private List<InterfaceMetric> getNotProcessedList(int execution) throws Exception {
+	private List<InterfaceMetric> getNotProcessedList(ExecutionType executionType) throws Exception {
 		List<InterfaceMetric> list = null;
-		if(execution == 1){
+		if(executionType.isInterfaceMetrics()){
 			list = repository.findAllNotProcessed();
-		} else if(execution == 2){
+		} else if(executionType.isParams()){
 			list = repository.findAllNotProcessedParam();
 		}
 		return list;
 	}
 
-	private void clearProcessing(int execution) throws Exception {
-		if(execution == 1){
+	private void clearProcessing(ExecutionType executionType) throws Exception {
+		if(executionType.isInterfaceMetrics()){
 			repository.clearProcessing();
-		} else if(execution == 2){
+		} else if(executionType.isParams()){
 			paramsRepository.deleteTable();
 			repository.clearProcessedParams();
 		}
 	}
 
-	private void process(InterfaceMetric interfaceMetric, int execution) throws Exception {
-		if(execution == 1){
+	private void process(InterfaceMetric interfaceMetric, ExecutionType executionType) throws Exception {
+		if(executionType.isInterfaceMetrics()){
 			this.processMethod(interfaceMetric);
-		} else if(execution == 2){
+		} else if(executionType.isParams()){
 			paramsRepository.deleteParams(interfaceMetric);
 			paramsRepository.insertParams(interfaceMetric);
 			interfaceMetric.setProcessedParams(true);

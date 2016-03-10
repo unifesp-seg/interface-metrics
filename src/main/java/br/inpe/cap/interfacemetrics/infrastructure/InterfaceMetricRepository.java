@@ -283,4 +283,22 @@ public class InterfaceMetricRepository {
 		
 		return list;
 	}
+	
+	public int getSumAllTotalParams() throws Exception {
+		Connection conn = getConnection();
+		Statement stmt = conn.createStatement();
+
+		String sql = "select sum(total_params) as total from " + table;
+		ResultSet rs = stmt.executeQuery(sql);
+
+		int total = 0;
+		while (rs.next()) {
+			total = rs.getInt("total");
+		}
+
+		stmt.close();
+		conn.close();
+
+		return total;
+	}
 }

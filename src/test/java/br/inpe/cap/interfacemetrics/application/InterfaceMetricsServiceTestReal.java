@@ -7,11 +7,13 @@ import org.junit.Test;
 
 import br.inpe.cap.interfacemetrics.domain.InterfaceMetric;
 import br.inpe.cap.interfacemetrics.domain.OccurrencesCombination;
+import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricParamsRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricRepository;
 
 public class InterfaceMetricsServiceTestReal {
 
 	private InterfaceMetricRepository repository = new InterfaceMetricRepository();
+	private InterfaceMetricParamsRepository paramsRepository = new InterfaceMetricParamsRepository();
 	private InterfaceMetricsService service = new InterfaceMetricsService();
 
 	@Test
@@ -70,4 +72,11 @@ public class InterfaceMetricsServiceTestReal {
 		assertTrue(rn1po - rnpo >= 0);
 	}
 	
+	@Test
+	public void verifyTotalParams() throws Exception {
+		int sumAllTotalParams = repository.getSumAllTotalParams();
+		int totalParamsTable = paramsRepository.countAll();
+		
+		assertEquals(sumAllTotalParams, totalParamsTable);
+	}
 }
