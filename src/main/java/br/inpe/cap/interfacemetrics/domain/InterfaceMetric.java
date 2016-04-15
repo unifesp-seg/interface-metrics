@@ -49,6 +49,11 @@ public class InterfaceMetric {
 	private int r1_n1_p1_1;
 	private int r0_xx_p0_1;
 	private int r1_xx_p1_1;
+	private int c0_r0_n0_p0_0;
+	private int c0_r0_n0_p0_1;
+	private int c0_r1_n1_p1_1;
+	private int c0_r0_xx_p0_1;
+	private int c0_r1_xx_p1_1;
 	
 	private List<QueryTerm> expandedParams = new ArrayList<QueryTerm>();
 	
@@ -96,7 +101,12 @@ public class InterfaceMetric {
 		r1_n1_p1_1 = rs.getInt("r1_n1_p1_1");
 		r0_xx_p0_1 = rs.getInt("r0_xx_p0_1");
 		r1_xx_p1_1 = rs.getInt("r1_xx_p1_1");
-
+		c0_r0_n0_p0_0 = rs.getInt("c0_r0_n0_p0_0");
+		c0_r0_n0_p0_1 = rs.getInt("c0_r0_n0_p0_1");
+		c0_r1_n1_p1_1 = rs.getInt("c0_r1_n1_p1_1");
+		c0_r0_xx_p0_1 = rs.getInt("c0_r0_xx_p0_1");
+		c0_r1_xx_p1_1 = rs.getInt("c0_r1_xx_p1_1");
+		
 		params = StringUtils.replace(params, "(", "");
 		params = StringUtils.replace(params, ")", "");
 	}
@@ -188,7 +198,7 @@ public class InterfaceMetric {
 		return StringUtils.substringAfterLast(fqn, ".");
 	}
 
-	private String getClassName(){
+	public String getClassName(){
 		String className = StringUtils.substringBeforeLast(fqn, ".");
 		return StringUtils.substringAfterLast(className, ".");
 	}
@@ -203,7 +213,17 @@ public class InterfaceMetric {
 		boolean expandParams = combination.isExpandParams();
 		boolean expandParamsOrder = combination.isExpandParamsOrder();
 		boolean ignoreMethodNameOnSearch = combination.isIgnoreMethodNameOnSearch();
+		boolean isClassNameOnSearch = combination.isClassNameOnSearch();
 		
+		if (isClassNameOnSearch){
+			if (ignoreMethodNameOnSearch)
+				return (!expandReturn && !expandParams) ? c0_r0_xx_p0_1 : c0_r1_xx_p1_1;
+
+			if (!expandReturn && !expandMethodName && !expandParams && !expandParamsOrder) return c0_r0_n0_p0_0;
+			if (!expandReturn && !expandMethodName && !expandParams &&  expandParamsOrder) return c0_r0_n0_p0_1;
+			if ( expandReturn &&  expandMethodName &&  expandParams &&  expandParamsOrder) return c0_r1_n1_p1_1;
+		}
+
 		if (ignoreMethodNameOnSearch)
 			return (!expandReturn && !expandParams) ? r0_xx_p0_1 : r1_xx_p1_1;
 		
@@ -233,6 +253,18 @@ public class InterfaceMetric {
 		boolean expandParams = combination.isExpandParams();
 		boolean expandParamsOrder = combination.isExpandParamsOrder();
 		boolean ignoreMethodNameOnSearch = combination.isIgnoreMethodNameOnSearch();
+		boolean isClassNameOnSearch = combination.isClassNameOnSearch();
+		
+		if (isClassNameOnSearch){
+			     if ( ignoreMethodNameOnSearch && !expandReturn && !expandParams &&  expandParamsOrder) c0_r0_xx_p0_1 = total;
+			else if ( ignoreMethodNameOnSearch &&  expandReturn &&  expandParams &&  expandParamsOrder) c0_r1_xx_p1_1 = total;
+
+			else if (!ignoreMethodNameOnSearch && !expandReturn && !expandMethodName && !expandParams && !expandParamsOrder) c0_r0_n0_p0_0 = total;
+			else if (!ignoreMethodNameOnSearch && !expandReturn && !expandMethodName && !expandParams &&  expandParamsOrder) c0_r0_n0_p0_1 = total;
+			else if (!ignoreMethodNameOnSearch &&  expandReturn &&  expandMethodName &&  expandParams &&  expandParamsOrder) c0_r1_n1_p1_1 = total;
+			     
+			return;
+		}
 		
 		     if ( ignoreMethodNameOnSearch && !expandReturn && !expandParams &&  expandParamsOrder) r0_xx_p0_1 = total;
 		else if ( ignoreMethodNameOnSearch &&  expandReturn &&  expandParams &&  expandParamsOrder) r1_xx_p1_1 = total;

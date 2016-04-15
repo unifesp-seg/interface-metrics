@@ -10,6 +10,7 @@ public class OccurrencesCombination {
 	private boolean expandParams;
 	private boolean expandParamsOrder;
 	private boolean ignoreMethodNameOnSearch;
+	private boolean classNameOnSearch;
 
 	public OccurrencesCombination(boolean expandReturn, boolean expandMethodName, boolean expandParams, boolean expandParamsOrder) {
 		this.expandReturn = expandReturn;
@@ -17,6 +18,7 @@ public class OccurrencesCombination {
 		this.expandParams = expandParams;
 		this.expandParamsOrder = expandParamsOrder;	
 		this.ignoreMethodNameOnSearch = false;
+		this.classNameOnSearch = false;
 	}
 
 	public OccurrencesCombination(boolean expandReturnAndParams) {
@@ -24,8 +26,18 @@ public class OccurrencesCombination {
 		this.expandParams = expandReturnAndParams;
 		this.expandParamsOrder = true;	
 		this.ignoreMethodNameOnSearch = true;
+		this.classNameOnSearch = false;
 	}
 
+	public OccurrencesCombination(boolean expand, boolean expandParamsOrder, boolean ignoreMethodNameOnSearch) {
+		this.expandReturn = expand;
+		this.expandMethodName = expand;
+		this.expandParams = expand;
+		this.expandParamsOrder = expandParamsOrder;
+		this.ignoreMethodNameOnSearch = ignoreMethodNameOnSearch;
+		this.classNameOnSearch = true;
+	}
+	
 	public static List<OccurrencesCombination> allCombinations(){
 		List<OccurrencesCombination> combinations = new ArrayList<OccurrencesCombination>();
 
@@ -49,14 +61,24 @@ public class OccurrencesCombination {
 		combinations.add(new OccurrencesCombination(false));
 		combinations.add(new OccurrencesCombination(true));
 
+		combinations.add(new OccurrencesCombination(false, false, false));
+		combinations.add(new OccurrencesCombination(false, true,  false));
+		combinations.add(new OccurrencesCombination(true,  true,  false));
+		combinations.add(new OccurrencesCombination(false, true,  true));
+		combinations.add(new OccurrencesCombination(true,  true,  true));
+		
 		return combinations;
 	}
 	
 	public void printCombination(){
-		if(!isIgnoreMethodNameOnSearch())
-			System.out.println("R: " + isExpandReturn() + " M: " + isExpandMethodName() + " P: " + isExpandParams() + " O: " + isExpandParamsOrder());
-		else
-			System.out.println("Ignore MethodName: " + isIgnoreMethodNameOnSearch() + " R: " + isExpandReturn() + " P: " + isExpandParams() + " O: " + isExpandParamsOrder());
+		String c = isClassNameOnSearch() ? "ClassNameOnSearch | " : "";
+		c += isIgnoreMethodNameOnSearch() ? "IgnoreMethodNameOnSearch | " : "";
+		String r = " R: " + isExpandReturn();
+		String m = isIgnoreMethodNameOnSearch() ? "" : " M: " + isExpandMethodName();
+		String p = " P: " + isExpandParams();
+		String o = " O: " + isExpandParamsOrder();
+
+		System.out.println(c + r + m + p + o);
 	}
 	
 	public boolean isExpandReturn() {
@@ -78,5 +100,8 @@ public class OccurrencesCombination {
 	public boolean isIgnoreMethodNameOnSearch() {
 		return ignoreMethodNameOnSearch;
 	}
-	
+
+	public boolean isClassNameOnSearch() {
+		return classNameOnSearch;
+	}
 }

@@ -196,8 +196,14 @@ public class InterfaceMetricRepository {
 		sql += "r1_n1_p1_1 = ?, ";
 
 		sql += "r0_xx_p0_1 = ?, ";
-		sql += "r1_xx_p1_1 = ?  ";
+		sql += "r1_xx_p1_1 = ?, ";
 
+		sql += "c0_r0_n0_p0_0 = ?, ";
+		sql += "c0_r0_n0_p0_1 = ?, ";
+		sql += "c0_r1_n1_p1_1 = ?, ";
+		sql += "c0_r0_xx_p0_1 = ?, ";
+		sql += "c0_r1_xx_p1_1 = ?  ";
+		
 		sql += allLines ? "WHERE project_type = 'CRAWLED' " : "WHERE id = ? ";
 
 		Connection conn = getConnection();
@@ -217,7 +223,7 @@ public class InterfaceMetricRepository {
 			ps.setInt(i++, interfaceMetric.getOccurrencesTotal(combination));
 
 		if (!allLines)
-			ps.setLong(26, interfaceMetric.getId());
+			ps.setLong(31, interfaceMetric.getId());
 
 		ps.executeUpdate();
 
@@ -276,7 +282,7 @@ public class InterfaceMetricRepository {
 
 		if(debugMode){
 			InterfaceMetric i = interfaceMetricSQLHelper.getInterfaceMetric();
-			System.out.println("\n\n-- " + i.getReturnType() + " "+ i.getMethodName() + "(" + i.getParams() + ")");
+			System.out.println("\n\n-- " + i.getReturnType() + " "+ i.getClassName() + "."+ i.getMethodName() + "(" + i.getParams() + ")");
 			System.out.println(sql);
 			System.out.println("-- Occurrences = " + list.size());
 		}

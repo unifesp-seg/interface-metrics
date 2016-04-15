@@ -74,11 +74,19 @@ public class InterfaceMetricOccurrencesHelper {
 	}
 
 	private boolean match(OccurrencesCombination combination, InterfaceMetric occurence) {
+		boolean matchClassName = this.matchClassName(combination, occurence);
 		boolean matchReturn = this.matchReturn(combination, occurence);
 		boolean matchMethodName = this.matchMethodName(combination, occurence);
 		boolean matchParams = this.matchParam(combination, occurence);
 		
-		return matchReturn && matchMethodName && matchParams;
+		return matchClassName && matchReturn && matchMethodName && matchParams;
+	}
+
+	private boolean matchClassName(OccurrencesCombination combination, InterfaceMetric occurence) {
+		if(!combination.isClassNameOnSearch())
+			return true;
+
+		return interfaceMetric.getClassName().equals(occurence.getClassName());
 	}
 
 	private boolean matchReturn(OccurrencesCombination combination, InterfaceMetric occurence) {

@@ -114,6 +114,8 @@ public class InterfaceMetricTest {
 		
 		repository.updateProcessedMethod(interfaceMetric);
 
+		assertEquals(23, combinations.size());
+		
 		InterfaceMetric storage = repository.findById(10);
 		
 		assertEquals(1 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, false)).intValue());
@@ -132,6 +134,15 @@ public class InterfaceMetricTest {
 		assertEquals(14, storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, true,  true)).intValue());
 		assertEquals(15, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false, true)).intValue());
 		assertEquals(16, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  true)).intValue());
+
+		assertEquals(17, storage.getOccurrencesTotal(new OccurrencesCombination(false)).intValue());
+		assertEquals(18, storage.getOccurrencesTotal(new OccurrencesCombination(true)).intValue());
+
+		assertEquals(19, storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false)).intValue());
+		assertEquals(20, storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  false)).intValue());
+		assertEquals(21, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false)).intValue());
+		assertEquals(22, storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  true )).intValue());
+		assertEquals(23, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true )).intValue());
 	}
 	
 	@Test()
