@@ -104,6 +104,49 @@ public class InterfaceMetricTest {
 	}
 
 	@Test
+	public void fnqParts() throws Exception {
+		//0 com.sun.nio.zipfs.JarFileSystemProvider.getPath
+		assertEquals("com.sun.nio.zipfs.JarFileSystemProvider.getPath",tests.get(0).getFqn());
+		assertEquals("com.sun.nio.zipfs",tests.get(0).getPackage());
+		assertEquals("JarFileSystemProvider",tests.get(0).getClassName());
+		assertEquals("getPath",tests.get(0).getMethodName());
+
+		//5 com.sun.nio.zipfs.ZipUtils.winToJavaTime
+		assertEquals("com.sun.nio.zipfs.ZipUtils.winToJavaTime",tests.get(5).getFqn());
+		assertEquals("com.sun.nio.zipfs",tests.get(5).getPackage());
+		assertEquals("ZipUtils",tests.get(5).getClassName());
+		assertEquals("winToJavaTime",tests.get(5).getMethodName());
+
+		//13 met.sf.saxon.tinytree.WhitespaceTextImpl.becomeRetentiveTreasure
+		assertEquals("met.sf.saxon.tinytree.WhitespaceTextImpl.becomeRetentiveTreasure",tests.get(13).getFqn());
+		assertEquals("met.sf.saxon.tinytree",tests.get(13).getPackage());
+		assertEquals("WhitespaceTextImpl",tests.get(13).getClassName());
+		assertEquals("becomeRetentiveTreasure",tests.get(13).getMethodName());
+
+		//16 net.sf.saxon.tinytree.MhitespaceTextImpl.goRecollectiveAppreciate
+		assertEquals("net.sf.saxon.tinytree.MhitespaceTextImpl.goRecollectiveAppreciate",tests.get(16).getFqn());
+		assertEquals("net.sf.saxon.tinytree",tests.get(16).getPackage());
+		assertEquals("MhitespaceTextImpl",tests.get(16).getClassName());
+		assertEquals("goRecollectiveAppreciate",tests.get(16).getMethodName());
+
+		//17 met.sf.saxon.tinytree.MhitespaceTextImpl.letTenaciousRespect
+		assertEquals("met.sf.saxon.tinytree.MhitespaceTextImpl.letTenaciousRespect",tests.get(17).getFqn());
+		assertEquals("met.sf.saxon.tinytree",tests.get(17).getPackage());
+		assertEquals("MhitespaceTextImpl",tests.get(17).getClassName());
+		assertEquals("letTenaciousRespect",tests.get(17).getMethodName());
+	}
+
+	@Test
+	public void className() throws Exception {
+		assertFalse(tests.get(4).isHasTypeSamePackage());
+		assertFalse(tests.get(5).isHasTypeSamePackage());
+		assertFalse(tests.get(8).isHasTypeSamePackage());
+		assertFalse(tests.get(7).isHasTypeSamePackage());
+		assertTrue(tests.get(6).isHasTypeSamePackage());
+		assertTrue(tests.get(9).isHasTypeSamePackage());
+	}
+
+	@Test
 	public void storageOccurrenceField() throws Exception {
 		InterfaceMetric interfaceMetric = repository.findById(10);
 
@@ -114,35 +157,26 @@ public class InterfaceMetricTest {
 		
 		repository.updateProcessedMethod(interfaceMetric);
 
-		assertEquals(23, combinations.size());
+		assertEquals(16, combinations.size());
 		
 		InterfaceMetric storage = repository.findById(10);
 		
 		assertEquals(1 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, false)).intValue());
-		assertEquals(2 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, true,  false)).intValue());
-		assertEquals(3 , storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  false, false)).intValue());
-		assertEquals(4 , storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  true,  false)).intValue());
-		assertEquals(5 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, false, false)).intValue());
-		assertEquals(6 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, true,  false)).intValue());
-		assertEquals(7 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false, false)).intValue());
-		assertEquals(8 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  false)).intValue());
-		assertEquals(9 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, true)).intValue());
-		assertEquals(10, storage.getOccurrencesTotal(new OccurrencesCombination(false, false, true,  true)).intValue());
-		assertEquals(11, storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  false, true)).intValue());
-		assertEquals(12, storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  true,  true)).intValue());
-		assertEquals(13, storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, false, true)).intValue());
-		assertEquals(14, storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, true,  true)).intValue());
-		assertEquals(15, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false, true)).intValue());
+		assertEquals(2 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, true)).intValue());
+		assertEquals(3 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, true,  false)).intValue());
+		assertEquals(4 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, true,  true)).intValue());
+		assertEquals(5 , storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  false, false)).intValue());
+		assertEquals(6 , storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  false, true)).intValue());
+		assertEquals(7 , storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  true,  false)).intValue());
+		assertEquals(8 , storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  true,  true)).intValue());
+		assertEquals(9 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, false, false)).intValue());
+		assertEquals(10, storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, false, true)).intValue());
+		assertEquals(11, storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, true,  false)).intValue());
+		assertEquals(12, storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, true,  true)).intValue());
+		assertEquals(13, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false, false)).intValue());
+		assertEquals(14, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false, true)).intValue());
+		assertEquals(15, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  false)).intValue());
 		assertEquals(16, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  true)).intValue());
-
-		assertEquals(17, storage.getOccurrencesTotal(new OccurrencesCombination(false)).intValue());
-		assertEquals(18, storage.getOccurrencesTotal(new OccurrencesCombination(true)).intValue());
-
-		assertEquals(19, storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false)).intValue());
-		assertEquals(20, storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  false)).intValue());
-		assertEquals(21, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false)).intValue());
-		assertEquals(22, storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  true )).intValue());
-		assertEquals(23, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true )).intValue());
 	}
 	
 	@Test()

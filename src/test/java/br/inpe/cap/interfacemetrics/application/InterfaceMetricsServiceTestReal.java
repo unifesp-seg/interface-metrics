@@ -18,58 +18,32 @@ public class InterfaceMetricsServiceTestReal {
 
 	@Test
 	public void processMethod1() throws Exception {
-		InterfaceMetric interfaceMetric = repository.findById(606204);
+		InterfaceMetric interfaceMetric = repository.findById(1410608);
 		service.processMethod(interfaceMetric);
-		
 		InterfaceMetric storage = repository.findById(interfaceMetric.getId());
-		
-		assertEquals(2, storage.getOccurrencesTotal(new OccurrencesCombination(true, true, true, false)).intValue());
-		assertEquals(2, storage.getOccurrencesTotal(new OccurrencesCombination(true, true, false, false)).intValue());
-		assertEquals(2, storage.getOccurrencesTotal(new OccurrencesCombination(true, false, true, false)).intValue());
-		assertEquals(2, storage.getOccurrencesTotal(new OccurrencesCombination(true, false, false, false)).intValue());
-		assertEquals(2, storage.getOccurrencesTotal(new OccurrencesCombination(false, true, true, false)).intValue());
-		assertEquals(2, storage.getOccurrencesTotal(new OccurrencesCombination(false, true, false, false)).intValue());
-		assertEquals(2, storage.getOccurrencesTotal(new OccurrencesCombination(false, false, true, false)).intValue());
-		assertEquals(2, storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, false)).intValue());
-		assertEquals(2, storage.getOccurrencesTotal(new OccurrencesCombination(true, true, true, true)).intValue());
-		assertEquals(2, storage.getOccurrencesTotal(new OccurrencesCombination(true, true, false, true)).intValue());
-		assertEquals(2, storage.getOccurrencesTotal(new OccurrencesCombination(true, false, true, true)).intValue());
-		assertEquals(2, storage.getOccurrencesTotal(new OccurrencesCombination(true, false, false, true)).intValue());
-		assertEquals(2, storage.getOccurrencesTotal(new OccurrencesCombination(false, true, true, true)).intValue());
-		assertEquals(2, storage.getOccurrencesTotal(new OccurrencesCombination(false, true, false, true)).intValue());
-		assertEquals(2, storage.getOccurrencesTotal(new OccurrencesCombination(false, false, true, true)).intValue());
-		assertEquals(2, storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, true)).intValue());
-		
+		int p1_c1_w1_t0 = storage.getOccurrencesTotal(new OccurrencesCombination(true, true, true, false));
+		int p1_c1_w1_t1 = storage.getOccurrencesTotal(new OccurrencesCombination(true, true, true, true));
+		assertTrue(p1_c1_w1_t1 - p1_c1_w1_t0 >= 0);
 	}
 
 	@Test
 	public void processMethod2() throws Exception {
-		InterfaceMetric interfaceMetric = repository.findById(607111);
+		InterfaceMetric interfaceMetric = repository.findById(1414004);
 		service.processMethod(interfaceMetric);
 		InterfaceMetric storage = repository.findById(interfaceMetric.getId());
-		int rnpo = storage.getOccurrencesTotal(new OccurrencesCombination(true, true, true, false));
-		int rn1po = storage.getOccurrencesTotal(new OccurrencesCombination(true, false, true, false));
-		assertTrue(rn1po - rnpo >= 0);
+		int p0_c0_w0_t0 = storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, false));
+		int p0_c0_w1_t0 = storage.getOccurrencesTotal(new OccurrencesCombination(false, false, true , false));
+		assertTrue(p0_c0_w1_t0 - p0_c0_w0_t0 >= 0);
 	}
 
 	@Test
 	public void processMethod3() throws Exception {
-		InterfaceMetric interfaceMetric = repository.findById(610507);
+		InterfaceMetric interfaceMetric = repository.findById(1418546);
 		service.processMethod(interfaceMetric);
 		InterfaceMetric storage = repository.findById(interfaceMetric.getId());
-		int r0_n0_p0_0 = storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, false));
-		int r0_n1_p0_0 = storage.getOccurrencesTotal(new OccurrencesCombination(false, true, false, false));
-		assertTrue(r0_n1_p0_0 - r0_n0_p0_0 >= 0);
-	}
-
-	@Test
-	public void processMethod4() throws Exception {
-		InterfaceMetric interfaceMetric = repository.findById(615049);
-		service.processMethod(interfaceMetric);
-		InterfaceMetric storage = repository.findById(interfaceMetric.getId());
-		int rnpo = storage.getOccurrencesTotal(new OccurrencesCombination(true, true, true, false));
-		int rn1po = storage.getOccurrencesTotal(new OccurrencesCombination(true, false, true, false));
-		assertTrue(rn1po - rnpo >= 0);
+		int p1_c1_w1_t0 = storage.getOccurrencesTotal(new OccurrencesCombination(true, true, true, false));
+		int p1_c1_w1_t1 = storage.getOccurrencesTotal(new OccurrencesCombination(true, true, true, true));
+		assertTrue(p1_c1_w1_t1 - p1_c1_w1_t0 >= 0);
 	}
 	
 	@Test

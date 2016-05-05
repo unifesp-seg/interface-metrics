@@ -15,7 +15,10 @@ public class InterfaceMetric {
 
 	private Long id;
 	private String projectType;
+	private Long projectId;
+	private String projectName;
 	private String entityType;
+	private Long entityId;
 	private String modifiers;
 	private String fqn;
 	private String params;
@@ -31,29 +34,22 @@ public class InterfaceMetric {
 	private boolean isStatic;
 	private boolean hasTypeSamePackage;
 
-	private int r0_n0_p0_0;
-	private int r0_n0_p1_0;
-	private int r0_n1_p0_0;
-	private int r0_n1_p1_0;
-	private int r1_n0_p0_0;
-	private int r1_n0_p1_0;
-	private int r1_n1_p0_0;
-	private int r1_n1_p1_0;
-	private int r0_n0_p0_1;
-	private int r0_n0_p1_1;
-	private int r0_n1_p0_1;
-	private int r0_n1_p1_1;
-	private int r1_n0_p0_1;
-	private int r1_n0_p1_1;
-	private int r1_n1_p0_1;
-	private int r1_n1_p1_1;
-	private int r0_xx_p0_1;
-	private int r1_xx_p1_1;
-	private int c0_r0_n0_p0_0;
-	private int c0_r0_n0_p0_1;
-	private int c0_r1_n1_p1_1;
-	private int c0_r0_xx_p0_1;
-	private int c0_r1_xx_p1_1;
+	private int p0_c0_w0_t0;
+	private int p0_c0_w0_t1;
+	private int p0_c0_w1_t0;
+	private int p0_c0_w1_t1;
+	private int p0_c1_w0_t0;
+	private int p0_c1_w0_t1;
+	private int p0_c1_w1_t0;
+	private int p0_c1_w1_t1;
+	private int p1_c0_w0_t0;
+	private int p1_c0_w0_t1;
+	private int p1_c0_w1_t0;
+	private int p1_c0_w1_t1;
+	private int p1_c1_w0_t0;
+	private int p1_c1_w0_t1;
+	private int p1_c1_w1_t0;
+	private int p1_c1_w1_t1;
 	
 	private List<QueryTerm> expandedParams = new ArrayList<QueryTerm>();
 	
@@ -67,7 +63,10 @@ public class InterfaceMetric {
 	public InterfaceMetric(ResultSet rs) throws Exception {
 		id = rs.getLong("id");
 		projectType = rs.getString("project_type");
+		projectId = rs.getLong("project_id");
+		projectName = rs.getString("project_name");
 		entityType = rs.getString("entity_type");
+		entityId = rs.getLong("entity_id");
 		modifiers = rs.getString("modifiers");
 		fqn = rs.getString("fqn");
 		params = rs.getString("params");
@@ -83,29 +82,22 @@ public class InterfaceMetric {
 		isStatic = rs.getInt("is_static") == 1 ? true : false;
 		hasTypeSamePackage = rs.getInt("has_type_same_package") == 1 ? true : false;
 
-		r0_n0_p0_0 = rs.getInt("r0_n0_p0_0");
-		r0_n0_p1_0 = rs.getInt("r0_n0_p1_0");
-		r0_n1_p0_0 = rs.getInt("r0_n1_p0_0");
-		r0_n1_p1_0 = rs.getInt("r0_n1_p1_0");
-		r1_n0_p0_0 = rs.getInt("r1_n0_p0_0");
-		r1_n0_p1_0 = rs.getInt("r1_n0_p1_0");
-		r1_n1_p0_0 = rs.getInt("r1_n1_p0_0");
-		r1_n1_p1_0 = rs.getInt("r1_n1_p1_0");
-		r0_n0_p0_1 = rs.getInt("r0_n0_p0_1");
-		r0_n0_p1_1 = rs.getInt("r0_n0_p1_1");
-		r0_n1_p0_1 = rs.getInt("r0_n1_p0_1");
-		r0_n1_p1_1 = rs.getInt("r0_n1_p1_1");
-		r1_n0_p0_1 = rs.getInt("r1_n0_p0_1");
-		r1_n0_p1_1 = rs.getInt("r1_n0_p1_1");
-		r1_n1_p0_1 = rs.getInt("r1_n1_p0_1");
-		r1_n1_p1_1 = rs.getInt("r1_n1_p1_1");
-		r0_xx_p0_1 = rs.getInt("r0_xx_p0_1");
-		r1_xx_p1_1 = rs.getInt("r1_xx_p1_1");
-		c0_r0_n0_p0_0 = rs.getInt("c0_r0_n0_p0_0");
-		c0_r0_n0_p0_1 = rs.getInt("c0_r0_n0_p0_1");
-		c0_r1_n1_p1_1 = rs.getInt("c0_r1_n1_p1_1");
-		c0_r0_xx_p0_1 = rs.getInt("c0_r0_xx_p0_1");
-		c0_r1_xx_p1_1 = rs.getInt("c0_r1_xx_p1_1");
+		p0_c0_w0_t0 = rs.getInt("p0_c0_w0_t0");
+		p0_c0_w0_t1 = rs.getInt("p0_c0_w0_t1");
+		p0_c0_w1_t0 = rs.getInt("p0_c0_w1_t0");
+		p0_c0_w1_t1 = rs.getInt("p0_c0_w1_t1");
+		p0_c1_w0_t0 = rs.getInt("p0_c1_w0_t0");
+		p0_c1_w0_t1 = rs.getInt("p0_c1_w0_t1");
+		p0_c1_w1_t0 = rs.getInt("p0_c1_w1_t0");
+		p0_c1_w1_t1 = rs.getInt("p0_c1_w1_t1");
+		p1_c0_w0_t0 = rs.getInt("p1_c0_w0_t0");
+		p1_c0_w0_t1 = rs.getInt("p1_c0_w0_t1");
+		p1_c0_w1_t0 = rs.getInt("p1_c0_w1_t0");
+		p1_c0_w1_t1 = rs.getInt("p1_c0_w1_t1");
+		p1_c1_w0_t0 = rs.getInt("p1_c1_w0_t0");
+		p1_c1_w0_t1 = rs.getInt("p1_c1_w0_t1");
+		p1_c1_w1_t0 = rs.getInt("p1_c1_w1_t0");
+		p1_c1_w1_t1 = rs.getInt("p1_c1_w1_t1");
 		
 		params = StringUtils.replace(params, "(", "");
 		params = StringUtils.replace(params, ")", "");
@@ -138,6 +130,13 @@ public class InterfaceMetric {
 			return null;
 		
 		return StringUtils.substringBeforeLast(fqnClass, ".");
+	}
+
+	public String getPackage() {
+		String packageName = StringUtils.substringBeforeLast(fqn, ".");
+		packageName = StringUtils.substringBeforeLast(packageName, ".");
+		
+		return packageName;
 	}
 
 	private boolean checkOnlyPrimitiveTypes(){
@@ -208,85 +207,59 @@ public class InterfaceMetric {
 	}
 
 	public Integer getOccurrencesTotal(OccurrencesCombination combination) {
-		boolean expandReturn = combination.isExpandReturn();
+		boolean ignorePackage = combination.isIgnorePackage();
+		boolean ignoreClass = combination.isIgnoreClass();
 		boolean expandMethodName = combination.isExpandMethodName();
-		boolean expandParams = combination.isExpandParams();
-		boolean expandParamsOrder = combination.isExpandParamsOrder();
-		boolean ignoreMethodNameOnSearch = combination.isIgnoreMethodNameOnSearch();
-		boolean isClassNameOnSearch = combination.isClassNameOnSearch();
-		
-		if (isClassNameOnSearch){
-			if (ignoreMethodNameOnSearch)
-				return (!expandReturn && !expandParams) ? c0_r0_xx_p0_1 : c0_r1_xx_p1_1;
+		boolean expandTypes = combination.isExpandTypes();
 
-			if (!expandReturn && !expandMethodName && !expandParams && !expandParamsOrder) return c0_r0_n0_p0_0;
-			if (!expandReturn && !expandMethodName && !expandParams &&  expandParamsOrder) return c0_r0_n0_p0_1;
-			if ( expandReturn &&  expandMethodName &&  expandParams &&  expandParamsOrder) return c0_r1_n1_p1_1;
-		}
-
-		if (ignoreMethodNameOnSearch)
-			return (!expandReturn && !expandParams) ? r0_xx_p0_1 : r1_xx_p1_1;
-		
-		if (!expandReturn && !expandMethodName && !expandParams && !expandParamsOrder) return r0_n0_p0_0;
-		if (!expandReturn && !expandMethodName &&  expandParams && !expandParamsOrder) return r0_n0_p1_0;
-		if (!expandReturn &&  expandMethodName && !expandParams && !expandParamsOrder) return r0_n1_p0_0;
-		if (!expandReturn &&  expandMethodName &&  expandParams && !expandParamsOrder) return r0_n1_p1_0;
-		if ( expandReturn && !expandMethodName && !expandParams && !expandParamsOrder) return r1_n0_p0_0;
-		if ( expandReturn && !expandMethodName &&  expandParams && !expandParamsOrder) return r1_n0_p1_0;
-		if ( expandReturn &&  expandMethodName && !expandParams && !expandParamsOrder) return r1_n1_p0_0;
-		if ( expandReturn &&  expandMethodName &&  expandParams && !expandParamsOrder) return r1_n1_p1_0;
-		if (!expandReturn && !expandMethodName && !expandParams &&  expandParamsOrder) return r0_n0_p0_1;
-		if (!expandReturn && !expandMethodName &&  expandParams &&  expandParamsOrder) return r0_n0_p1_1;
-		if (!expandReturn &&  expandMethodName && !expandParams &&  expandParamsOrder) return r0_n1_p0_1;
-		if (!expandReturn &&  expandMethodName &&  expandParams &&  expandParamsOrder) return r0_n1_p1_1;
-		if ( expandReturn && !expandMethodName && !expandParams &&  expandParamsOrder) return r1_n0_p0_1;
-		if ( expandReturn && !expandMethodName &&  expandParams &&  expandParamsOrder) return r1_n0_p1_1;
-		if ( expandReturn &&  expandMethodName && !expandParams &&  expandParamsOrder) return r1_n1_p0_1;
-		if ( expandReturn &&  expandMethodName &&  expandParams &&  expandParamsOrder) return r1_n1_p1_1;
+		if (!ignorePackage && !ignoreClass && !expandMethodName && !expandTypes) return p0_c0_w0_t0;
+		if (!ignorePackage && !ignoreClass && !expandMethodName &&  expandTypes) return p0_c0_w0_t1;
+		if (!ignorePackage && !ignoreClass &&  expandMethodName && !expandTypes) return p0_c0_w1_t0;
+		if (!ignorePackage && !ignoreClass &&  expandMethodName &&  expandTypes) return p0_c0_w1_t1;
+		if (!ignorePackage &&  ignoreClass && !expandMethodName && !expandTypes) return p0_c1_w0_t0;
+		if (!ignorePackage &&  ignoreClass && !expandMethodName &&  expandTypes) return p0_c1_w0_t1;
+		if (!ignorePackage &&  ignoreClass &&  expandMethodName && !expandTypes) return p0_c1_w1_t0;
+		if (!ignorePackage &&  ignoreClass &&  expandMethodName &&  expandTypes) return p0_c1_w1_t1;
+		if ( ignorePackage && !ignoreClass && !expandMethodName && !expandTypes) return p1_c0_w0_t0;
+		if ( ignorePackage && !ignoreClass && !expandMethodName &&  expandTypes) return p1_c0_w0_t1;
+		if ( ignorePackage && !ignoreClass &&  expandMethodName && !expandTypes) return p1_c0_w1_t0;
+		if ( ignorePackage && !ignoreClass &&  expandMethodName &&  expandTypes) return p1_c0_w1_t1;
+		if ( ignorePackage &&  ignoreClass && !expandMethodName && !expandTypes) return p1_c1_w0_t0;
+		if ( ignorePackage &&  ignoreClass && !expandMethodName &&  expandTypes) return p1_c1_w0_t1;
+		if ( ignorePackage &&  ignoreClass &&  expandMethodName && !expandTypes) return p1_c1_w1_t0;
+		if ( ignorePackage &&  ignoreClass &&  expandMethodName &&  expandTypes) return p1_c1_w1_t1;
 
 		return null;
 	}
 
 	public void setOccurrencesTotal(OccurrencesCombination combination, int total) {
-		boolean expandReturn = combination.isExpandReturn();
+		boolean ignorePackage = combination.isIgnorePackage();
+		boolean ignoreClass = combination.isIgnoreClass();
 		boolean expandMethodName = combination.isExpandMethodName();
-		boolean expandParams = combination.isExpandParams();
-		boolean expandParamsOrder = combination.isExpandParamsOrder();
-		boolean ignoreMethodNameOnSearch = combination.isIgnoreMethodNameOnSearch();
-		boolean isClassNameOnSearch = combination.isClassNameOnSearch();
+		boolean expandTypes = combination.isExpandTypes();
 		
-		if (isClassNameOnSearch){
-			     if ( ignoreMethodNameOnSearch && !expandReturn && !expandParams &&  expandParamsOrder) c0_r0_xx_p0_1 = total;
-			else if ( ignoreMethodNameOnSearch &&  expandReturn &&  expandParams &&  expandParamsOrder) c0_r1_xx_p1_1 = total;
-
-			else if (!ignoreMethodNameOnSearch && !expandReturn && !expandMethodName && !expandParams && !expandParamsOrder) c0_r0_n0_p0_0 = total;
-			else if (!ignoreMethodNameOnSearch && !expandReturn && !expandMethodName && !expandParams &&  expandParamsOrder) c0_r0_n0_p0_1 = total;
-			else if (!ignoreMethodNameOnSearch &&  expandReturn &&  expandMethodName &&  expandParams &&  expandParamsOrder) c0_r1_n1_p1_1 = total;
-			     
-			return;
-		}
-		
-		     if ( ignoreMethodNameOnSearch && !expandReturn && !expandParams &&  expandParamsOrder) r0_xx_p0_1 = total;
-		else if ( ignoreMethodNameOnSearch &&  expandReturn &&  expandParams &&  expandParamsOrder) r1_xx_p1_1 = total;
-		
-		else if (!expandReturn && !expandMethodName && !expandParams && !expandParamsOrder) r0_n0_p0_0 = total;
-		else if (!expandReturn && !expandMethodName &&  expandParams && !expandParamsOrder) r0_n0_p1_0 = total;
-		else if (!expandReturn &&  expandMethodName && !expandParams && !expandParamsOrder) r0_n1_p0_0 = total;
-		else if (!expandReturn &&  expandMethodName &&  expandParams && !expandParamsOrder) r0_n1_p1_0 = total;
-		else if ( expandReturn && !expandMethodName && !expandParams && !expandParamsOrder) r1_n0_p0_0 = total;
-		else if ( expandReturn && !expandMethodName &&  expandParams && !expandParamsOrder) r1_n0_p1_0 = total;
-		else if ( expandReturn &&  expandMethodName && !expandParams && !expandParamsOrder) r1_n1_p0_0 = total;
-		else if ( expandReturn &&  expandMethodName &&  expandParams && !expandParamsOrder) r1_n1_p1_0 = total;
-		else if (!expandReturn && !expandMethodName && !expandParams &&  expandParamsOrder) r0_n0_p0_1 = total;
-		else if (!expandReturn && !expandMethodName &&  expandParams &&  expandParamsOrder) r0_n0_p1_1 = total;
-		else if (!expandReturn &&  expandMethodName && !expandParams &&  expandParamsOrder) r0_n1_p0_1 = total;
-		else if (!expandReturn &&  expandMethodName &&  expandParams &&  expandParamsOrder) r0_n1_p1_1 = total;
-		else if ( expandReturn && !expandMethodName && !expandParams &&  expandParamsOrder) r1_n0_p0_1 = total;
-		else if ( expandReturn && !expandMethodName &&  expandParams &&  expandParamsOrder) r1_n0_p1_1 = total;
-		else if ( expandReturn &&  expandMethodName && !expandParams &&  expandParamsOrder) r1_n1_p0_1 = total;
-		else if ( expandReturn &&  expandMethodName &&  expandParams &&  expandParamsOrder) r1_n1_p1_1 = total;
+		     if (!ignorePackage && !ignoreClass && !expandMethodName && !expandTypes) p0_c0_w0_t0 = total;
+		else if (!ignorePackage && !ignoreClass && !expandMethodName &&  expandTypes) p0_c0_w0_t1 = total;
+		else if (!ignorePackage && !ignoreClass &&  expandMethodName && !expandTypes) p0_c0_w1_t0 = total;
+		else if (!ignorePackage && !ignoreClass &&  expandMethodName &&  expandTypes) p0_c0_w1_t1 = total;
+		else if (!ignorePackage &&  ignoreClass && !expandMethodName && !expandTypes) p0_c1_w0_t0 = total;
+		else if (!ignorePackage &&  ignoreClass && !expandMethodName &&  expandTypes) p0_c1_w0_t1 = total;
+		else if (!ignorePackage &&  ignoreClass &&  expandMethodName && !expandTypes) p0_c1_w1_t0 = total;
+		else if (!ignorePackage &&  ignoreClass &&  expandMethodName &&  expandTypes) p0_c1_w1_t1 = total;
+		else if ( ignorePackage && !ignoreClass && !expandMethodName && !expandTypes) p1_c0_w0_t0 = total;
+		else if ( ignorePackage && !ignoreClass && !expandMethodName &&  expandTypes) p1_c0_w0_t1 = total;
+		else if ( ignorePackage && !ignoreClass &&  expandMethodName && !expandTypes) p1_c0_w1_t0 = total;
+		else if ( ignorePackage && !ignoreClass &&  expandMethodName &&  expandTypes) p1_c0_w1_t1 = total;
+		else if ( ignorePackage &&  ignoreClass && !expandMethodName && !expandTypes) p1_c1_w0_t0 = total;
+		else if ( ignorePackage &&  ignoreClass && !expandMethodName &&  expandTypes) p1_c1_w0_t1 = total;
+		else if ( ignorePackage &&  ignoreClass &&  expandMethodName && !expandTypes)  p1_c1_w1_t0 = total;
+		else if ( ignorePackage &&  ignoreClass &&  expandMethodName &&  expandTypes) p1_c1_w1_t1 = total;
 	}
 	
+	public boolean isSameParams(String[] paramsNames) {
+		return this.isSameParams(paramsNames, false);
+	}
+
 	public boolean isSameParams(String[] paramsNames, boolean isParamsOrder) {
 		if (this.getParamsNames().length != paramsNames.length)
 			return false;
@@ -312,7 +285,12 @@ public class InterfaceMetric {
 		}
 	}
 	
+	public boolean isSameExpandedParams(String[] paramsNames) {
+		return this.isSameExpandedParams(paramsNames, false);
+	}
+
 	public boolean isSameExpandedParams(String[] paramsNames, boolean isParamsOrder) {
+
 		if (this.getExpandedParams().size() != paramsNames.length)
 			return false;
 
@@ -438,4 +416,17 @@ public class InterfaceMetric {
 	public void setExpandedParams(List<QueryTerm> expandedParams) {
 		this.expandedParams = expandedParams;
 	}
+
+	public Long getProjectId() {
+		return projectId;
+	}
+
+	public String getProjectName() {
+		return projectName;
+	}
+
+	public Long getEntityId() {
+		return entityId;
+	}
+	
 }

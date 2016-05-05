@@ -13,14 +13,15 @@ public class InterfaceMetricsService {
 
 	private InterfaceMetricRepository repository;
 	private InterfaceMetricParamsRepository paramsRepository;
+	private boolean mock = false;
 	
 	//Controll
-	private int total = 0;
-	private int totalPartial = 0;
-	private int i = 1;
-	private long duraction = 0;
-	private long totalduraction = 0;
-	private long timestamp = System.currentTimeMillis(); 
+	private int total;
+	private int totalPartial;
+	private int i;
+	private long duraction;
+	private long totalduraction;
+	private long timestamp; 
 
 	public InterfaceMetricsService() {
 		repository = new InterfaceMetricRepository();
@@ -30,10 +31,13 @@ public class InterfaceMetricsService {
 	public InterfaceMetricsService(boolean mock) {
 		repository = new InterfaceMetricRepository(mock);
 		paramsRepository = new InterfaceMetricParamsRepository(mock);
+		this.mock = mock;
 	}
 
 	public void execute(boolean dbPrepared, ExecutionType executionType) throws Exception {
 
+		this.setupControllVariables();
+		
 		// Prepare DB
 		if (!dbPrepared) {
 			this.printPreparingDB();
@@ -64,6 +68,15 @@ public class InterfaceMetricsService {
 
 		//Print
 		this.printFinish();
+	}
+
+	private void setupControllVariables() {
+		this.total = 0;
+		this.totalPartial = 0;
+		this.i = 1;
+		this.duraction = 0;
+		this.totalduraction = 0;
+		this.timestamp = System.currentTimeMillis(); 
 	}
 
 	private int getNotProcessedTotal(ExecutionType executionType) throws Exception {
@@ -115,7 +128,7 @@ public class InterfaceMetricsService {
 	}
 	
 	private void updateOccurrences(InterfaceMetric interfaceMetric) throws Exception {
-		InterfaceMetricOccurrencesHelper helper = new InterfaceMetricOccurrencesHelper(interfaceMetric);
+		InterfaceMetricOccurrencesHelper helper = new InterfaceMetricOccurrencesHelper(interfaceMetric, this.mock);
 		helper.updateOccurrences();
 	}
 

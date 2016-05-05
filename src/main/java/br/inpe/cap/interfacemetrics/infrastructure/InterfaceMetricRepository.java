@@ -177,33 +177,24 @@ public class InterfaceMetricRepository {
 		sql += "only_primitive_types = ?, ";
 		sql += "is_static = ?, ";
 		sql += "has_type_same_package = ?, ";
+	
+		sql += "p0_c0_w0_t0 = ?, ";
+		sql += "p0_c0_w0_t1 = ?, ";
+		sql += "p0_c0_w1_t0 = ?, ";
+		sql += "p0_c0_w1_t1 = ?, ";
+		sql += "p0_c1_w0_t0 = ?, ";
+		sql += "p0_c1_w0_t1 = ?, ";
+		sql += "p0_c1_w1_t0 = ?, ";
+		sql += "p0_c1_w1_t1 = ?, ";
+		sql += "p1_c0_w0_t0 = ?, ";
+		sql += "p1_c0_w0_t1 = ?, ";
+		sql += "p1_c0_w1_t0 = ?, ";
+		sql += "p1_c0_w1_t1 = ?, ";
+		sql += "p1_c1_w0_t0 = ?, ";
+		sql += "p1_c1_w0_t1 = ?, ";
+		sql += "p1_c1_w1_t0 = ?, ";
+		sql += "p1_c1_w1_t1 = ? ";
 
-		sql += "r0_n0_p0_0 = ?, ";
-		sql += "r0_n0_p1_0 = ?, ";
-		sql += "r0_n1_p0_0 = ?, ";
-		sql += "r0_n1_p1_0 = ?, ";
-		sql += "r1_n0_p0_0 = ?, ";
-		sql += "r1_n0_p1_0 = ?, ";
-		sql += "r1_n1_p0_0 = ?, ";
-		sql += "r1_n1_p1_0 = ?, ";
-		sql += "r0_n0_p0_1 = ?, ";
-		sql += "r0_n0_p1_1 = ?, ";
-		sql += "r0_n1_p0_1 = ?, ";
-		sql += "r0_n1_p1_1 = ?, ";
-		sql += "r1_n0_p0_1 = ?, ";
-		sql += "r1_n0_p1_1 = ?, ";
-		sql += "r1_n1_p0_1 = ?, ";
-		sql += "r1_n1_p1_1 = ?, ";
-
-		sql += "r0_xx_p0_1 = ?, ";
-		sql += "r1_xx_p1_1 = ?, ";
-
-		sql += "c0_r0_n0_p0_0 = ?, ";
-		sql += "c0_r0_n0_p0_1 = ?, ";
-		sql += "c0_r1_n1_p1_1 = ?, ";
-		sql += "c0_r0_xx_p0_1 = ?, ";
-		sql += "c0_r1_xx_p1_1 = ?  ";
-		
 		sql += allLines ? "WHERE project_type = 'CRAWLED' " : "WHERE id = ? ";
 
 		Connection conn = getConnection();
@@ -223,7 +214,7 @@ public class InterfaceMetricRepository {
 			ps.setInt(i++, interfaceMetric.getOccurrencesTotal(combination));
 
 		if (!allLines)
-			ps.setLong(31, interfaceMetric.getId());
+			ps.setLong(24, interfaceMetric.getId());
 
 		ps.executeUpdate();
 
@@ -282,7 +273,7 @@ public class InterfaceMetricRepository {
 
 		if(debugMode){
 			InterfaceMetric i = interfaceMetricSQLHelper.getInterfaceMetric();
-			System.out.println("\n\n-- " + i.getReturnType() + " "+ i.getClassName() + "."+ i.getMethodName() + "(" + i.getParams() + ")");
+			System.out.println("\n\n-- " + i.getReturnType() + " "+ i.getFqn() + "(" + i.getParams() + ")");
 			System.out.println(sql);
 			System.out.println("-- Occurrences = " + list.size());
 		}

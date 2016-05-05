@@ -133,21 +133,38 @@ public class InterfaceMetricOccurrencesHelperTest {
 		List<InterfaceMetric> matches = new ArrayList<InterfaceMetric>();
 		
 		matches = helper.getOccurrences(new OccurrencesCombination(false, false, false, false));
-		assertEquals(0, matches.size());
+		assertEquals(1, matches.size());
+		assertEquals(18, matches.get(0).getId().longValue());
+		
+		matches = helper.getOccurrences(new OccurrencesCombination(false, false, false, true));
+		assertEquals(7, matches.size());
+		assertTrue(matches.contains(new InterfaceMetric(11)));
+		assertTrue(matches.contains(new InterfaceMetric(14)));
+		assertTrue(matches.contains(new InterfaceMetric(15)));
+		assertTrue(matches.contains(new InterfaceMetric(18)));
+		assertTrue(matches.contains(new InterfaceMetric(19)));
+		assertTrue(matches.contains(new InterfaceMetric(22)));
+		assertTrue(matches.contains(new InterfaceMetric(23)));
 		
 		matches = helper.getOccurrences(new OccurrencesCombination(false, false, true, false));
-		assertEquals(1, matches.size());
-		assertEquals(11, matches.get(0).getId().longValue());
-
-		matches = helper.getOccurrences(new OccurrencesCombination(false, true, false, false));
-		assertEquals(1, matches.size());
-		assertEquals(12, matches.get(0).getId().longValue());
-
-		matches = helper.getOccurrences(new OccurrencesCombination(false, true, true, false));
 		assertEquals(3, matches.size());
-		assertEquals(11, matches.get(0).getId().longValue());
-		assertEquals(12, matches.get(1).getId().longValue());
-		assertEquals(13, matches.get(2).getId().longValue());
+		assertTrue(matches.contains(new InterfaceMetric(12)));
+		assertTrue(matches.contains(new InterfaceMetric(18)));
+		assertTrue(matches.contains(new InterfaceMetric(20)));
+
+		matches = helper.getOccurrences(new OccurrencesCombination(false, false, true, true));
+		assertEquals(11, matches.size());
+		assertTrue(matches.contains(new InterfaceMetric(11)));
+		assertTrue(matches.contains(new InterfaceMetric(12)));
+		assertTrue(matches.contains(new InterfaceMetric(14)));
+		assertTrue(matches.contains(new InterfaceMetric(15)));
+		assertTrue(matches.contains(new InterfaceMetric(18)));
+		assertTrue(matches.contains(new InterfaceMetric(19)));
+		assertTrue(matches.contains(new InterfaceMetric(20)));
+		assertTrue(matches.contains(new InterfaceMetric(22)));
+		assertTrue(matches.contains(new InterfaceMetric(23)));
+		assertTrue(matches.contains(new InterfaceMetric(24)));
+		assertTrue(matches.contains(new InterfaceMetric(25)));
 	}
 
 	@Test
@@ -155,31 +172,40 @@ public class InterfaceMetricOccurrencesHelperTest {
 		helper.updateOccurrences();
 		List<InterfaceMetric> matches = new ArrayList<InterfaceMetric>();
 		
-		matches = helper.getOccurrences(new OccurrencesCombination(true, false, false, false));
+		matches = helper.getOccurrences(new OccurrencesCombination(false, true, false, false));
 		assertEquals(1, matches.size());
-		assertEquals(14, matches.get(0).getId().longValue());
+		assertEquals(18, matches.get(0).getId().longValue());
 		
-		matches = helper.getOccurrences(new OccurrencesCombination(true, false, true, false));
-		assertEquals(3, matches.size());
-		assertEquals(11, matches.get(0).getId().longValue());
-		assertEquals(14, matches.get(1).getId().longValue());
-		assertEquals(15, matches.get(2).getId().longValue());
-
-		matches = helper.getOccurrences(new OccurrencesCombination(true, true, false, false));
-		assertEquals(3, matches.size());
-		assertEquals(12, matches.get(0).getId().longValue());
-		assertEquals(14, matches.get(1).getId().longValue());
-		assertEquals(16, matches.get(2).getId().longValue());
-
-		matches = helper.getOccurrences(new OccurrencesCombination(true, true, true, false));
+		matches = helper.getOccurrences(new OccurrencesCombination(false, true, false, true));
 		assertEquals(7, matches.size());
-		assertEquals(11, matches.get(0).getId().longValue());
-		assertEquals(12, matches.get(1).getId().longValue());
-		assertEquals(13, matches.get(2).getId().longValue());
-		assertEquals(14, matches.get(3).getId().longValue());
-		assertEquals(15, matches.get(4).getId().longValue());
-		assertEquals(16, matches.get(5).getId().longValue());
-		assertEquals(17, matches.get(6).getId().longValue());
+		assertTrue(matches.contains(new InterfaceMetric(11)));
+		assertTrue(matches.contains(new InterfaceMetric(14)));
+		assertTrue(matches.contains(new InterfaceMetric(15)));
+		assertTrue(matches.contains(new InterfaceMetric(18)));
+		assertTrue(matches.contains(new InterfaceMetric(19)));
+		assertTrue(matches.contains(new InterfaceMetric(22)));
+		assertTrue(matches.contains(new InterfaceMetric(23)));
+		
+		matches = helper.getOccurrences(new OccurrencesCombination(false, true, true, false));
+		assertEquals(3, matches.size());
+		assertTrue(matches.contains(new InterfaceMetric(12)));
+		assertTrue(matches.contains(new InterfaceMetric(18)));
+		assertTrue(matches.contains(new InterfaceMetric(20)));
+
+		matches = helper.getOccurrences(new OccurrencesCombination(false, true, true, true));
+		assertEquals(12, matches.size());
+		assertTrue(matches.contains(new InterfaceMetric(11)));
+		assertTrue(matches.contains(new InterfaceMetric(12)));
+		assertTrue(matches.contains(new InterfaceMetric(14)));
+		assertTrue(matches.contains(new InterfaceMetric(15)));
+		assertTrue(matches.contains(new InterfaceMetric(16)));
+		assertTrue(matches.contains(new InterfaceMetric(18)));
+		assertTrue(matches.contains(new InterfaceMetric(19)));
+		assertTrue(matches.contains(new InterfaceMetric(20)));
+		assertTrue(matches.contains(new InterfaceMetric(22)));
+		assertTrue(matches.contains(new InterfaceMetric(23)));
+		assertTrue(matches.contains(new InterfaceMetric(24)));
+		assertTrue(matches.contains(new InterfaceMetric(25)));
 	}
 
 	@Test
@@ -187,31 +213,40 @@ public class InterfaceMetricOccurrencesHelperTest {
 		helper.updateOccurrences();
 		List<InterfaceMetric> matches = new ArrayList<InterfaceMetric>();
 		
-		matches = helper.getOccurrences(new OccurrencesCombination(false, false, false, true));
+		matches = helper.getOccurrences(new OccurrencesCombination(true, false, false, false));
 		assertEquals(1, matches.size());
 		assertEquals(18, matches.get(0).getId().longValue());
 		
-		matches = helper.getOccurrences(new OccurrencesCombination(false, false, true, true));
-		assertEquals(3, matches.size());
+		matches = helper.getOccurrences(new OccurrencesCombination(true, false, false, true));
+		assertEquals(7, matches.size());
 		assertTrue(matches.contains(new InterfaceMetric(11)));
+		assertTrue(matches.contains(new InterfaceMetric(14)));
+		assertTrue(matches.contains(new InterfaceMetric(15)));
 		assertTrue(matches.contains(new InterfaceMetric(18)));
 		assertTrue(matches.contains(new InterfaceMetric(19)));
-
-		matches = helper.getOccurrences(new OccurrencesCombination(false, true, false, true));
+		assertTrue(matches.contains(new InterfaceMetric(22)));
+		assertTrue(matches.contains(new InterfaceMetric(23)));
+		
+		matches = helper.getOccurrences(new OccurrencesCombination(true, false, true, false));
 		assertEquals(3, matches.size());
 		assertTrue(matches.contains(new InterfaceMetric(12)));
 		assertTrue(matches.contains(new InterfaceMetric(18)));
 		assertTrue(matches.contains(new InterfaceMetric(20)));
 
-		matches = helper.getOccurrences(new OccurrencesCombination(false, true, true, true));
-		assertEquals(7, matches.size());
+		matches = helper.getOccurrences(new OccurrencesCombination(true, false, true, true));
+		assertEquals(12, matches.size());
 		assertTrue(matches.contains(new InterfaceMetric(11)));
 		assertTrue(matches.contains(new InterfaceMetric(12)));
 		assertTrue(matches.contains(new InterfaceMetric(13)));
+		assertTrue(matches.contains(new InterfaceMetric(14)));
+		assertTrue(matches.contains(new InterfaceMetric(15)));
 		assertTrue(matches.contains(new InterfaceMetric(18)));
 		assertTrue(matches.contains(new InterfaceMetric(19)));
 		assertTrue(matches.contains(new InterfaceMetric(20)));
-		assertTrue(matches.contains(new InterfaceMetric(21)));
+		assertTrue(matches.contains(new InterfaceMetric(22)));
+		assertTrue(matches.contains(new InterfaceMetric(23)));
+		assertTrue(matches.contains(new InterfaceMetric(24)));
+		assertTrue(matches.contains(new InterfaceMetric(25)));
 	}
 
 	@Test
@@ -219,35 +254,28 @@ public class InterfaceMetricOccurrencesHelperTest {
 		helper.updateOccurrences();
 		List<InterfaceMetric> matches = new ArrayList<InterfaceMetric>();
 		
-		matches = helper.getOccurrences(new OccurrencesCombination(true, false, false, true));
-		assertEquals(3, matches.size());
-		assertTrue(matches.contains(new InterfaceMetric(14)));
-		assertTrue(matches.contains(new InterfaceMetric(18)));
-		assertTrue(matches.contains(new InterfaceMetric(22)));
-
+		matches = helper.getOccurrences(new OccurrencesCombination(true, true, false, false));
+		assertEquals(1, matches.size());
+		assertEquals(18, matches.get(0).getId().longValue());
 		
-		matches = helper.getOccurrences(new OccurrencesCombination(true, false, true, true));
-		assertEquals(7, matches.size());
-		assertTrue(matches.contains(new InterfaceMetric(11)));
-		assertTrue(matches.contains(new InterfaceMetric(14)));
-		assertTrue(matches.contains(new InterfaceMetric(15)));
-		assertTrue(matches.contains(new InterfaceMetric(18)));
-		assertTrue(matches.contains(new InterfaceMetric(19)));
-		assertTrue(matches.contains(new InterfaceMetric(22)));
-		assertTrue(matches.contains(new InterfaceMetric(23)));
-
 		matches = helper.getOccurrences(new OccurrencesCombination(true, true, false, true));
 		assertEquals(7, matches.size());
-		assertTrue(matches.contains(new InterfaceMetric(12)));
+		assertTrue(matches.contains(new InterfaceMetric(11)));
 		assertTrue(matches.contains(new InterfaceMetric(14)));
-		assertTrue(matches.contains(new InterfaceMetric(16)));
+		assertTrue(matches.contains(new InterfaceMetric(15)));
+		assertTrue(matches.contains(new InterfaceMetric(18)));
+		assertTrue(matches.contains(new InterfaceMetric(19)));
+		assertTrue(matches.contains(new InterfaceMetric(22)));
+		assertTrue(matches.contains(new InterfaceMetric(23)));
+		
+		matches = helper.getOccurrences(new OccurrencesCombination(true, true, true, false));
+		assertEquals(3, matches.size());
+		assertTrue(matches.contains(new InterfaceMetric(12)));
 		assertTrue(matches.contains(new InterfaceMetric(18)));
 		assertTrue(matches.contains(new InterfaceMetric(20)));
-		assertTrue(matches.contains(new InterfaceMetric(22)));
-		assertTrue(matches.contains(new InterfaceMetric(24)));
 
 		matches = helper.getOccurrences(new OccurrencesCombination(true, true, true, true));
-		assertEquals(15, matches.size());
+		assertEquals(14, matches.size());
 		assertTrue(matches.contains(new InterfaceMetric(11)));
 		assertTrue(matches.contains(new InterfaceMetric(12)));
 		assertTrue(matches.contains(new InterfaceMetric(13)));
@@ -258,101 +286,12 @@ public class InterfaceMetricOccurrencesHelperTest {
 		assertTrue(matches.contains(new InterfaceMetric(18)));
 		assertTrue(matches.contains(new InterfaceMetric(19)));
 		assertTrue(matches.contains(new InterfaceMetric(20)));
-		assertTrue(matches.contains(new InterfaceMetric(21)));
 		assertTrue(matches.contains(new InterfaceMetric(22)));
 		assertTrue(matches.contains(new InterfaceMetric(23)));
 		assertTrue(matches.contains(new InterfaceMetric(24)));
 		assertTrue(matches.contains(new InterfaceMetric(25)));
 	}
 
-	@Test
-	public void occurrences17to18() throws Exception {
-		helper.updateOccurrences();
-		List<InterfaceMetric> matches = new ArrayList<InterfaceMetric>();
-		
-		matches = helper.getOccurrences(new OccurrencesCombination(false));
-		assertEquals(3, matches.size());
-		assertEquals(12, matches.get(0).getId().longValue());
-		assertEquals(18, matches.get(1).getId().longValue());
-		assertEquals(20, matches.get(2).getId().longValue());
-
-		matches = helper.getOccurrences(new OccurrencesCombination(true));
-		assertEquals(15, matches.size());
-		assertTrue(matches.contains(new InterfaceMetric(11)));
-		assertTrue(matches.contains(new InterfaceMetric(12)));
-		assertTrue(matches.contains(new InterfaceMetric(13)));
-		assertTrue(matches.contains(new InterfaceMetric(14)));
-		assertTrue(matches.contains(new InterfaceMetric(15)));
-		assertTrue(matches.contains(new InterfaceMetric(16)));
-		assertTrue(matches.contains(new InterfaceMetric(17)));
-		assertTrue(matches.contains(new InterfaceMetric(18)));
-		assertTrue(matches.contains(new InterfaceMetric(19)));
-		assertTrue(matches.contains(new InterfaceMetric(20)));
-		assertTrue(matches.contains(new InterfaceMetric(21)));
-		assertTrue(matches.contains(new InterfaceMetric(22)));
-		assertTrue(matches.contains(new InterfaceMetric(23)));
-		assertTrue(matches.contains(new InterfaceMetric(24)));
-		assertTrue(matches.contains(new InterfaceMetric(25)));
-	}
-
-	@Test
-	public void occurrences19to23() throws Exception {
-		helper.updateOccurrences();
-		List<InterfaceMetric> matches = new ArrayList<InterfaceMetric>();
-		
-		matches = helper.getOccurrences(new OccurrencesCombination(false, false, false));
-		assertEquals(0, matches.size());
-		
-		matches = helper.getOccurrences(new OccurrencesCombination(false, true, false));
-		assertEquals(1, matches.size());
-		assertTrue(matches.contains(new InterfaceMetric(18)));
-
-		matches = helper.getOccurrences(new OccurrencesCombination(true, true, false));
-		assertEquals(13, matches.size());
-		assertTrue(matches.contains(new InterfaceMetric(11)));
-		assertTrue(matches.contains(new InterfaceMetric(12)));
-		assertTrue(matches.contains(new InterfaceMetric(13)));
-		assertTrue(matches.contains(new InterfaceMetric(14)));
-		assertTrue(matches.contains(new InterfaceMetric(15)));
-		assertTrue(matches.contains(new InterfaceMetric(17)));
-		assertTrue(matches.contains(new InterfaceMetric(18)));
-		assertTrue(matches.contains(new InterfaceMetric(19)));
-		assertTrue(matches.contains(new InterfaceMetric(20)));
-		assertTrue(matches.contains(new InterfaceMetric(21)));
-		assertTrue(matches.contains(new InterfaceMetric(22)));
-		assertTrue(matches.contains(new InterfaceMetric(23)));
-		assertTrue(matches.contains(new InterfaceMetric(25)));
-
-		matches = helper.getOccurrences(new OccurrencesCombination(false, true, true));
-		assertEquals(3, matches.size());
-		assertTrue(matches.contains(new InterfaceMetric(12)));
-		assertTrue(matches.contains(new InterfaceMetric(20)));
-		assertTrue(matches.contains(new InterfaceMetric(18)));
-
-		matches = helper.getOccurrences(new OccurrencesCombination(true, true, true));
-		assertEquals(13, matches.size());
-		assertTrue(matches.contains(new InterfaceMetric(11)));
-		assertTrue(matches.contains(new InterfaceMetric(12)));
-		assertTrue(matches.contains(new InterfaceMetric(13)));
-		assertTrue(matches.contains(new InterfaceMetric(14)));
-		assertTrue(matches.contains(new InterfaceMetric(15)));
-		assertTrue(matches.contains(new InterfaceMetric(17)));
-		assertTrue(matches.contains(new InterfaceMetric(18)));
-		assertTrue(matches.contains(new InterfaceMetric(19)));
-		assertTrue(matches.contains(new InterfaceMetric(20)));
-		assertTrue(matches.contains(new InterfaceMetric(21)));
-		assertTrue(matches.contains(new InterfaceMetric(22)));
-		assertTrue(matches.contains(new InterfaceMetric(23)));
-		assertTrue(matches.contains(new InterfaceMetric(25)));
-	}
-	
-//	@Test
-//	public void occurrences() throws Exception {
-//		helper.updateOccurrences();
-//		List<InterfaceMetric> occurrences = helper.getOccurrences();
-//		assertEquals(15, occurrences.size());
-//	}
-	
 	@Test
 	public void updateOccurrences() throws Exception {
 
@@ -361,30 +300,24 @@ public class InterfaceMetricOccurrencesHelperTest {
 
 		InterfaceMetric storage = repository.findById(interfaceMetric.getId());
 		
-		assertEquals(0 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, false)).intValue());
-		assertEquals(1 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, true,  false)).intValue());
-		assertEquals(1 , storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  false, false)).intValue());
-		assertEquals(3 , storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  true,  false)).intValue());
-		assertEquals(1 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, false, false)).intValue());
-		assertEquals(3 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, true,  false)).intValue());
-		assertEquals(3 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false, false)).intValue());
-		assertEquals(7 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  false)).intValue());
-		assertEquals(1 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, true)).intValue());
-		assertEquals(3 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, true,  true)).intValue());
-		assertEquals(3 , storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  false, true)).intValue());
-		assertEquals(7 , storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  true,  true)).intValue());
-		assertEquals(3 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, false, true)).intValue());
-		assertEquals(7 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, true,  true)).intValue());
-		assertEquals(7 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false, true)).intValue());
-		assertEquals(15, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  true)).intValue());
+		assertEquals(1 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, false)).intValue());
+		assertEquals(7 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, true)).intValue());
+		assertEquals(3 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, true,  false)).intValue());
+		assertEquals(11, storage.getOccurrencesTotal(new OccurrencesCombination(false, false, true,  true)).intValue());
 
-		assertEquals(3, storage.getOccurrencesTotal(new OccurrencesCombination(false)).intValue());
-		assertEquals(15, storage.getOccurrencesTotal(new OccurrencesCombination(true)).intValue());
+		assertEquals(1 , storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  false, false)).intValue());
+		assertEquals(7 , storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  false, true)).intValue());
+		assertEquals(3 , storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  true,  false)).intValue());
+		assertEquals(12, storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  true,  true)).intValue());
 		
-		assertEquals(0, storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false)).intValue());
-		assertEquals(1, storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  false)).intValue());
-		assertEquals(13, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false)).intValue());
-		assertEquals(3, storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  true )).intValue());
-		assertEquals(13, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true )).intValue());
+		assertEquals(1 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, false, false)).intValue());
+		assertEquals(7 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, false, true)).intValue());
+		assertEquals(3 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, true,  false)).intValue());
+		assertEquals(12, storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, true,  true)).intValue());
+
+		assertEquals(1 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false, false)).intValue());
+		assertEquals(7 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false, true)).intValue());
+		assertEquals(3 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  false)).intValue());
+		assertEquals(14, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  true)).intValue());
 	}
 }

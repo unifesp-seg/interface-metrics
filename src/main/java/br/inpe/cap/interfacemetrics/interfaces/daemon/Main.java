@@ -25,8 +25,9 @@ public class Main {
 			do{
 				try{
 
-					//EXECUTE EXECUTE EXECUTE 
-					service.execute(true, ExecutionType.INTERFACE_METRICS);
+					//EXECUTE EXECUTE EXECUTE
+					//              dbPrepared, ExecutionType executionType
+					service.execute(true, ExecutionType.PARAMS);
 
 					communicationsException = false;
 				} catch (CommunicationsException ex){
@@ -35,8 +36,7 @@ public class Main {
 			}while(communicationsException);
 
 		} catch (Exception e) {
-			LogUtils.getLogger().error(e
-					);
+			LogUtils.getLogger().error(e);
 			e.printStackTrace();
 		}
 
