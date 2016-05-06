@@ -45,6 +45,7 @@ public class InterfaceMetricRepository {
 		String limit = ConfigProperties.getProperty("interface-metrics.processed.max-result");
 		String sql = "SELECT * FROM " + table + "";
 		sql += " where (processed <> 1 or processed is null)";
+		//TODO Comments on special condition - Setup database 
 		sql += " and project_type = 'CRAWLED'";
 		sql += " limit " + limit;
 
@@ -69,6 +70,7 @@ public class InterfaceMetricRepository {
 
 		String sql = "SELECT count(*) as total FROM " + table + "";
 		sql += " where (processed <> 1 or processed is null)";
+		//TODO Comments on special condition - Setup database 
 		sql += " and project_type = 'CRAWLED'";
 		ResultSet rs = stmt.executeQuery(sql);
 

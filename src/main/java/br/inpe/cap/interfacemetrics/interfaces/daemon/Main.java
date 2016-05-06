@@ -27,7 +27,7 @@ public class Main {
 
 					//EXECUTE EXECUTE EXECUTE
 					//              dbPrepared, ExecutionType executionType
-					service.execute(true, ExecutionType.PARAMS);
+					service.execute(true, ExecutionType.INTERFACE_METRICS);
 
 					communicationsException = false;
 				} catch (CommunicationsException ex){

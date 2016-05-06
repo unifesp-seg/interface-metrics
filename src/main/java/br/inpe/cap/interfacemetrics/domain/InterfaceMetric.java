@@ -207,53 +207,53 @@ public class InterfaceMetric {
 	}
 
 	public Integer getOccurrencesTotal(OccurrencesCombination combination) {
-		boolean ignorePackage = combination.isIgnorePackage();
+		boolean differentPackage = combination.isDifferentPackage();
 		boolean ignoreClass = combination.isIgnoreClass();
 		boolean expandMethodName = combination.isExpandMethodName();
 		boolean expandTypes = combination.isExpandTypes();
 
-		if (!ignorePackage && !ignoreClass && !expandMethodName && !expandTypes) return p0_c0_w0_t0;
-		if (!ignorePackage && !ignoreClass && !expandMethodName &&  expandTypes) return p0_c0_w0_t1;
-		if (!ignorePackage && !ignoreClass &&  expandMethodName && !expandTypes) return p0_c0_w1_t0;
-		if (!ignorePackage && !ignoreClass &&  expandMethodName &&  expandTypes) return p0_c0_w1_t1;
-		if (!ignorePackage &&  ignoreClass && !expandMethodName && !expandTypes) return p0_c1_w0_t0;
-		if (!ignorePackage &&  ignoreClass && !expandMethodName &&  expandTypes) return p0_c1_w0_t1;
-		if (!ignorePackage &&  ignoreClass &&  expandMethodName && !expandTypes) return p0_c1_w1_t0;
-		if (!ignorePackage &&  ignoreClass &&  expandMethodName &&  expandTypes) return p0_c1_w1_t1;
-		if ( ignorePackage && !ignoreClass && !expandMethodName && !expandTypes) return p1_c0_w0_t0;
-		if ( ignorePackage && !ignoreClass && !expandMethodName &&  expandTypes) return p1_c0_w0_t1;
-		if ( ignorePackage && !ignoreClass &&  expandMethodName && !expandTypes) return p1_c0_w1_t0;
-		if ( ignorePackage && !ignoreClass &&  expandMethodName &&  expandTypes) return p1_c0_w1_t1;
-		if ( ignorePackage &&  ignoreClass && !expandMethodName && !expandTypes) return p1_c1_w0_t0;
-		if ( ignorePackage &&  ignoreClass && !expandMethodName &&  expandTypes) return p1_c1_w0_t1;
-		if ( ignorePackage &&  ignoreClass &&  expandMethodName && !expandTypes) return p1_c1_w1_t0;
-		if ( ignorePackage &&  ignoreClass &&  expandMethodName &&  expandTypes) return p1_c1_w1_t1;
+		if (!differentPackage && !ignoreClass && !expandMethodName && !expandTypes) return p0_c0_w0_t0;
+		if (!differentPackage && !ignoreClass && !expandMethodName &&  expandTypes) return p0_c0_w0_t1;
+		if (!differentPackage && !ignoreClass &&  expandMethodName && !expandTypes) return p0_c0_w1_t0;
+		if (!differentPackage && !ignoreClass &&  expandMethodName &&  expandTypes) return p0_c0_w1_t1;
+		if (!differentPackage &&  ignoreClass && !expandMethodName && !expandTypes) return p0_c1_w0_t0;
+		if (!differentPackage &&  ignoreClass && !expandMethodName &&  expandTypes) return p0_c1_w0_t1;
+		if (!differentPackage &&  ignoreClass &&  expandMethodName && !expandTypes) return p0_c1_w1_t0;
+		if (!differentPackage &&  ignoreClass &&  expandMethodName &&  expandTypes) return p0_c1_w1_t1;
+		if ( differentPackage && !ignoreClass && !expandMethodName && !expandTypes) return p1_c0_w0_t0;
+		if ( differentPackage && !ignoreClass && !expandMethodName &&  expandTypes) return p1_c0_w0_t1;
+		if ( differentPackage && !ignoreClass &&  expandMethodName && !expandTypes) return p1_c0_w1_t0;
+		if ( differentPackage && !ignoreClass &&  expandMethodName &&  expandTypes) return p1_c0_w1_t1;
+		if ( differentPackage &&  ignoreClass && !expandMethodName && !expandTypes) return p1_c1_w0_t0;
+		if ( differentPackage &&  ignoreClass && !expandMethodName &&  expandTypes) return p1_c1_w0_t1;
+		if ( differentPackage &&  ignoreClass &&  expandMethodName && !expandTypes) return p1_c1_w1_t0;
+		if ( differentPackage &&  ignoreClass &&  expandMethodName &&  expandTypes) return p1_c1_w1_t1;
 
 		return null;
 	}
 
 	public void setOccurrencesTotal(OccurrencesCombination combination, int total) {
-		boolean ignorePackage = combination.isIgnorePackage();
+		boolean differentPackage = combination.isDifferentPackage();
 		boolean ignoreClass = combination.isIgnoreClass();
 		boolean expandMethodName = combination.isExpandMethodName();
 		boolean expandTypes = combination.isExpandTypes();
 		
-		     if (!ignorePackage && !ignoreClass && !expandMethodName && !expandTypes) p0_c0_w0_t0 = total;
-		else if (!ignorePackage && !ignoreClass && !expandMethodName &&  expandTypes) p0_c0_w0_t1 = total;
-		else if (!ignorePackage && !ignoreClass &&  expandMethodName && !expandTypes) p0_c0_w1_t0 = total;
-		else if (!ignorePackage && !ignoreClass &&  expandMethodName &&  expandTypes) p0_c0_w1_t1 = total;
-		else if (!ignorePackage &&  ignoreClass && !expandMethodName && !expandTypes) p0_c1_w0_t0 = total;
-		else if (!ignorePackage &&  ignoreClass && !expandMethodName &&  expandTypes) p0_c1_w0_t1 = total;
-		else if (!ignorePackage &&  ignoreClass &&  expandMethodName && !expandTypes) p0_c1_w1_t0 = total;
-		else if (!ignorePackage &&  ignoreClass &&  expandMethodName &&  expandTypes) p0_c1_w1_t1 = total;
-		else if ( ignorePackage && !ignoreClass && !expandMethodName && !expandTypes) p1_c0_w0_t0 = total;
-		else if ( ignorePackage && !ignoreClass && !expandMethodName &&  expandTypes) p1_c0_w0_t1 = total;
-		else if ( ignorePackage && !ignoreClass &&  expandMethodName && !expandTypes) p1_c0_w1_t0 = total;
-		else if ( ignorePackage && !ignoreClass &&  expandMethodName &&  expandTypes) p1_c0_w1_t1 = total;
-		else if ( ignorePackage &&  ignoreClass && !expandMethodName && !expandTypes) p1_c1_w0_t0 = total;
-		else if ( ignorePackage &&  ignoreClass && !expandMethodName &&  expandTypes) p1_c1_w0_t1 = total;
-		else if ( ignorePackage &&  ignoreClass &&  expandMethodName && !expandTypes)  p1_c1_w1_t0 = total;
-		else if ( ignorePackage &&  ignoreClass &&  expandMethodName &&  expandTypes) p1_c1_w1_t1 = total;
+		     if (!differentPackage && !ignoreClass && !expandMethodName && !expandTypes) p0_c0_w0_t0 = total;
+		else if (!differentPackage && !ignoreClass && !expandMethodName &&  expandTypes) p0_c0_w0_t1 = total;
+		else if (!differentPackage && !ignoreClass &&  expandMethodName && !expandTypes) p0_c0_w1_t0 = total;
+		else if (!differentPackage && !ignoreClass &&  expandMethodName &&  expandTypes) p0_c0_w1_t1 = total;
+		else if (!differentPackage &&  ignoreClass && !expandMethodName && !expandTypes) p0_c1_w0_t0 = total;
+		else if (!differentPackage &&  ignoreClass && !expandMethodName &&  expandTypes) p0_c1_w0_t1 = total;
+		else if (!differentPackage &&  ignoreClass &&  expandMethodName && !expandTypes) p0_c1_w1_t0 = total;
+		else if (!differentPackage &&  ignoreClass &&  expandMethodName &&  expandTypes) p0_c1_w1_t1 = total;
+		else if ( differentPackage && !ignoreClass && !expandMethodName && !expandTypes) p1_c0_w0_t0 = total;
+		else if ( differentPackage && !ignoreClass && !expandMethodName &&  expandTypes) p1_c0_w0_t1 = total;
+		else if ( differentPackage && !ignoreClass &&  expandMethodName && !expandTypes) p1_c0_w1_t0 = total;
+		else if ( differentPackage && !ignoreClass &&  expandMethodName &&  expandTypes) p1_c0_w1_t1 = total;
+		else if ( differentPackage &&  ignoreClass && !expandMethodName && !expandTypes) p1_c1_w0_t0 = total;
+		else if ( differentPackage &&  ignoreClass && !expandMethodName &&  expandTypes) p1_c1_w0_t1 = total;
+		else if ( differentPackage &&  ignoreClass &&  expandMethodName && !expandTypes)  p1_c1_w1_t0 = total;
+		else if ( differentPackage &&  ignoreClass &&  expandMethodName &&  expandTypes) p1_c1_w1_t1 = total;
 	}
 	
 	public boolean isSameParams(String[] paramsNames) {

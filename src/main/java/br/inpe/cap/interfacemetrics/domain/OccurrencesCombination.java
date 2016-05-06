@@ -5,13 +5,13 @@ import java.util.List;
 
 public class OccurrencesCombination {
 
-	private boolean ignorePackage;
+	private boolean differentPackage;
 	private boolean ignoreClass;
 	private boolean expandMethodName;
 	private boolean expandTypes;
 
-	public OccurrencesCombination(boolean ignorePackage, boolean ignoreClass, boolean expandMethodName, boolean expandTypes) {
-		this.ignorePackage = ignorePackage;
+	public OccurrencesCombination(boolean differentPackage, boolean ignoreClass, boolean expandMethodName, boolean expandTypes) {
+		this.differentPackage = differentPackage;
 		this.ignoreClass = ignoreClass;
 		this.expandMethodName = expandMethodName;
 		this.expandTypes = expandTypes;	
@@ -41,7 +41,7 @@ public class OccurrencesCombination {
 	}
 	
 	public void printCombination(){
-		String p = isIgnorePackage() ? "IgnorePackage | " : "";
+		String p = isDifferentPackage() ? "DifferentPackage | " : "";
 		String c = isIgnoreClass() ? "IgnoreClass | " : "";
 		String w = " W: " + isExpandMethodName();
 		String t = " T: " + isExpandTypes();
@@ -49,8 +49,8 @@ public class OccurrencesCombination {
 		System.out.println(p + c + w + t);
 	}
 
-	public boolean isIgnorePackage() {
-		return ignorePackage;
+	public boolean isDifferentPackage() {
+		return differentPackage;
 	}
 
 	public boolean isIgnoreClass() {

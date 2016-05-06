@@ -83,7 +83,10 @@ public class InterfaceMetricOccurrencesHelper {
 	}
 
 	private boolean matchPackage(OccurrencesCombination combination, InterfaceMetric occurence) {
-		return combination.isIgnorePackage() ? true : interfaceMetric.getPackage().equals(occurence.getPackage());
+		if (combination.isDifferentPackage())
+			return !interfaceMetric.getPackage().equals(occurence.getPackage());
+		else
+			return interfaceMetric.getPackage().equals(occurence.getPackage());
 	}
 
 	private boolean matchClassName(OccurrencesCombination combination, InterfaceMetric occurence) {

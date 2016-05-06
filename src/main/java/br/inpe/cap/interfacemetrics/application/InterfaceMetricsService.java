@@ -122,6 +122,7 @@ public class InterfaceMetricsService {
 	void processMethod(InterfaceMetric interfaceMetric) throws Exception {
 		interfaceMetric.processMethod();
 		
+		//TODO Comments on special condition - Setup database 
 		this.updateOccurrences(interfaceMetric);
 		
 		repository.updateProcessedMethod(interfaceMetric);

@@ -22,19 +22,20 @@ public class InterfaceMetricOccurrencesHelperTestReal {
 	
 	@Before
 	public void setup() throws Exception {
-		interfaceMetric = repository.findById(1419315);
+		interfaceMetric = repository.findById(1816587);
 		helper = new InterfaceMetricOccurrencesHelper(interfaceMetric);
 	}
 	
 	@Test
 	public void returnMethodParamsValues(){
-		assertEquals("int", interfaceMetric.getReturnType());
-		assertEquals("get", interfaceMetric.getMethodName());
-		assertEquals("javax.servlet.ServletRequest,java.lang.String,int", interfaceMetric.getParams());
-		assertEquals(3, interfaceMetric.getParamsNames().length);
-		assertEquals("javax.servlet.ServletRequest", interfaceMetric.getParamsNames()[0]);
-		assertEquals("java.lang.String", interfaceMetric.getParamsNames()[1]);
-		assertEquals("int", interfaceMetric.getParamsNames()[2]);
+		assertEquals("org.apache.struts.action.ActionForward", interfaceMetric.getReturnType());
+		assertEquals("execute", interfaceMetric.getMethodName());
+		assertEquals("org.apache.struts.action.ActionMapping,org.apache.struts.action.ActionForm,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse", interfaceMetric.getParams());
+		assertEquals(4, interfaceMetric.getParamsNames().length);
+		assertEquals("org.apache.struts.action.ActionMapping", interfaceMetric.getParamsNames()[0]);
+		assertEquals("org.apache.struts.action.ActionForm", interfaceMetric.getParamsNames()[1]);
+		assertEquals("javax.servlet.http.HttpServletRequest", interfaceMetric.getParamsNames()[2]);
+		assertEquals("javax.servlet.http.HttpServletResponse", interfaceMetric.getParamsNames()[3]);
 	}
 
 	@Test
@@ -257,38 +258,4 @@ public class InterfaceMetricOccurrencesHelperTestReal {
 		assertEquals(6 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  false)).intValue());
 		assertEquals(30, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  true)).intValue());
 	}
-
-	@Test
-	public void interface_1439308() throws Exception {
-		interfaceMetric = repository.findById(1439308);
-		InterfaceMetricOccurrencesHelper h = new InterfaceMetricOccurrencesHelper(interfaceMetric);
-
-		h.updateOccurrences();
-		List<InterfaceMetric> matches = new ArrayList<InterfaceMetric>();
-		
-		matches = helper.getOccurrences(new OccurrencesCombination(false, false, false, false));
-		assertEquals(1, matches.size());
-		assertEquals(1097303, matches.get(0).getId().longValue());
-		
-		matches = helper.getOccurrences(new OccurrencesCombination(false, false, false, true));
-		assertEquals(5, matches.size());
-		assertTrue(matches.contains(new InterfaceMetric(1097301)));
-		assertTrue(matches.contains(new InterfaceMetric(1097302)));
-		assertTrue(matches.contains(new InterfaceMetric(1097303)));
-		assertTrue(matches.contains(new InterfaceMetric(1097304)));
-		assertTrue(matches.contains(new InterfaceMetric(1097305)));
-		
-		matches = helper.getOccurrences(new OccurrencesCombination(false, false, true, false));
-		assertEquals(1, matches.size());
-		assertTrue(matches.contains(new InterfaceMetric(1097303)));
-
-		matches = helper.getOccurrences(new OccurrencesCombination(false, false, true, true));
-		assertEquals(5, matches.size());
-		assertTrue(matches.contains(new InterfaceMetric(1097301)));
-		assertTrue(matches.contains(new InterfaceMetric(1097302)));
-		assertTrue(matches.contains(new InterfaceMetric(1097303)));
-		assertTrue(matches.contains(new InterfaceMetric(1097304)));
-		assertTrue(matches.contains(new InterfaceMetric(1097305)));
-	}
-
 }

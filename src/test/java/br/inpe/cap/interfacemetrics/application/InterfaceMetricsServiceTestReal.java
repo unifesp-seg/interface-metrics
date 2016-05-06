@@ -18,7 +18,7 @@ public class InterfaceMetricsServiceTestReal {
 
 	@Test
 	public void processMethod1() throws Exception {
-		InterfaceMetric interfaceMetric = repository.findById(1410608);
+		InterfaceMetric interfaceMetric = repository.findById(1812357);
 		service.processMethod(interfaceMetric);
 		InterfaceMetric storage = repository.findById(interfaceMetric.getId());
 		int p1_c1_w1_t0 = storage.getOccurrencesTotal(new OccurrencesCombination(true, true, true, false));
@@ -28,7 +28,7 @@ public class InterfaceMetricsServiceTestReal {
 
 	@Test
 	public void processMethod2() throws Exception {
-		InterfaceMetric interfaceMetric = repository.findById(1414004);
+		InterfaceMetric interfaceMetric = repository.findById(1815753);
 		service.processMethod(interfaceMetric);
 		InterfaceMetric storage = repository.findById(interfaceMetric.getId());
 		int p0_c0_w0_t0 = storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, false));
@@ -38,7 +38,7 @@ public class InterfaceMetricsServiceTestReal {
 
 	@Test
 	public void processMethod3() throws Exception {
-		InterfaceMetric interfaceMetric = repository.findById(1418546);
+		InterfaceMetric interfaceMetric = repository.findById(1816587);
 		service.processMethod(interfaceMetric);
 		InterfaceMetric storage = repository.findById(interfaceMetric.getId());
 		int p1_c1_w1_t0 = storage.getOccurrencesTotal(new OccurrencesCombination(true, true, true, false));
