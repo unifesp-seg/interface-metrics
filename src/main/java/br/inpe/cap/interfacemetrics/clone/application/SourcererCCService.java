@@ -104,13 +104,13 @@ public class SourcererCCService {
 
 		for(SourcererCCPair pair : this.pairs10){
 
-			boolean a = headerIdA == pair.getHeaderIdA();
-			boolean b = headerIdB == pair.getHeaderIdB();
+			boolean a = headerIdA.longValue() == pair.getHeaderIdA().longValue();
+			boolean b = headerIdB.longValue() == pair.getHeaderIdB().longValue();
 			if(a && b)
 				return true;
 
-			a = headerIdA == pair.getHeaderIdB();
-			b = headerIdB == pair.getHeaderIdA();
+			a = headerIdA.longValue() == pair.getHeaderIdB().longValue();
+			b = headerIdB.longValue() == pair.getHeaderIdA().longValue();
 			if(a && b)
 				return true;
 		}
