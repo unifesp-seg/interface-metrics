@@ -25,10 +25,10 @@ public class SourcererCCService {
 
 	//private SourcererCCRepository repository = new SourcererCCRepository();
 
-	private List<SourcererCCHeader> headers = new ArrayList<SourcererCCHeader>();
-	private List<SourcererCCPair> pairs10 = new ArrayList<SourcererCCPair>();
-	private List<SourcererCCPair> pairs8 = new ArrayList<SourcererCCPair>();
-	private List<InterfaceMetricsPairsClone> interfaceMetricsPairsClone = new ArrayList<InterfaceMetricsPairsClone>();
+	private List<SourcererCCHeader> headers = null;
+	private List<SourcererCCPair> pairs10 = null;
+	private List<SourcererCCPair> pairs8 = null;
+	private List<InterfaceMetricsPairsClone> interfaceMetricsPairsClone = null;
 	
 	private int processIndex = 0;
 	private PrintWriter pw = null;
@@ -39,12 +39,22 @@ public class SourcererCCService {
 		this.loadHeaders();
 
 		this.processHeaders();
-
-//		this.pairs10 = repository.findAllNotProcessed10();
-//		this.loadPair10EntityId();
-//		this.savePairs10();
 	}
 
+	public void executeIdsMatch() throws Exception {
+		
+		this.loadProcessedHeaders();
+		this.loadInterfaceMetricsPairsClone();
+
+		this.loadPairs10();
+		this.processInterfaceMetricsPairsClone10();
+
+		this.loadPairs8();
+		this.processInterfaceMetricsPairsClone8();
+
+	}
+
+	
 	public void openPrintWriter() throws Exception {
 		pw = new PrintWriter(new FileWriter(SourcererCCService.HEADER_FILE_PATH + "2"));
 	}
@@ -94,7 +104,7 @@ public class SourcererCCService {
 				clones++;
 
 			String headers = " [headerIdA: " + headerIdA + ", headerIdB: " + headerIdB + "]";
-			System.out.println("index: " + index++ + headers +  " (clones " + clones + ")");
+			System.out.println("index: " + index++ + headers +  " (100% clones " + clones + ")");
 		}
 		System.out.println("Clones 100%: " + clones);
 	}
@@ -133,7 +143,7 @@ public class SourcererCCService {
 				clones++;
 
 			String headers = " [headerIdA: " + headerIdA + ", headerIdB: " + headerIdB + "]";
-			System.out.println("index: " + index++ + headers +  " (clones " + clones + ")");
+			System.out.println("index: " + index++ + headers +  " (80% clones " + clones + ")");
 		}
 		System.out.println("Clones 80%: " + clones);
 	}
@@ -190,13 +200,13 @@ public class SourcererCCService {
 	}
 
 	private void loadPairs8() throws Exception {
-		this.pairs10 = new ArrayList<SourcererCCPair>();
+		this.pairs8 = new ArrayList<SourcererCCPair>();
 		
 		BufferedReader reader = new BufferedReader(new FileReader(SourcererCCService.CLONE_PAIRS_8_FILE_PATH));
 		String line;
 		while ((line = reader.readLine()) != null) {
 			SourcererCCPair pair = new SourcererCCPair(line);
-			this.pairs10.add(pair);
+			this.pairs8.add(pair);
 		}
 		reader.close();
 	}
@@ -225,18 +235,6 @@ public class SourcererCCService {
 		reader.close();
 	}
 		
-	public void executeIdsMatch() throws Exception {
-		
-		this.loadProcessedHeaders();
-		this.loadPairs10();
-		this.loadPairs8();
-		this.loadInterfaceMetricsPairsClone();
-
-		this.processInterfaceMetricsPairsClone10();
-		this.processInterfaceMetricsPairsClone8();
-
-	}
-
 	public List<SourcererCCHeader> getHeaders() {
 		return headers;
 	}
