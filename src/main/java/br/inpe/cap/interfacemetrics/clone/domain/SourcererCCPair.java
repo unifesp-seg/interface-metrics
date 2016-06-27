@@ -1,8 +1,5 @@
 package br.inpe.cap.interfacemetrics.clone.domain;
 
-import java.sql.ResultSet;
-import java.util.List;
-
 import org.apache.commons.lang.StringUtils;
 
 

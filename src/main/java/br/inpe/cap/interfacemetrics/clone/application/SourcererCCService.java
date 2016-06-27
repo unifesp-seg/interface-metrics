@@ -27,6 +27,7 @@ public class SourcererCCService {
 
 	private List<SourcererCCHeader> headers = new ArrayList<SourcererCCHeader>();
 	private List<SourcererCCPair> pairs10 = new ArrayList<SourcererCCPair>();
+	private List<SourcererCCPair> pairs8 = new ArrayList<SourcererCCPair>();
 	private List<InterfaceMetricsPairsClone> interfaceMetricsPairsClone = new ArrayList<InterfaceMetricsPairsClone>();
 	
 	private int processIndex = 0;
@@ -78,7 +79,7 @@ public class SourcererCCService {
 		pw.close();
 	}
 	
-	private void processInterfaceMetricsPairsClone() throws Exception {
+	private void processInterfaceMetricsPairsClone10() throws Exception {
 		
 		int clones = 0;
 		int index = 1;
@@ -103,6 +104,45 @@ public class SourcererCCService {
 			return false;
 
 		for(SourcererCCPair pair : this.pairs10){
+
+			boolean a = headerIdA.longValue() == pair.getHeaderIdA().longValue();
+			boolean b = headerIdB.longValue() == pair.getHeaderIdB().longValue();
+			if(a && b)
+				return true;
+
+			a = headerIdA.longValue() == pair.getHeaderIdB().longValue();
+			b = headerIdB.longValue() == pair.getHeaderIdA().longValue();
+			if(a && b)
+				return true;
+		}
+		return false;
+	}
+
+	private void processInterfaceMetricsPairsClone8() throws Exception {
+		
+		int clones = 0;
+		int index = 1;
+		for(InterfaceMetricsPairsClone imPair :  this.getInterfaceMetricsPairsClone()){
+			Long headerIdA = this.getHeaderIdFromEntityId(imPair.getEntityIdA()); 
+			Long headerIdB = this.getHeaderIdFromEntityId(imPair.getEntityIdB());
+			
+			boolean isClone = this.match8(headerIdA, headerIdB);
+			imPair.setClone(isClone);
+			
+			if(isClone)
+				clones++;
+
+			String headers = " [headerIdA: " + headerIdA + ", headerIdB: " + headerIdB + "]";
+			System.out.println("index: " + index++ + headers +  " (clones " + clones + ")");
+		}
+		System.out.println("Clones 80%: " + clones);
+	}
+
+	private boolean match8(Long headerIdA, Long headerIdB) {
+		if(headerIdA == null || headerIdB == null)
+			return false;
+
+		for(SourcererCCPair pair : this.pairs8){
 
 			boolean a = headerIdA.longValue() == pair.getHeaderIdA().longValue();
 			boolean b = headerIdB.longValue() == pair.getHeaderIdB().longValue();
@@ -149,6 +189,18 @@ public class SourcererCCService {
 		reader.close();
 	}
 
+	private void loadPairs8() throws Exception {
+		this.pairs10 = new ArrayList<SourcererCCPair>();
+		
+		BufferedReader reader = new BufferedReader(new FileReader(SourcererCCService.CLONE_PAIRS_8_FILE_PATH));
+		String line;
+		while ((line = reader.readLine()) != null) {
+			SourcererCCPair pair = new SourcererCCPair(line);
+			this.pairs10.add(pair);
+		}
+		reader.close();
+	}
+
 	private void loadInterfaceMetricsPairsClone() throws Exception {
 		this.interfaceMetricsPairsClone = new ArrayList<InterfaceMetricsPairsClone>();
 		
@@ -177,9 +229,12 @@ public class SourcererCCService {
 		
 		this.loadProcessedHeaders();
 		this.loadPairs10();
+		this.loadPairs8();
 		this.loadInterfaceMetricsPairsClone();
 
-		this.processInterfaceMetricsPairsClone();
+		this.processInterfaceMetricsPairsClone10();
+		this.processInterfaceMetricsPairsClone8();
+
 	}
 
 	public List<SourcererCCHeader> getHeaders() {
