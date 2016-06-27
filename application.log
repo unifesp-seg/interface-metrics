@@ -1,331 +1,46 @@
-Dom, 26/06/2016 02:14:58 - 
-Dom, 26/06/2016 02:14:58 - Aplicativo iniciado
-Dom, 26/06/2016 02:14:58 - 
-Dom, 26/06/2016 02:14:58 - Service
-Dom, 26/06/2016 02:15:55 - java.lang.ArrayIndexOutOfBoundsException: 0
-Dom, 26/06/2016 02:15:55 - 
-Dom, 26/06/2016 02:15:55 - Aplicativo finalizado. Tempo de execucao: 56 segundos.
-Dom, 26/06/2016 02:15:55 - 
-Dom, 26/06/2016 02:17:43 - 
-Dom, 26/06/2016 02:17:43 - Aplicativo iniciado
-Dom, 26/06/2016 02:17:43 - 
-Dom, 26/06/2016 02:17:43 - Service
-Dom, 26/06/2016 02:19:15 - java.lang.ArrayIndexOutOfBoundsException: 0
-Dom, 26/06/2016 02:19:15 - 
-Dom, 26/06/2016 02:19:15 - Aplicativo finalizado. Tempo de execucao: 1 minutos.
-Dom, 26/06/2016 02:19:15 - 
-Dom, 26/06/2016 02:21:14 - 
-Dom, 26/06/2016 02:21:14 - Aplicativo iniciado
-Dom, 26/06/2016 02:21:14 - 
-Dom, 26/06/2016 02:21:14 - Service
-Dom, 26/06/2016 02:22:09 - java.lang.ArrayIndexOutOfBoundsException: 0
-Dom, 26/06/2016 02:22:09 - 
-Dom, 26/06/2016 02:22:09 - Aplicativo finalizado. Tempo de execucao: 56 segundos.
-Dom, 26/06/2016 02:22:09 - 
-Dom, 26/06/2016 02:26:12 - 
-Dom, 26/06/2016 02:26:12 - Aplicativo iniciado
-Dom, 26/06/2016 02:26:12 - 
-Dom, 26/06/2016 02:26:12 - Service
-Dom, 26/06/2016 02:34:55 - java.lang.NullPointerException
-Dom, 26/06/2016 02:34:55 - 
-Dom, 26/06/2016 02:34:55 - Aplicativo finalizado. Tempo de execucao: 8 minutos.
-Dom, 26/06/2016 02:34:55 - 
-Dom, 26/06/2016 02:40:20 - 
-Dom, 26/06/2016 02:40:20 - Aplicativo iniciado
-Dom, 26/06/2016 02:40:20 - 
-Dom, 26/06/2016 02:40:20 - Service
-Dom, 26/06/2016 02:52:49 - 
-Dom, 26/06/2016 02:52:49 - Aplicativo finalizado. Tempo de execucao: 12 minutos.
-Dom, 26/06/2016 02:52:49 - 
-Dom, 26/06/2016 10:35:57 - 
-Dom, 26/06/2016 10:35:57 - Aplicativo iniciado
-Dom, 26/06/2016 10:35:57 - 
-Dom, 26/06/2016 10:35:57 - Service
-Dom, 26/06/2016 10:37:58 - 
-Dom, 26/06/2016 10:37:58 - Aplicativo iniciado
-Dom, 26/06/2016 10:37:58 - 
-Dom, 26/06/2016 10:37:58 - Service
-Dom, 26/06/2016 10:38:26 - 
-Dom, 26/06/2016 10:38:26 - Aplicativo iniciado
-Dom, 26/06/2016 10:38:26 - 
-Dom, 26/06/2016 10:38:26 - Service
-Dom, 26/06/2016 10:38:47 - 
-Dom, 26/06/2016 10:38:47 - Aplicativo finalizado. Tempo de execucao: 21 segundos.
-Dom, 26/06/2016 10:38:47 - 
-Dom, 26/06/2016 10:46:35 - 
-Dom, 26/06/2016 10:46:35 - Aplicativo iniciado
-Dom, 26/06/2016 10:46:35 - 
-Dom, 26/06/2016 10:46:35 - Service
-Dom, 26/06/2016 10:49:00 - 
-Dom, 26/06/2016 10:49:00 - Aplicativo iniciado
-Dom, 26/06/2016 10:49:00 - 
-Dom, 26/06/2016 10:49:00 - Service
-Dom, 26/06/2016 10:50:05 - 
-Dom, 26/06/2016 10:50:05 - Aplicativo iniciado
-Dom, 26/06/2016 10:50:05 - 
-Dom, 26/06/2016 10:50:05 - Service
-Dom, 26/06/2016 10:50:26 - 
-Dom, 26/06/2016 10:50:26 - Aplicativo finalizado. Tempo de execucao: 21 segundos.
-Dom, 26/06/2016 10:50:26 - 
-Dom, 26/06/2016 10:51:39 - 
-Dom, 26/06/2016 10:51:39 - Aplicativo iniciado
-Dom, 26/06/2016 10:51:39 - 
-Dom, 26/06/2016 10:51:39 - Service
-Dom, 26/06/2016 10:51:43 - 
-Dom, 26/06/2016 10:51:43 - Aplicativo finalizado. Tempo de execucao: 3 segundos.
-Dom, 26/06/2016 10:51:43 - 
-Dom, 26/06/2016 10:52:49 - 
-Dom, 26/06/2016 10:52:49 - Aplicativo iniciado
-Dom, 26/06/2016 10:52:49 - 
-Dom, 26/06/2016 10:52:49 - Service
-Dom, 26/06/2016 10:52:53 - 
-Dom, 26/06/2016 10:52:53 - Aplicativo finalizado. Tempo de execucao: 3 segundos.
-Dom, 26/06/2016 10:52:53 - 
-Dom, 26/06/2016 11:05:46 - 
-Dom, 26/06/2016 11:05:46 - Aplicativo iniciado
-Dom, 26/06/2016 11:05:46 - 
-Dom, 26/06/2016 11:05:46 - Service
-Dom, 26/06/2016 11:05:49 - 
-Dom, 26/06/2016 11:05:49 - Aplicativo finalizado. Tempo de execucao: 3 segundos.
-Dom, 26/06/2016 11:05:49 - 
-Dom, 26/06/2016 11:07:01 - 
-Dom, 26/06/2016 11:07:01 - Aplicativo iniciado
-Dom, 26/06/2016 11:07:01 - 
-Dom, 26/06/2016 11:07:01 - Service
-Dom, 26/06/2016 11:22:04 - 
-Dom, 26/06/2016 11:22:04 - Aplicativo iniciado
-Dom, 26/06/2016 11:22:04 - 
-Dom, 26/06/2016 11:22:04 - Service
-Dom, 26/06/2016 11:22:08 - 
-Dom, 26/06/2016 11:22:08 - Aplicativo finalizado. Tempo de execucao: 3 segundos.
-Dom, 26/06/2016 11:22:08 - 
-Dom, 26/06/2016 11:23:10 - 
-Dom, 26/06/2016 11:23:10 - Aplicativo iniciado
-Dom, 26/06/2016 11:23:10 - 
-Dom, 26/06/2016 11:23:10 - Service
-Dom, 26/06/2016 11:56:03 - 
-Dom, 26/06/2016 11:56:03 - Aplicativo iniciado
-Dom, 26/06/2016 11:56:03 - 
-Dom, 26/06/2016 11:56:03 - Service
-Dom, 26/06/2016 11:56:07 - 
-Dom, 26/06/2016 11:56:07 - Aplicativo finalizado. Tempo de execucao: 3 segundos.
-Dom, 26/06/2016 11:56:07 - 
-Dom, 26/06/2016 12:01:50 - 
-Dom, 26/06/2016 12:01:50 - Aplicativo iniciado
-Dom, 26/06/2016 12:01:50 - 
-Dom, 26/06/2016 12:01:50 - Service
-Dom, 26/06/2016 12:01:53 - 
-Dom, 26/06/2016 12:01:53 - Aplicativo finalizado. Tempo de execucao: 3 segundos.
-Dom, 26/06/2016 12:01:53 - 
-Dom, 26/06/2016 12:02:50 - 
-Dom, 26/06/2016 12:02:50 - Aplicativo iniciado
-Dom, 26/06/2016 12:02:50 - 
-Dom, 26/06/2016 12:02:50 - Service
-Dom, 26/06/2016 12:02:55 - 
-Dom, 26/06/2016 12:02:55 - Aplicativo finalizado. Tempo de execucao: 4 segundos.
-Dom, 26/06/2016 12:02:55 - 
-Dom, 26/06/2016 12:03:39 - 
-Dom, 26/06/2016 12:03:39 - Aplicativo iniciado
-Dom, 26/06/2016 12:03:39 - 
-Dom, 26/06/2016 12:03:39 - Service
-Dom, 26/06/2016 12:03:44 - 
-Dom, 26/06/2016 12:03:44 - Aplicativo finalizado. Tempo de execucao: 5 segundos.
-Dom, 26/06/2016 12:03:44 - 
-Dom, 26/06/2016 12:05:13 - 
-Dom, 26/06/2016 12:05:13 - Aplicativo iniciado
-Dom, 26/06/2016 12:05:13 - 
-Dom, 26/06/2016 12:05:13 - Service
-Dom, 26/06/2016 12:05:22 - 
-Dom, 26/06/2016 12:05:22 - Aplicativo finalizado. Tempo de execucao: 9 segundos.
-Dom, 26/06/2016 12:05:22 - 
-Dom, 26/06/2016 15:23:16 - 
-Dom, 26/06/2016 15:23:16 - Aplicativo iniciado
-Dom, 26/06/2016 15:23:16 - 
-Dom, 26/06/2016 15:23:16 - Service
-Dom, 26/06/2016 15:23:26 - 
-Dom, 26/06/2016 15:23:26 - Aplicativo finalizado. Tempo de execucao: 9 segundos.
-Dom, 26/06/2016 15:23:26 - 
-Dom, 26/06/2016 15:33:44 - 
-Dom, 26/06/2016 15:33:44 - Aplicativo iniciado
-Dom, 26/06/2016 15:33:44 - 
-Dom, 26/06/2016 15:33:44 - Service
-Dom, 26/06/2016 15:33:54 - 
-Dom, 26/06/2016 15:33:54 - Aplicativo finalizado. Tempo de execucao: 9 segundos.
-Dom, 26/06/2016 15:33:54 - 
-Dom, 26/06/2016 15:49:00 - 
-Dom, 26/06/2016 15:49:00 - Aplicativo iniciado
-Dom, 26/06/2016 15:49:00 - 
-Dom, 26/06/2016 15:49:00 - Service
-Dom, 26/06/2016 16:42:05 - 
-Dom, 26/06/2016 16:42:05 - Aplicativo iniciado
-Dom, 26/06/2016 16:42:05 - 
-Dom, 26/06/2016 16:42:05 - Service
-Dom, 26/06/2016 16:42:29 - 
-Dom, 26/06/2016 16:42:29 - Aplicativo iniciado
-Dom, 26/06/2016 16:42:29 - 
-Dom, 26/06/2016 16:42:29 - Service
-Dom, 26/06/2016 16:43:38 - 
-Dom, 26/06/2016 16:43:38 - Aplicativo iniciado
-Dom, 26/06/2016 16:43:38 - 
-Dom, 26/06/2016 16:43:38 - Service
-Dom, 26/06/2016 17:02:52 - 
-Dom, 26/06/2016 17:02:52 - Aplicativo iniciado
-Dom, 26/06/2016 17:02:52 - 
-Dom, 26/06/2016 17:02:52 - Service
-Dom, 26/06/2016 17:02:56 - java.sql.SQLException: Parameter index out of range (5 > number of parameters, which is 3).
-Dom, 26/06/2016 17:02:56 - 
-Dom, 26/06/2016 17:02:56 - Aplicativo finalizado. Tempo de execucao: 3 segundos.
-Dom, 26/06/2016 17:02:56 - 
-Dom, 26/06/2016 17:03:17 - 
-Dom, 26/06/2016 17:03:17 - Aplicativo iniciado
-Dom, 26/06/2016 17:03:17 - 
-Dom, 26/06/2016 17:03:17 - Service
-Dom, 26/06/2016 17:06:08 - 
-Dom, 26/06/2016 17:06:08 - Aplicativo iniciado
-Dom, 26/06/2016 17:06:08 - 
-Dom, 26/06/2016 17:06:08 - Service
-Dom, 26/06/2016 17:06:47 - 
-Dom, 26/06/2016 17:06:47 - Aplicativo iniciado
-Dom, 26/06/2016 17:06:47 - 
-Dom, 26/06/2016 17:06:47 - Service
-Dom, 26/06/2016 17:18:10 - 
-Dom, 26/06/2016 17:18:10 - Aplicativo iniciado
-Dom, 26/06/2016 17:18:10 - 
-Dom, 26/06/2016 17:18:10 - Service
-Dom, 26/06/2016 17:19:17 - 
-Dom, 26/06/2016 17:19:17 - Aplicativo iniciado
-Dom, 26/06/2016 17:19:17 - 
-Dom, 26/06/2016 17:19:17 - Service
-Dom, 26/06/2016 17:23:04 - 
-Dom, 26/06/2016 17:23:04 - Aplicativo iniciado
-Dom, 26/06/2016 17:23:04 - 
-Dom, 26/06/2016 17:23:04 - Service
-Dom, 26/06/2016 19:50:16 - 
-Dom, 26/06/2016 19:50:16 - Aplicativo iniciado
-Dom, 26/06/2016 19:50:16 - 
-Dom, 26/06/2016 19:50:16 - Service
-Dom, 26/06/2016 19:55:04 - 
-Dom, 26/06/2016 19:55:04 - Aplicativo iniciado
-Dom, 26/06/2016 19:55:04 - 
-Dom, 26/06/2016 19:55:04 - Service
-Dom, 26/06/2016 19:55:09 - 
-Dom, 26/06/2016 19:55:09 - Aplicativo finalizado. Tempo de execucao: 4 segundos.
-Dom, 26/06/2016 19:55:09 - 
-Dom, 26/06/2016 19:56:12 - 
-Dom, 26/06/2016 19:56:12 - Aplicativo iniciado
-Dom, 26/06/2016 19:56:12 - 
-Dom, 26/06/2016 19:56:12 - Service
-Dom, 26/06/2016 19:56:18 - 
-Dom, 26/06/2016 19:56:18 - Aplicativo finalizado. Tempo de execucao: 5 segundos.
-Dom, 26/06/2016 19:56:18 - 
-Dom, 26/06/2016 19:56:50 - 
-Dom, 26/06/2016 19:56:50 - Aplicativo iniciado
-Dom, 26/06/2016 19:56:50 - 
-Dom, 26/06/2016 19:56:50 - Service
-Dom, 26/06/2016 19:56:55 - 
-Dom, 26/06/2016 19:56:55 - Aplicativo finalizado. Tempo de execucao: 5 segundos.
-Dom, 26/06/2016 19:56:55 - 
-Dom, 26/06/2016 20:01:34 - 
-Dom, 26/06/2016 20:01:34 - Aplicativo iniciado
-Dom, 26/06/2016 20:01:34 - 
-Dom, 26/06/2016 20:01:34 - Service
-Dom, 26/06/2016 20:01:38 - 
-Dom, 26/06/2016 20:01:38 - Aplicativo finalizado. Tempo de execucao: 4 segundos.
-Dom, 26/06/2016 20:01:38 - 
-Dom, 26/06/2016 20:04:23 - 
-Dom, 26/06/2016 20:04:23 - Aplicativo iniciado
-Dom, 26/06/2016 20:04:23 - 
-Dom, 26/06/2016 20:04:23 - Service
-Dom, 26/06/2016 20:04:27 - 
-Dom, 26/06/2016 20:04:27 - Aplicativo finalizado. Tempo de execucao: 4 segundos.
-Dom, 26/06/2016 20:04:27 - 
-Dom, 26/06/2016 20:05:29 - 
-Dom, 26/06/2016 20:05:29 - Aplicativo iniciado
-Dom, 26/06/2016 20:05:29 - 
-Dom, 26/06/2016 20:05:29 - Service
-Dom, 26/06/2016 20:06:15 - 
-Dom, 26/06/2016 20:06:15 - Aplicativo iniciado
-Dom, 26/06/2016 20:06:15 - 
-Dom, 26/06/2016 20:06:15 - Service
-Dom, 26/06/2016 20:06:41 - 
-Dom, 26/06/2016 20:06:41 - Aplicativo iniciado
-Dom, 26/06/2016 20:06:41 - 
-Dom, 26/06/2016 20:06:41 - Service
-Dom, 26/06/2016 20:06:55 - 
-Dom, 26/06/2016 20:06:55 - Aplicativo iniciado
-Dom, 26/06/2016 20:06:55 - 
-Dom, 26/06/2016 20:06:55 - Service
-Dom, 26/06/2016 20:19:06 - 
-Dom, 26/06/2016 20:19:06 - Aplicativo iniciado
-Dom, 26/06/2016 20:19:06 - 
-Dom, 26/06/2016 20:19:06 - Service
-Dom, 26/06/2016 20:27:12 - 
-Dom, 26/06/2016 20:27:12 - Aplicativo iniciado
-Dom, 26/06/2016 20:27:12 - 
-Dom, 26/06/2016 20:27:12 - Service
-Dom, 26/06/2016 20:28:50 - 
-Dom, 26/06/2016 20:28:50 - Aplicativo iniciado
-Dom, 26/06/2016 20:28:50 - 
-Dom, 26/06/2016 20:28:50 - Service
-Dom, 26/06/2016 20:28:51 - 
-Dom, 26/06/2016 20:28:51 - Aplicativo finalizado. Tempo de execucao: 1 segundos.
-Dom, 26/06/2016 20:28:51 - 
-Dom, 26/06/2016 20:29:24 - 
-Dom, 26/06/2016 20:29:24 - Aplicativo iniciado
-Dom, 26/06/2016 20:29:24 - 
-Dom, 26/06/2016 20:29:24 - Service
-Dom, 26/06/2016 20:29:26 - 
-Dom, 26/06/2016 20:29:26 - Aplicativo finalizado. Tempo de execucao: 1 segundos.
-Dom, 26/06/2016 20:29:26 - 
-Dom, 26/06/2016 20:29:40 - 
-Dom, 26/06/2016 20:29:40 - Aplicativo iniciado
-Dom, 26/06/2016 20:29:40 - 
-Dom, 26/06/2016 20:29:40 - Service
-Dom, 26/06/2016 20:32:06 - 
-Dom, 26/06/2016 20:32:06 - Aplicativo iniciado
-Dom, 26/06/2016 20:32:06 - 
-Dom, 26/06/2016 20:32:06 - Service
-Dom, 26/06/2016 20:33:59 - 
-Dom, 26/06/2016 20:33:59 - Aplicativo iniciado
-Dom, 26/06/2016 20:33:59 - 
-Dom, 26/06/2016 20:33:59 - Service
-Dom, 26/06/2016 20:35:58 - 
-Dom, 26/06/2016 20:35:58 - Aplicativo iniciado
-Dom, 26/06/2016 20:35:58 - 
-Dom, 26/06/2016 20:35:58 - Service
-Dom, 26/06/2016 20:37:55 - 
-Dom, 26/06/2016 20:37:55 - Aplicativo iniciado
-Dom, 26/06/2016 20:37:55 - 
-Dom, 26/06/2016 20:37:55 - Service
-Dom, 26/06/2016 20:39:09 - 
-Dom, 26/06/2016 20:39:09 - Aplicativo iniciado
-Dom, 26/06/2016 20:39:09 - 
-Dom, 26/06/2016 20:39:09 - Service
-Dom, 26/06/2016 20:39:14 - 
-Dom, 26/06/2016 20:39:14 - Aplicativo finalizado. Tempo de execucao: 5 segundos.
-Dom, 26/06/2016 20:39:14 - 
-Dom, 26/06/2016 20:42:46 - 
-Dom, 26/06/2016 20:42:46 - Aplicativo iniciado
-Dom, 26/06/2016 20:42:46 - 
-Dom, 26/06/2016 20:42:46 - Service
-Dom, 26/06/2016 20:42:51 - 
-Dom, 26/06/2016 20:42:51 - Aplicativo finalizado. Tempo de execucao: 4 segundos.
-Dom, 26/06/2016 20:42:51 - 
-Dom, 26/06/2016 20:46:20 - 
-Dom, 26/06/2016 20:46:20 - Aplicativo iniciado
-Dom, 26/06/2016 20:46:20 - 
-Dom, 26/06/2016 20:46:20 - Service
-Dom, 26/06/2016 20:46:25 - 
-Dom, 26/06/2016 20:46:25 - Aplicativo finalizado. Tempo de execucao: 4 segundos.
-Dom, 26/06/2016 20:46:25 - 
-Dom, 26/06/2016 20:48:17 - 
-Dom, 26/06/2016 20:48:17 - Aplicativo iniciado
-Dom, 26/06/2016 20:48:17 - 
-Dom, 26/06/2016 20:48:17 - Service
-Dom, 26/06/2016 20:48:22 - 
-Dom, 26/06/2016 20:48:22 - Aplicativo finalizado. Tempo de execucao: 5 segundos.
-Dom, 26/06/2016 20:48:22 - 
-Dom, 26/06/2016 20:50:06 - 
-Dom, 26/06/2016 20:50:06 - Aplicativo iniciado
-Dom, 26/06/2016 20:50:06 - 
-Dom, 26/06/2016 20:50:06 - Service
+Seg, 27/06/2016 00:07:13 - 
+Seg, 27/06/2016 00:07:13 - Aplicativo finalizado. Tempo de execucao: 24 minutos.
+Seg, 27/06/2016 00:07:13 - 
+Seg, 27/06/2016 00:10:41 - 
+Seg, 27/06/2016 00:10:41 - Aplicativo iniciado
+Seg, 27/06/2016 00:10:41 - 
+Seg, 27/06/2016 00:10:41 - Service
+Seg, 27/06/2016 00:10:43 - 
+Seg, 27/06/2016 00:10:43 - Aplicativo finalizado. Tempo de execucao: 2 segundos.
+Seg, 27/06/2016 00:10:43 - 
+Seg, 27/06/2016 00:10:58 - 
+Seg, 27/06/2016 00:10:58 - Aplicativo iniciado
+Seg, 27/06/2016 00:10:58 - 
+Seg, 27/06/2016 00:10:58 - Service
+Seg, 27/06/2016 00:13:52 - 
+Seg, 27/06/2016 00:13:52 - Aplicativo iniciado
+Seg, 27/06/2016 00:13:52 - 
+Seg, 27/06/2016 00:13:52 - Service
+Seg, 27/06/2016 00:18:46 - 
+Seg, 27/06/2016 00:18:46 - Aplicativo iniciado
+Seg, 27/06/2016 00:18:46 - 
+Seg, 27/06/2016 00:18:46 - Service
+Seg, 27/06/2016 00:19:21 - 
+Seg, 27/06/2016 00:19:21 - Aplicativo iniciado
+Seg, 27/06/2016 00:19:21 - 
+Seg, 27/06/2016 00:19:21 - Service
+Seg, 27/06/2016 00:20:51 - 
+Seg, 27/06/2016 00:20:51 - Aplicativo iniciado
+Seg, 27/06/2016 00:20:51 - 
+Seg, 27/06/2016 00:20:51 - Service
+Seg, 27/06/2016 00:31:55 - 
+Seg, 27/06/2016 00:31:55 - Aplicativo iniciado
+Seg, 27/06/2016 00:31:55 - 
+Seg, 27/06/2016 00:31:55 - Service
+Seg, 27/06/2016 00:33:04 - 
+Seg, 27/06/2016 00:33:04 - Aplicativo iniciado
+Seg, 27/06/2016 00:33:04 - 
+Seg, 27/06/2016 00:33:04 - Service
+Seg, 27/06/2016 00:37:33 - 
+Seg, 27/06/2016 00:37:33 - Aplicativo iniciado
+Seg, 27/06/2016 00:37:33 - 
+Seg, 27/06/2016 00:37:33 - Service
+Seg, 27/06/2016 00:38:44 - 
+Seg, 27/06/2016 00:38:44 - Aplicativo iniciado
+Seg, 27/06/2016 00:38:44 - 
+Seg, 27/06/2016 00:38:44 - Service

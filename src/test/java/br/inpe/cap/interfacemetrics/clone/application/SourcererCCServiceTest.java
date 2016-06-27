@@ -96,17 +96,4 @@ public class SourcererCCServiceTest {
 		reader.close();
 		assertEquals(3436520, total);
 	}
-	
-	@Test
-	public void pair10Id336() throws Exception {
-		//line = "157,7316";
-		SourcererCCPair pair = new SourcererCCPair(pairs10.get(336-1).getLine());
-		pair.loadEntityId(headers);
-		
-		assertEquals(157, pair.getHeaderIdA().longValue());
-		assertEquals(5825911, pair.getEntityIdA().longValue());
-
-		assertEquals(7316, pair.getHeaderIdB().longValue());
-		assertEquals(5833508, pair.getEntityIdB().longValue());
-	}	
 }

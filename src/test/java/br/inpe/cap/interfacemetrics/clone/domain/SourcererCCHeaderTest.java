@@ -145,4 +145,19 @@ public class SourcererCCHeaderTest {
 		
 		assertEquals(5833508, cc.getEntityId().longValue());
 	}
+
+	@Test
+	public void headerId57219() throws Exception{
+		String line = "57219,/home/saini/otavio/sf100-src/0/55/content/src/main/java/net/sf/lavalamp/site/AbstractBuildSite.java,18,20";
+		SourcererCCHeader cc = new SourcererCCHeader(line);
+
+		cc.loadFromSourceCode();
+		cc.loadFromDB();
+
+		assertEquals("public void login( ) throws LoginRequiredException,LoginFailedException, IOException {", cc.getMethodLine());
+		assertEquals("net.sf.lavalamp.site.AbstractBuildSite.login", cc.getMethodFQN());
+		assertEquals(0, cc.getMethodParams().size());
+		
+		assertEquals(5893406, cc.getEntityId().longValue());
+	}
 }

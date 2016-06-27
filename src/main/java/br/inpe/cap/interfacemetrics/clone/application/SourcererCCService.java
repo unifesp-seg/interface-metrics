@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.inpe.cap.interfacemetrics.clone.domain.InterfaceMetricsPairsClone;
 import br.inpe.cap.interfacemetrics.clone.domain.SourcererCCHeader;
 import br.inpe.cap.interfacemetrics.clone.domain.SourcererCCPair;
 
@@ -20,11 +21,13 @@ public class SourcererCCService {
 	public static final String HEADER_FILE_PATH = SOURCERER_CC_PATH + "/headers.file";
 	public static final String CLONE_PAIRS_10_FILE_PATH = SOURCERER_CC_PATH + "/tokensclones_index_WITH_FILTER 10.0.txt";
 	public static final String CLONE_PAIRS_8_FILE_PATH = SOURCERER_CC_PATH + "/tokensclones_index_WITH_FILTER 8.0.txt";
+	public static final String INTERFACE_METRICS_PAIRS_FILE_PATH = SOURCERER_CC_PATH + "/interface_metrics_pairs.txt";
 
 	//private SourcererCCRepository repository = new SourcererCCRepository();
 
 	private List<SourcererCCHeader> headers = new ArrayList<SourcererCCHeader>();
 	private List<SourcererCCPair> pairs10 = new ArrayList<SourcererCCPair>();
+	private List<InterfaceMetricsPairsClone> interfaceMetricsPairsClone = new ArrayList<InterfaceMetricsPairsClone>();
 	
 	private int processIndex = 0;
 	private PrintWriter pw = null;
@@ -32,12 +35,9 @@ public class SourcererCCService {
 	public void execute() throws Exception {
 
 		// Headers
-		this.headers = this.getHeaders();
+		this.loadHeaders();
 
-		// Pair
-		//this.pairs10 = this.getPairs10();
-		
-		this.processPairs10();
+		this.processHeaders();
 
 //		this.pairs10 = repository.findAllNotProcessed10();
 //		this.loadPair10EntityId();
@@ -45,12 +45,12 @@ public class SourcererCCService {
 	}
 
 	public void openPrintWriter() throws Exception {
-		pw = new PrintWriter(new FileWriter(SourcererCCService.CLONE_PAIRS_10_FILE_PATH + "2"));
+		pw = new PrintWriter(new FileWriter(SourcererCCService.HEADER_FILE_PATH + "2"));
 	}
 	
-	private void processPairs10() throws Exception {
+	private void processHeaders() throws Exception {
 
-		BufferedReader br = new BufferedReader(new FileReader(SourcererCCService.CLONE_PAIRS_10_FILE_PATH));
+		BufferedReader br = new BufferedReader(new FileReader(SourcererCCService.HEADER_FILE_PATH));
 
 		String line;
 		int i = 0;
@@ -63,21 +63,69 @@ public class SourcererCCService {
 
 			i++;
 			
-			SourcererCCPair pair = new SourcererCCPair(line);
-			pair.loadEntityId(this.headers);
-			String line2 = i + "," + pair.getHeaderIdA() + "," + pair.getHeaderIdB() + "," + pair.getEntityIdA() + "," + pair.getEntityIdB();
+			SourcererCCHeader header = new SourcererCCHeader(line);
+			header.loadFromSourceCode();
+			header.loadFromDB();
+			String line2 = header.getLine() + "," + header.getEntityId();
 			pw.println(line2);
 
 			this.processIndex = i;
 			
-			System.out.println(line2 + " processPairs10");
+			System.out.println(line2);
 		}
 
 		br.close();
 		pw.close();
 	}
+	
+	private void processInterfaceMetricsPairsClone() throws Exception {
+		
+		int clones = 0;
+		int index = 1;
+		for(InterfaceMetricsPairsClone imPair :  this.getInterfaceMetricsPairsClone()){
+			Long headerIdA = this.getHeaderIdFromEntityId(imPair.getEntityIdA()); 
+			Long headerIdB = this.getHeaderIdFromEntityId(imPair.getEntityIdB());
+			
+			boolean isClone = this.match10(headerIdA, headerIdB);
+			imPair.setClone(isClone);
+			
+			if(isClone)
+				clones++;
 
-	List<SourcererCCHeader> getHeaders() throws Exception {
+			String headers = " [headerIdA: " + headerIdA + ", headerIdB: " + headerIdB + "]";
+			System.out.println("index: " + index++ + headers +  " (clones " + clones + ")");
+		}
+		System.out.println("Clones 100%: " + clones);
+	}
+
+	private boolean match10(Long headerIdA, Long headerIdB) {
+		if(headerIdA == null || headerIdB == null)
+			return false;
+
+		for(SourcererCCPair pair : this.pairs10){
+
+			boolean a = headerIdA == pair.getHeaderIdA();
+			boolean b = headerIdB == pair.getHeaderIdB();
+			if(a && b)
+				return true;
+
+			a = headerIdA == pair.getHeaderIdB();
+			b = headerIdB == pair.getHeaderIdA();
+			if(a && b)
+				return true;
+		}
+		return false;
+	}
+
+	private Long getHeaderIdFromEntityId(Long entityId) {
+		for(SourcererCCHeader header : this.headers){
+			if(entityId.longValue() == header.getEntityId().longValue())
+				return header.getHeaderId();
+		}
+		return null;
+	}
+
+	private void loadHeaders() throws Exception {
 		this.headers = new ArrayList<SourcererCCHeader>();
 		
 		BufferedReader reader = new BufferedReader(new FileReader(SourcererCCService.HEADER_FILE_PATH));
@@ -87,11 +135,9 @@ public class SourcererCCService {
 			this.headers.add(ccHeader);
 		}
 		reader.close();
-
-		return headers;
 	}
 		
-	List<SourcererCCPair> getPairs10() throws Exception {
+	private void loadPairs10() throws Exception {
 		this.pairs10 = new ArrayList<SourcererCCPair>();
 		
 		BufferedReader reader = new BufferedReader(new FileReader(SourcererCCService.CLONE_PAIRS_10_FILE_PATH));
@@ -101,28 +147,52 @@ public class SourcererCCService {
 			this.pairs10.add(pair);
 		}
 		reader.close();
+	}
 
+	private void loadInterfaceMetricsPairsClone() throws Exception {
+		this.interfaceMetricsPairsClone = new ArrayList<InterfaceMetricsPairsClone>();
+		
+		BufferedReader reader = new BufferedReader(new FileReader(SourcererCCService.INTERFACE_METRICS_PAIRS_FILE_PATH));
+		String line;
+		while ((line = reader.readLine()) != null) {
+			InterfaceMetricsPairsClone interfaceMetricsPairsClone = new InterfaceMetricsPairsClone(line);
+			this.interfaceMetricsPairsClone.add(interfaceMetricsPairsClone);
+		}
+		reader.close();
+	}
+		
+	private void loadProcessedHeaders() throws Exception {
+		this.headers = new ArrayList<SourcererCCHeader>();
+		
+		BufferedReader reader = new BufferedReader(new FileReader(SourcererCCService.HEADER_FILE_PATH+"2"));
+		String line;
+		while ((line = reader.readLine()) != null) {
+			SourcererCCHeader ccHeader = new SourcererCCHeader(line);
+			this.headers.add(ccHeader);
+		}
+		reader.close();
+	}
+		
+	public void executeIdsMatch() throws Exception {
+		
+		this.loadProcessedHeaders();
+		this.loadPairs10();
+		this.loadInterfaceMetricsPairsClone();
+
+		this.processInterfaceMetricsPairsClone();
+	}
+
+	public List<SourcererCCHeader> getHeaders() {
+		return headers;
+	}
+
+	public List<SourcererCCPair> getPairs10() {
 		return pairs10;
 	}
-/*
-	private void loadPair10EntityId() throws Exception {
-		int i = 0;
-		for(SourcererCCPair pair : this.pairs10){
-			System.out.println(i++ + " de " + this.pairs10.size() + " loadPair10EntityId");
-			pair.loadEntityId(headers);
-		}
+
+	public List<InterfaceMetricsPairsClone> getInterfaceMetricsPairsClone() {
+		return interfaceMetricsPairsClone;
 	}
+
 	
-	private void savePairs10() throws Exception {
-		int i = 0;
-		for(SourcererCCPair pair : this.pairs10){
-			System.out.println(i++ + " de " + this.pairs10.size() + " savePairs10");
-			try{
-				repository.savePairs10(pair);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	*/
 }

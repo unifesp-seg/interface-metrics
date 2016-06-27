@@ -44,8 +44,11 @@ public class SourcererCCHeader {
 		else if(pre.length() == 2)
 			pre = "0" + pre;
 		this.methodProjectNamePrefix = pre;
+		
+		if(parts.length == 5)
+			this.entityId = new Long(parts[4]);
 	}
-
+	
 	public void loadFromSourceCode() throws Exception {
 		this.loadMethodLine();
 		String strPackage = this.loadPackage();
@@ -106,6 +109,7 @@ public class SourcererCCHeader {
 		int i = StringUtils.indexOf(methodLine, "(");
 		int f = StringUtils.indexOf(methodLine, ")");
 		String params = StringUtils.substring(methodLine, i+1, f);
+		params = StringUtils.trim(params);
 		String[] parts = StringUtils.split(params,',');
 		
 		List<String> args = new ArrayList<String>(); 

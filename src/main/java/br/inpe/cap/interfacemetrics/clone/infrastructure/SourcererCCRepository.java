@@ -5,8 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
 import br.inpe.cap.interfacemetrics.clone.domain.SourcererCCHeader;
 import br.inpe.cap.interfacemetrics.clone.domain.SourcererCCPair;
@@ -106,27 +104,4 @@ public class SourcererCCRepository {
 
 		return total;
 	}
-	
-	public List<SourcererCCPair> findAllNotProcessed10() throws Exception {
-		Connection conn = getConnection();
-		Statement stmt = conn.createStatement();
-
-		String sql = "SELECT * FROM interface_metrics_pairs_clone_10";
-		sql += " where (processed <> 1 or processed is null)";
-
-		ResultSet rs = stmt.executeQuery(sql);
-
-		List<SourcererCCPair> list = new ArrayList<SourcererCCPair>();
-
-		while (rs.next()) {
-			SourcererCCPair pair = new SourcererCCPair(rs);
-			list.add(pair);
-		}
-
-		stmt.close();
-		conn.close();
-
-		return list;
-	}
-	
 }
