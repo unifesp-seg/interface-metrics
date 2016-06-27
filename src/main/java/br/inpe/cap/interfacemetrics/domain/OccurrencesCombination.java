@@ -40,6 +40,15 @@ public class OccurrencesCombination {
 		return combinations;
 	}
 	
+	public String getName(){
+		String p = isDifferentPackage() ? "1" : "0";
+		String c = isIgnoreClass() ? "1" : "0";
+		String w = isExpandMethodName() ? "1" : "0";
+		String t = isExpandTypes() ? "1" : "0";
+
+		return "p"+p+"_c"+c+"_w"+w+"_t"+t;
+	}
+
 	public void printCombination(){
 		String p = isDifferentPackage() ? "DifferentPackage | " : "";
 		String c = isIgnoreClass() ? "IgnoreClass | " : "";

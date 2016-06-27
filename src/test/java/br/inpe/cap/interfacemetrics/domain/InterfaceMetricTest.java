@@ -11,10 +11,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricRepository;
+import br.inpe.cap.interfacemetrics.infrastructure.RepositoryType;
 
 public class InterfaceMetricTest {
 
-	private InterfaceMetricRepository repository = new InterfaceMetricRepository(true);
+	private InterfaceMetricRepository repository = new InterfaceMetricRepository(RepositoryType.MOCK);
 
 	private List<InterfaceMetric> tests = new ArrayList<InterfaceMetric>();
 

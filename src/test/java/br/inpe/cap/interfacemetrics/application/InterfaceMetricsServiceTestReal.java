@@ -9,12 +9,13 @@ import br.inpe.cap.interfacemetrics.domain.InterfaceMetric;
 import br.inpe.cap.interfacemetrics.domain.OccurrencesCombination;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricParamsRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricRepository;
+import br.inpe.cap.interfacemetrics.infrastructure.RepositoryType;
 
 public class InterfaceMetricsServiceTestReal {
 
-	private InterfaceMetricRepository repository = new InterfaceMetricRepository();
-	private InterfaceMetricParamsRepository paramsRepository = new InterfaceMetricParamsRepository();
-	private InterfaceMetricsService service = new InterfaceMetricsService();
+	private InterfaceMetricRepository repository = new InterfaceMetricRepository(RepositoryType.REAL);
+	private InterfaceMetricParamsRepository paramsRepository = new InterfaceMetricParamsRepository(RepositoryType.REAL);
+	private InterfaceMetricsService service = new InterfaceMetricsService(RepositoryType.REAL);
 
 	@Test
 	public void processMethod1() throws Exception {

@@ -15,17 +15,12 @@ import br.inpe.cap.interfacemetrics.infrastructure.util.ConfigProperties;
 
 public class InterfaceMetricRepository {
 
-	private static final String TABLE = "interface_metrics";
-	private String table;
+	private String table = "interface_metrics";
 
 	private static boolean debugMode = false;
 	
-	public InterfaceMetricRepository() {
-		table = TABLE;
-	}
-
-	public InterfaceMetricRepository(boolean mock) {
-		table = mock ? TABLE + "_test" : TABLE;
+	public InterfaceMetricRepository(RepositoryType repositoryType) {
+		table += repositoryType.getSufix();
 	}
 
 	private Connection getConnection() throws Exception {

@@ -13,15 +13,10 @@ import br.inpe.cap.interfacemetrics.infrastructure.util.ConfigProperties;
 
 public class InterfaceMetricParamsRepository {
 
-	private static final String TABLE = "interface_metrics_params";
-	private String table;
+	private String table = "interface_metrics_params";
 
-	public InterfaceMetricParamsRepository() {
-		table = TABLE;
-	}
-
-	public InterfaceMetricParamsRepository(boolean mock) {
-		table = mock ? TABLE + "_test" : TABLE;
+	public InterfaceMetricParamsRepository(RepositoryType repositoryType) {
+		table += repositoryType.getSufix();
 	}
 
 	private Connection getConnection() throws Exception {
@@ -61,7 +56,7 @@ public class InterfaceMetricParamsRepository {
 		PreparedStatement ps = null;
 
 		for(String param : interfaceMetric.getParamsNames()){
-			String sql = "INSERT into interface_metrics_params (interface_metrics_id, param) values (?, ?)";
+			String sql = "INSERT into " + table + " (interface_metrics_id, param) values (?, ?)";
 			ps = conn.prepareStatement(sql);
 			ps.setLong(1, interfaceMetric.getId());
 			ps.setString(2, param);

@@ -11,11 +11,12 @@ import org.junit.Test;
 import br.inpe.cap.interfacemetrics.application.InterfaceMetricOccurrencesHelper;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricParamsRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricRepository;
+import br.inpe.cap.interfacemetrics.infrastructure.RepositoryType;
 
 public class InterfaceMetricTestReal {
 
-	private InterfaceMetricRepository repository = new InterfaceMetricRepository();
-	private InterfaceMetricParamsRepository paramsRepository = new InterfaceMetricParamsRepository();
+	private InterfaceMetricRepository repository = new InterfaceMetricRepository(RepositoryType.REAL);
+	private InterfaceMetricParamsRepository paramsRepository = new InterfaceMetricParamsRepository(RepositoryType.REAL);
 
 	@Test()
 	public void processMethod1() throws Exception {
@@ -87,12 +88,12 @@ public class InterfaceMetricTestReal {
 		InterfaceMetric i14 = repository.findById(1811542);//'(java.lang.String,int)'
 
 		@SuppressWarnings("unused")
-		InterfaceMetricOccurrencesHelper helper = new InterfaceMetricOccurrencesHelper(i11);
-		helper = new InterfaceMetricOccurrencesHelper(i13);
-		helper = new InterfaceMetricOccurrencesHelper(i07);
-		helper = new InterfaceMetricOccurrencesHelper(i01);
-		helper = new InterfaceMetricOccurrencesHelper(i02);
-		helper = new InterfaceMetricOccurrencesHelper(i04);
+		InterfaceMetricOccurrencesHelper helper = new InterfaceMetricOccurrencesHelper(i11, RepositoryType.REAL);
+		helper = new InterfaceMetricOccurrencesHelper(i13, RepositoryType.REAL);
+		helper = new InterfaceMetricOccurrencesHelper(i07, RepositoryType.REAL);
+		helper = new InterfaceMetricOccurrencesHelper(i01, RepositoryType.REAL);
+		helper = new InterfaceMetricOccurrencesHelper(i02, RepositoryType.REAL);
+		helper = new InterfaceMetricOccurrencesHelper(i04, RepositoryType.REAL);
 		
 		//sameParams isParamsOrder
 		assertTrue(i11.isSameExpandedParams(i12.getParamsNames(),true));
@@ -185,9 +186,9 @@ public class InterfaceMetricTestReal {
 		assertEquals(0    , storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, true,  false)).intValue());
 		assertEquals(0    , storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, true,  true)).intValue());
 
-		assertEquals(12335, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false, false)).intValue());
-		assertEquals(12335, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false, true)).intValue());
-		assertEquals(12342, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  false)).intValue());
-		assertEquals(12342, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  true)).intValue());
+		assertEquals(12130, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false, false)).intValue());
+		assertEquals(12130, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false, true)).intValue());
+		assertEquals(12137, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  false)).intValue());
+		assertEquals(12137, storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  true)).intValue());
 	}
 }

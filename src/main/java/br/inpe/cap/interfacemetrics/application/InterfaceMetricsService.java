@@ -5,15 +5,18 @@ import java.util.Date;
 import java.util.List;
 
 import br.inpe.cap.interfacemetrics.domain.InterfaceMetric;
+import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricPairRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricParamsRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricRepository;
+import br.inpe.cap.interfacemetrics.infrastructure.RepositoryType;
 import br.inpe.cap.interfacemetrics.interfaces.daemon.ExecutionType;
 
 public class InterfaceMetricsService {
 
 	private InterfaceMetricRepository repository;
+	private InterfaceMetricPairRepository pairRepository;
 	private InterfaceMetricParamsRepository paramsRepository;
-	private boolean mock = false;
+	private RepositoryType repositoryType;
 	
 	//Controll
 	private int total;
@@ -23,15 +26,11 @@ public class InterfaceMetricsService {
 	private long totalduraction;
 	private long timestamp; 
 
-	public InterfaceMetricsService() {
-		repository = new InterfaceMetricRepository();
-		paramsRepository = new InterfaceMetricParamsRepository();
-	}
-
-	public InterfaceMetricsService(boolean mock) {
-		repository = new InterfaceMetricRepository(mock);
-		paramsRepository = new InterfaceMetricParamsRepository(mock);
-		this.mock = mock;
+	public InterfaceMetricsService(RepositoryType repositoryType) {
+		repository = new InterfaceMetricRepository(repositoryType);
+		pairRepository = new InterfaceMetricPairRepository(repositoryType);
+		paramsRepository = new InterfaceMetricParamsRepository(repositoryType);
+		this.repositoryType = repositoryType;
 	}
 
 	public void execute(boolean dbPrepared, ExecutionType executionType) throws Exception {
@@ -101,6 +100,7 @@ public class InterfaceMetricsService {
 
 	private void clearProcessing(ExecutionType executionType) throws Exception {
 		if(executionType.isInterfaceMetrics()){
+			pairRepository.deleteTable();
 			repository.clearProcessing();
 		} else if(executionType.isParams()){
 			paramsRepository.deleteTable();
@@ -129,7 +129,7 @@ public class InterfaceMetricsService {
 	}
 	
 	private void updateOccurrences(InterfaceMetric interfaceMetric) throws Exception {
-		InterfaceMetricOccurrencesHelper helper = new InterfaceMetricOccurrencesHelper(interfaceMetric, this.mock);
+		InterfaceMetricOccurrencesHelper helper = new InterfaceMetricOccurrencesHelper(interfaceMetric, this.repositoryType);
 		helper.updateOccurrences();
 	}
 

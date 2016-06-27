@@ -11,13 +11,14 @@ import org.junit.Test;
 import br.inpe.cap.interfacemetrics.domain.InterfaceMetric;
 import br.inpe.cap.interfacemetrics.domain.OccurrencesCombination;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricRepository;
+import br.inpe.cap.interfacemetrics.infrastructure.RepositoryType;
 import br.inpe.cap.interfacemetrics.infrastructure.util.ConfigProperties;
 import br.inpe.cap.interfacemetrics.interfaces.daemon.ExecutionType;
 
 public class InterfaceMetricsServiceTest {
 
-	private InterfaceMetricRepository repository = new InterfaceMetricRepository(true);
-	private InterfaceMetricsService service = new InterfaceMetricsService(true);
+	private InterfaceMetricRepository repository = new InterfaceMetricRepository(RepositoryType.MOCK);
+	private InterfaceMetricsService service = new InterfaceMetricsService(RepositoryType.MOCK);
 	
 	@Test
 	public void clearProcessing() throws Exception{

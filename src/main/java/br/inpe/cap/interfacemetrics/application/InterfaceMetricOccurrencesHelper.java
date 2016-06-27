@@ -7,7 +7,9 @@ import org.apache.commons.lang.StringUtils;
 
 import br.inpe.cap.interfacemetrics.domain.InterfaceMetric;
 import br.inpe.cap.interfacemetrics.domain.OccurrencesCombination;
+import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricPairRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricRepository;
+import br.inpe.cap.interfacemetrics.infrastructure.RepositoryType;
 import br.unifesp.ppgcc.sourcereraqe.infrastructure.AQEApproach;
 import br.unifesp.ppgcc.sourcereraqe.infrastructure.QueryTerm;
 import br.unifesp.ppgcc.sourcereraqe.infrastructure.SourcererQueryBuilder;
@@ -19,16 +21,15 @@ public class InterfaceMetricOccurrencesHelper {
 	private List<InterfaceMetric> occurrences = new ArrayList<InterfaceMetric>();
 
 	private InterfaceMetricRepository repository;
+	private InterfaceMetricPairRepository pairRepository;
+	private RepositoryType repositoryType;
 	
-	public InterfaceMetricOccurrencesHelper(InterfaceMetric interfaceMetric) throws Exception {
-		repository =  new InterfaceMetricRepository();
-		this.interfaceMetric = interfaceMetric;
-		this.aqeApproach = getAQEApproach();
-		interfaceMetric.setExpandedParams(this.aqeApproach.getParamsTerms());
-	}
+	
+	public InterfaceMetricOccurrencesHelper(InterfaceMetric interfaceMetric, RepositoryType repositoryType) throws Exception {
+		repository = new InterfaceMetricRepository(repositoryType);
+		pairRepository = new InterfaceMetricPairRepository(repositoryType);
+		this.repositoryType = repositoryType;
 
-	public InterfaceMetricOccurrencesHelper(InterfaceMetric interfaceMetric, boolean mock) throws Exception {
-		repository =  new InterfaceMetricRepository(mock);
 		this.interfaceMetric = interfaceMetric;
 		this.aqeApproach = getAQEApproach();
 		interfaceMetric.setExpandedParams(this.aqeApproach.getParamsTerms());
@@ -54,13 +55,16 @@ public class InterfaceMetricOccurrencesHelper {
 	}
 	
 	public void updateOccurrences() throws Exception {
-		this.occurrences = repository.findOccurrences(this);
+
+		pairRepository.deletePairs(interfaceMetric);
 		
+		this.occurrences = repository.findOccurrences(this);
 		
 		List<OccurrencesCombination> combinations = OccurrencesCombination.allCombinations();
 		for(OccurrencesCombination combination : combinations){
-			int total = this.getOccurrences(combination).size();
-			interfaceMetric.setOccurrencesTotal(combination, total);
+			List<InterfaceMetric> occurrences = this.getOccurrences(combination);
+			interfaceMetric.setOccurrencesTotal(combination, occurrences.size());
+			pairRepository.insertPairs(interfaceMetric, combination, occurrences);
 		}
 	}
 
@@ -126,7 +130,10 @@ public class InterfaceMetricOccurrencesHelper {
 
 	public String getOccurrencesSQL(String table) throws Exception {
 		String sql = "SELECT * FROM " + table;
-		sql += "\n" + "where project_id <> " + interfaceMetric.getProjectId();
+		
+		String inner = repositoryType == RepositoryType.INNER ? "=" : "<>";
+		
+		sql += "\n" + "where project_id " + inner + interfaceMetric.getProjectId();
 		sql += "\n" + "and total_params = " + interfaceMetric.getTotalParams();
 		
 		sql += "\n" + this.getSimilarReturnSQLClause();

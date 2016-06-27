@@ -1,6 +1,7 @@
 package br.inpe.cap.interfacemetrics.interfaces.daemon;
 
 import br.inpe.cap.interfacemetrics.application.InterfaceMetricsService;
+import br.inpe.cap.interfacemetrics.infrastructure.RepositoryType;
 import br.inpe.cap.interfacemetrics.infrastructure.util.LogUtils;
 
 import com.mysql.jdbc.exceptions.jdbc4.CommunicationsException;
@@ -19,7 +20,7 @@ public class Main {
 		try {
 
 			LogUtils.getLogger().info("Service");
-			InterfaceMetricsService service = new InterfaceMetricsService();
+			InterfaceMetricsService service = new InterfaceMetricsService(RepositoryType.REAL);
 
 			boolean communicationsException = false;
 			do{
