@@ -270,7 +270,7 @@ public class InterfaceMetricRepository {
 
 		if(debugMode){
 			InterfaceMetric i = interfaceMetricSQLHelper.getInterfaceMetric();
-			System.out.println("\n\n-- " + i.getReturnType() + " "+ i.getFqn() + "(" + i.getParams() + ")");
+			System.out.println("\n\n-- id: " + i.getId() + "\n-- " + i.getReturnType() + " "+ i.getFqn() + "(" + i.getParams() + ")");
 			System.out.println(sql);
 			System.out.println("-- Occurrences = " + list.size());
 		}
@@ -295,4 +295,22 @@ public class InterfaceMetricRepository {
 
 		return total;
 	}
+	
+	public int countAllByCombination(OccurrencesCombination combination) throws Exception {
+		Connection conn = getConnection();
+		Statement stmt = conn.createStatement();
+
+		String sql = "SELECT sum(" + combination.getName() + ") as total FROM " + table;
+		ResultSet rs = stmt.executeQuery(sql);
+
+		int total = 0;
+		while (rs.next()) {
+			total = rs.getInt("total");
+		}
+
+		stmt.close();
+		conn.close();
+
+		return total;
+	}	
 }

@@ -112,4 +112,21 @@ public class InterfaceMetricPairRepository {
 		return total;
 	}
 	
+	public int countAllByCombination(OccurrencesCombination combination) throws Exception {
+		Connection conn = getConnection();
+		Statement stmt = conn.createStatement();
+
+		String sql = "SELECT count(*) as total FROM " + table + " WHERE search_type = '" + combination.getName() + "'";
+		ResultSet rs = stmt.executeQuery(sql);
+
+		int total = 0;
+		while (rs.next()) {
+			total = rs.getInt("total");
+		}
+
+		stmt.close();
+		conn.close();
+
+		return total;
+	}
 }

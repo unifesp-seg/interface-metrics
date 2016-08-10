@@ -12,7 +12,7 @@ import br.inpe.cap.interfacemetrics.infrastructure.util.ConfigProperties;
 
 public class SourcererCCRepository {
 
-	private static boolean debugMode = false;
+	private static boolean debugMode = true;
 
 	private Connection getConnection() throws Exception {
 		String url = ConfigProperties.getProperty("jdbc.url");
