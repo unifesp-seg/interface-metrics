@@ -175,7 +175,7 @@ public class SourcererCCService {
 		return null;
 	}
 
-	private void loadHeaders() throws Exception {
+	void loadHeaders() throws Exception {
 		this.headers = new ArrayList<SourcererCCHeader>();
 		
 		BufferedReader reader = new BufferedReader(new FileReader(SourcererCCService.HEADER_FILE_PATH));

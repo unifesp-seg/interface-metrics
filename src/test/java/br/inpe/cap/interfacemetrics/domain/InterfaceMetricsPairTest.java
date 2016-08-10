@@ -42,7 +42,7 @@ public class InterfaceMetricsPairTest {
 	@Test
 	public void countAll() throws Exception {
 		int total = repository.countAll();
-		assertEquals(125, total);
+		assertEquals(121, total);
 	}
 
 	@Test
@@ -50,24 +50,7 @@ public class InterfaceMetricsPairTest {
 		
 		List<InterfaceMetricPair> pairs = repository.getPairs(new InterfaceMetric(10));
 		assertEquals(48, pairs.size());
-		
-//		assertEquals(1 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, false)).intValue());
-//		assertEquals(7 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, true)).intValue());
-//		assertEquals(3 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, true,  false)).intValue());
-//		assertEquals(11, storage.getOccurrencesTotal(new OccurrencesCombination(false, false, true,  true)).intValue());
-//		assertEquals(1 , storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  false, false)).intValue());
-//		assertEquals(7 , storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  false, true)).intValue());
-//		assertEquals(3 , storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  true,  false)).intValue());
-//		assertEquals(12, storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  true,  true)).intValue());
-//		assertEquals(0 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, false, false)).intValue());
-//		assertEquals(0 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, false, true)).intValue());
-//		assertEquals(0 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, true,  false)).intValue());
-//		assertEquals(1 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  false, true,  true)).intValue());
-//		assertEquals(0 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false, false)).intValue());
-//		assertEquals(0 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false, true)).intValue());
-//		assertEquals(0 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  false)).intValue());
-//		assertEquals(2 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  true)).intValue());
-		
+
 		String name = "p0_c0_w0_t0";
 		List<InterfaceMetricPair> pairsByName = this.getPairsByCombination(pairs, name);
 		assertEquals(1, pairsByName.size());

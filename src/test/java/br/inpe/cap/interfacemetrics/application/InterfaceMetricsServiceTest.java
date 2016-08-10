@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import br.inpe.cap.interfacemetrics.domain.InterfaceMetric;
 import br.inpe.cap.interfacemetrics.domain.OccurrencesCombination;
+import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricPairRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.RepositoryType;
 import br.inpe.cap.interfacemetrics.infrastructure.util.ConfigProperties;
@@ -18,6 +19,7 @@ import br.inpe.cap.interfacemetrics.interfaces.daemon.ExecutionType;
 public class InterfaceMetricsServiceTest {
 
 	private InterfaceMetricRepository repository = new InterfaceMetricRepository(RepositoryType.MOCK);
+	private InterfaceMetricPairRepository pairRepository = new InterfaceMetricPairRepository(RepositoryType.MOCK);
 	private InterfaceMetricsService service = new InterfaceMetricsService(RepositoryType.MOCK);
 	
 	@Test
@@ -151,5 +153,15 @@ public class InterfaceMetricsServiceTest {
 		assertEquals(0 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false, true)).intValue());
 		assertEquals(0 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  false)).intValue());
 		assertEquals(2 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  true)).intValue());
+	}
+	
+	@Test
+	public void verifyTotalPairs() throws Exception {
+		
+		for(OccurrencesCombination combination : OccurrencesCombination.allCombinations()){
+			int sumAllTotalOccurrences = repository.countAllByCombination(combination);
+			int totalPairsTable = pairRepository.countAllByCombination(combination);
+			assertEquals(sumAllTotalOccurrences, totalPairsTable);
+		}
 	}
 }

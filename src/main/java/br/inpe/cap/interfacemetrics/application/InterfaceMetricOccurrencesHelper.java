@@ -105,10 +105,10 @@ public class InterfaceMetricOccurrencesHelper {
 			return false;
 		
 		boolean match = true;
-		
 		for(int i = 0; i < aqeApproach.getMethodNameTerms().size(); i++){
 			QueryTerm term = aqeApproach.getMethodNameTerms().get(i);
 			match = term.getExpandedTerms().contains(occurence.getWordsMethod()[i]);
+			if(!match) break; //add line on 09 aug 2016
 		}
 		return match;
 	}

@@ -13,7 +13,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import br.inpe.cap.interfacemetrics.clone.domain.SourcererCCHeader;
-import br.inpe.cap.interfacemetrics.clone.domain.SourcererCCPair;
 import br.inpe.cap.interfacemetrics.clone.infrastructure.SourcererCCRepository;
 
 public class SourcererCCServiceTest {
@@ -22,12 +21,12 @@ public class SourcererCCServiceTest {
 	private SourcererCCRepository repository = new SourcererCCRepository();
 	
 	private List<SourcererCCHeader> headers = new ArrayList<SourcererCCHeader>();
-	private List<SourcererCCPair> pairs10 = new ArrayList<SourcererCCPair>();
 
 	@Before
 	public void listAll() throws Exception {
 		
 		//Headers
+		service.loadHeaders();
 		headers = service.getHeaders();
 		assertEquals(155884, headers.size());
 	}
@@ -78,7 +77,7 @@ public class SourcererCCServiceTest {
 	@Test
 	public void clonePairs10Total() throws Exception {
 		int total = repository.countAllNotProccessed10();
-		assertEquals(660894, total);
+		assertEquals(171046, total);
 	}
 
 	@Test
