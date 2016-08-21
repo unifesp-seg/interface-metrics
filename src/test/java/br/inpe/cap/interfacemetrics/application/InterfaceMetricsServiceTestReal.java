@@ -75,6 +75,56 @@ public class InterfaceMetricsServiceTestReal {
 	}
 	
 	@Test
+	public void classNameMatch_1716777() throws Exception {
+		long idA = 1810953;
+		InterfaceMetric interfaceMetric = repository.findById(idA);
+		service.processMethod(interfaceMetric);
+		InterfaceMetric storage = repository.findById(interfaceMetric.getId());
+		
+		//Ignore Class
+		OccurrencesCombination combination = new OccurrencesCombination(true, true, true, true);
+		List<InterfaceMetricPair> pairs = pairRepository.getPairs(storage, combination);
+		assertEquals(5, pairs.size());
+		assertEquals(idA, pairs.get(0).getInterfaceMetricsA().longValue());
+		assertEquals(1546107, pairs.get(0).getInterfaceMetricsB().longValue());
+		assertEquals(1574538, pairs.get(1).getInterfaceMetricsB().longValue());
+		assertEquals(1574539, pairs.get(2).getInterfaceMetricsB().longValue());
+		assertEquals(1597165, pairs.get(3).getInterfaceMetricsB().longValue());
+		assertEquals(1664164, pairs.get(4).getInterfaceMetricsB().longValue());
+
+		//Consider Class
+		combination = new OccurrencesCombination(true, false, true, true);
+		pairs = pairRepository.getPairs(storage, combination);
+		assertEquals(5, pairs.size());
+		assertEquals(idA, pairs.get(0).getInterfaceMetricsA().longValue());
+		assertEquals(1546107, pairs.get(0).getInterfaceMetricsB().longValue());
+		assertEquals(1574538, pairs.get(1).getInterfaceMetricsB().longValue());
+		assertEquals(1574539, pairs.get(2).getInterfaceMetricsB().longValue());
+		assertEquals(1597165, pairs.get(3).getInterfaceMetricsB().longValue());
+		assertEquals(1664164, pairs.get(4).getInterfaceMetricsB().longValue());
+	}
+	
+	@Test
+	public void classNameMatch_1816587() throws Exception {
+		long idA = 1816587;
+		InterfaceMetric interfaceMetric = repository.findById(idA);
+		service.processMethod(interfaceMetric);
+		InterfaceMetric storage = repository.findById(interfaceMetric.getId());
+		
+		//Ignore Class
+		OccurrencesCombination combination = new OccurrencesCombination(true, true, true, true);
+		List<InterfaceMetricPair> pairs = pairRepository.getPairs(storage, combination);
+		assertEquals(181, pairs.size());
+		assertEquals(idA, pairs.get(0).getInterfaceMetricsA().longValue());
+
+		//Consider Class
+		combination = new OccurrencesCombination(true, false, true, true);
+		pairs = pairRepository.getPairs(storage, combination);
+		assertEquals(181, pairs.size());
+		assertEquals(idA, pairs.get(0).getInterfaceMetricsA().longValue());
+	}
+	
+	@Test
 	public void verifyTotalParams() throws Exception {
 		int sumAllTotalParams = repository.getSumAllTotalParams();
 		int totalParamsTable = paramsRepository.countAll();
@@ -82,7 +132,7 @@ public class InterfaceMetricsServiceTestReal {
 		assertEquals(sumAllTotalParams, totalParamsTable);
 	}
 
-	@Test
+	//@Test
 	public void verifyTotalPairs() throws Exception {
 		
 		for(OccurrencesCombination combination : OccurrencesCombination.allCombinations()){

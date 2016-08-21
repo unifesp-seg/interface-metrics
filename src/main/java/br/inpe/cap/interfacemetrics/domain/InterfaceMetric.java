@@ -106,8 +106,8 @@ public class InterfaceMetric {
 	//bussiness
 	public void processMethod() {
 		totalParams = getParamsNames().length;
-		totalWordsMethod = StringUtils.split(JavaTermExtractor.getFQNTermsAsString(getMethodName()), " ").length;
-		totalWordsClass = StringUtils.split(JavaTermExtractor.getFQNTermsAsString(getClassName()), " ").length;
+		totalWordsMethod = this.getWords(getMethodName()).length;
+		totalWordsClass =  this.getWords(getClassName()).length;
 		onlyPrimitiveTypes = checkOnlyPrimitiveTypes();
 		isStatic = StringUtils.indexOf(modifiers, "STATIC") >= 0;
 		hasTypeSamePackage = checkHasTypeSamePackage();
@@ -172,9 +172,18 @@ public class InterfaceMetric {
 	}
 	
 	public String[] getWordsMethod(){
-		String[] wordsMethod = StringUtils.split(JavaTermExtractor.getFQNTermsAsString(getMethodName()), " ");
-		return wordsMethod;
+		return this.getWords(getMethodName());
 	}
+
+	public String[] getWordsClassName(){
+		return this.getWords(getClassName());
+	}
+
+	private String[] getWords(String strWords){
+		String[] words = StringUtils.split(JavaTermExtractor.getFQNTermsAsString(strWords), " ");
+		return words;
+	}
+	
 	private boolean isPrimitive(String type, boolean includeString){
 		
 		type = StringUtils.replace(type,"[]", ""); 

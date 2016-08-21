@@ -75,10 +75,16 @@ public class InterfaceMetricPairRepository {
 	}
 
 	public List<InterfaceMetricPair> getPairs(InterfaceMetric interfaceMetric) throws Exception {
+		return this.getPairs(interfaceMetric, null);
+	}
+	
+	public List<InterfaceMetricPair> getPairs(InterfaceMetric interfaceMetric, OccurrencesCombination combination) throws Exception {
 		Connection conn = getConnection();
 		Statement stmt = conn.createStatement();
 
 		String sql = "SELECT * FROM " + table + " where interface_metrics_a = " + interfaceMetric.getId();
+		if(combination != null)
+			sql += " AND search_type = '" + combination.getName() + "'";
 		ResultSet rs = stmt.executeQuery(sql);
 
 		List<InterfaceMetricPair> list = new ArrayList<InterfaceMetricPair>();

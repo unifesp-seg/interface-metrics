@@ -131,9 +131,9 @@ public class InterfaceMetricTest {
 		assertEquals("goRecollectiveAppreciate",tests.get(16).getMethodName());
 
 		//17 met.sf.saxon.tinytree.MhitespaceTextImpl.letTenaciousRespect
-		assertEquals("met.sf.saxon.tinytree.MhitespaceTextImpl.letTenaciousRespect",tests.get(17).getFqn());
+		assertEquals("met.sf.saxon.tinytree.MhitespaceTmextImmpl.letTenaciousRespect",tests.get(17).getFqn());
 		assertEquals("met.sf.saxon.tinytree",tests.get(17).getPackage());
-		assertEquals("MhitespaceTextImpl",tests.get(17).getClassName());
+		assertEquals("MhitespaceTmextImmpl",tests.get(17).getClassName());
 		assertEquals("letTenaciousRespect",tests.get(17).getMethodName());
 	}
 

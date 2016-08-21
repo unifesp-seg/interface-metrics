@@ -66,4 +66,6 @@ public class Main {
 		duraction /= 60;
 		return duraction + " minutos.";
 	}
+	
+ toS
 }

@@ -79,7 +79,7 @@ public class InterfaceMetricOccurrencesHelper {
 
 	private boolean match(OccurrencesCombination combination, InterfaceMetric occurence) {
 		boolean matchPackage = this.matchPackage(combination, occurence);
-		boolean matchClassName = this.matchClassName(combination, occurence);
+		boolean matchClassName = this.matchClassName1(combination, occurence);
 		boolean matchMethodName = this.matchMethodName(combination, occurence);
 		boolean matchTypes = this.matchTypes(combination, occurence);
 		
@@ -93,8 +93,23 @@ public class InterfaceMetricOccurrencesHelper {
 			return interfaceMetric.getPackage().equals(occurence.getPackage());
 	}
 
-	private boolean matchClassName(OccurrencesCombination combination, InterfaceMetric occurence) {
-		return combination.isIgnoreClass() ? true : interfaceMetric.getClassName().equals(occurence.getClassName());
+//	private boolean matchClassName(OccurrencesCombination combination, InterfaceMetric occurence) {
+//		return combination.isIgnoreClass() ? true : interfaceMetric.getClassName().equals(occurence.getClassName());
+//	}
+
+	private boolean matchClassName1(OccurrencesCombination combination, InterfaceMetric occurence) {
+		if(combination.isIgnoreClass())
+			return true;
+
+		String[] aWords = interfaceMetric.getWordsClassName();
+		String[] bWords = occurence.getWordsClassName();
+		
+		for(String a : aWords)
+			for(String b : bWords)
+				if(a.equalsIgnoreCase(b))
+					return true;
+		
+		return false;
 	}
 
 	private boolean matchMethodName(OccurrencesCombination combination, InterfaceMetric occurence) {

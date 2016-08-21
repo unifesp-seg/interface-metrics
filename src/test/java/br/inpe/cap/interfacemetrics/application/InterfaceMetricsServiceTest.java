@@ -9,6 +9,7 @@ import java.util.List;
 import org.junit.Test;
 
 import br.inpe.cap.interfacemetrics.domain.InterfaceMetric;
+import br.inpe.cap.interfacemetrics.domain.InterfaceMetricPair;
 import br.inpe.cap.interfacemetrics.domain.OccurrencesCombination;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricPairRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricRepository;
@@ -140,7 +141,7 @@ public class InterfaceMetricsServiceTest {
 		assertEquals(1 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, false)).intValue());
 		assertEquals(7 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, true)).intValue());
 		assertEquals(3 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, true,  false)).intValue());
-		assertEquals(11, storage.getOccurrencesTotal(new OccurrencesCombination(false, false, true,  true)).intValue());
+		assertEquals(12, storage.getOccurrencesTotal(new OccurrencesCombination(false, false, true,  true)).intValue());
 		assertEquals(1 , storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  false, false)).intValue());
 		assertEquals(7 , storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  false, true)).intValue());
 		assertEquals(3 , storage.getOccurrencesTotal(new OccurrencesCombination(false, true,  true,  false)).intValue());
@@ -153,6 +154,29 @@ public class InterfaceMetricsServiceTest {
 		assertEquals(0 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  false, true)).intValue());
 		assertEquals(0 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  false)).intValue());
 		assertEquals(2 , storage.getOccurrencesTotal(new OccurrencesCombination(true,  true,  true,  true)).intValue());
+	}
+
+	@Test
+	public void classNameMatch_10() throws Exception {
+		long idA = 10;
+		InterfaceMetric interfaceMetric = repository.findById(idA);
+		service.processMethod(interfaceMetric);
+		InterfaceMetric storage = repository.findById(interfaceMetric.getId());
+		
+		//Ignore Class
+		OccurrencesCombination combination = new OccurrencesCombination(true, true, true, true);
+		List<InterfaceMetricPair> pairs = pairRepository.getPairs(storage, combination);
+		assertEquals(2, pairs.size());
+		assertEquals(idA, pairs.get(0).getInterfaceMetricsA().longValue());
+		assertEquals(13, pairs.get(0).getInterfaceMetricsB().longValue());
+		assertEquals(17, pairs.get(1).getInterfaceMetricsB().longValue());
+
+		//Consider Class
+		combination = new OccurrencesCombination(true, false, true, true);
+		pairs = pairRepository.getPairs(storage, combination);
+		assertEquals(1, pairs.size());
+		assertEquals(idA, pairs.get(0).getInterfaceMetricsA().longValue());
+		assertEquals(13, pairs.get(0).getInterfaceMetricsB().longValue());
 	}
 	
 	@Test

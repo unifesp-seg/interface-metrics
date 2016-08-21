@@ -42,14 +42,14 @@ public class InterfaceMetricsPairTest {
 	@Test
 	public void countAll() throws Exception {
 		int total = repository.countAll();
-		assertEquals(121, total);
+		assertEquals(124, total);
 	}
 
 	@Test
 	public void pairsId10() throws Exception {
 		
 		List<InterfaceMetricPair> pairs = repository.getPairs(new InterfaceMetric(10));
-		assertEquals(48, pairs.size());
+		assertEquals(49, pairs.size());
 
 		String name = "p0_c0_w0_t0";
 		List<InterfaceMetricPair> pairsByName = this.getPairsByCombination(pairs, name);
@@ -76,7 +76,7 @@ public class InterfaceMetricsPairTest {
 
 		name = "p0_c0_w1_t1";
 		pairsByName = this.getPairsByCombination(pairs, name);
-		assertEquals(11, pairsByName.size());
+		assertEquals(12, pairsByName.size());
 		assertTrue(pairsByName.contains(new InterfaceMetricPair(10L, 18L, name)));
 		assertTrue(pairsByName.contains(new InterfaceMetricPair(10L, 11L, name)));
 		assertTrue(pairsByName.contains(new InterfaceMetricPair(10L, 25L, name)));
