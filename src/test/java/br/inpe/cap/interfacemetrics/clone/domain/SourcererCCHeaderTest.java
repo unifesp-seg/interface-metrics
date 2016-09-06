@@ -36,7 +36,7 @@ public class SourcererCCHeaderTest {
 		assertEquals("boolean", cc.getMethodParams().get(3));
 	}
 	
-	@Test
+	//@Test
 	public void headerId0() throws Exception {
 		String line = "0,/home/saini/otavio/sf100-src/0/96/content/healJavaSrc/org/heal/module/oai/heal/OAIProviderServlet.java,95,232";
 		SourcererCCHeader ccHeader = new SourcererCCHeader(line);
@@ -58,7 +58,7 @@ public class SourcererCCHeaderTest {
 		assertEquals(6042353, ccHeader.getEntityId().longValue());
 	}
 
-	@Test
+	//@Test
 	public void headerId124555() throws Exception{
 		String line = "124555,/home/saini/otavio/sf100-src/0/75/content/platforms/liferay-ext/versions/deprecated/4.3.0_clean/portal-impl/src/com/liferay/portlet/wiki/service/impl/WikiPageLocalServiceImpl.java,173,210";
 		SourcererCCHeader ccHeader = new SourcererCCHeader(line);
@@ -115,7 +115,7 @@ public class SourcererCCHeaderTest {
 		assertEquals(-1, cc.getEntityId().longValue());
 	}
 	
-	@Test
+	//@Test
 	public void headerId3250() throws Exception{
 		String line = "3250,/home/saini/otavio/sf100-src/0/96/content/healJavaSrc/org/heal/module/oai/provider/oai_dc/OAI_DCHandler.java,38,40";
 		SourcererCCHeader cc = new SourcererCCHeader(line);
@@ -130,7 +130,7 @@ public class SourcererCCHeaderTest {
 		assertEquals(6042831, cc.getEntityId().longValue());
 	}
 	
-	@Test
+	//@Test
 	public void headerId7316() throws Exception{
 		String line = "7316,/home/saini/otavio/sf100-src/0/12/content/src/dsachat/share/hero/Talent.java,42,44";
 		SourcererCCHeader cc = new SourcererCCHeader(line);
@@ -146,7 +146,7 @@ public class SourcererCCHeaderTest {
 		assertEquals(5833508, cc.getEntityId().longValue());
 	}
 
-	@Test
+	//@Test
 	public void headerId57219() throws Exception{
 		String line = "57219,/home/saini/otavio/sf100-src/0/55/content/src/main/java/net/sf/lavalamp/site/AbstractBuildSite.java,18,20";
 		SourcererCCHeader cc = new SourcererCCHeader(line);

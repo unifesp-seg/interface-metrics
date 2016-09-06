@@ -1,4 +1,4 @@
-package br.inpe.cap.interfacemetrics.clone.interfaces.daemon;
+package br.inpe.cap.interfacemetrics.clone.daemon;
 
 import br.inpe.cap.interfacemetrics.clone.application.SourcererCCService;
 import br.inpe.cap.interfacemetrics.infrastructure.util.LogUtils;

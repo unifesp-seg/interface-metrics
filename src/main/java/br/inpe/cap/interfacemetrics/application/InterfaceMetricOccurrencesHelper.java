@@ -10,6 +10,7 @@ import br.inpe.cap.interfacemetrics.domain.OccurrencesCombination;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricPairRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.RepositoryType;
+import br.inpe.cap.interfacemetrics.infrastructure.util.ConfigProperties;
 import br.unifesp.ppgcc.sourcereraqe.infrastructure.AQEApproach;
 import br.unifesp.ppgcc.sourcereraqe.infrastructure.QueryTerm;
 import br.unifesp.ppgcc.sourcereraqe.infrastructure.SourcererQueryBuilder;
@@ -40,7 +41,8 @@ public class InterfaceMetricOccurrencesHelper {
 		boolean relaxParams = false;
 		boolean contextRelevants = true;
 		boolean filterMethodNameTermsByParameter = false;
-		String relatedWordsServiceUrl = "http://localhost:8080/related-words-service";
+		String relatedWordsServiceUrl = ConfigProperties.getProperty("related.words.service.url");
+
 
 		String expanders = "WordNet , Type";
 		

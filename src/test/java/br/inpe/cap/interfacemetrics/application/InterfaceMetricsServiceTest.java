@@ -2,6 +2,7 @@ package br.inpe.cap.interfacemetrics.application;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,7 @@ import br.inpe.cap.interfacemetrics.domain.InterfaceMetric;
 import br.inpe.cap.interfacemetrics.domain.InterfaceMetricPair;
 import br.inpe.cap.interfacemetrics.domain.OccurrencesCombination;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricPairRepository;
+import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricParamsRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.RepositoryType;
 import br.inpe.cap.interfacemetrics.infrastructure.util.ConfigProperties;
@@ -20,17 +22,71 @@ import br.inpe.cap.interfacemetrics.interfaces.daemon.ExecutionType;
 public class InterfaceMetricsServiceTest {
 
 	private InterfaceMetricRepository repository = new InterfaceMetricRepository(RepositoryType.MOCK);
+	private InterfaceMetricParamsRepository paramsRepository = new InterfaceMetricParamsRepository(RepositoryType.MOCK);
 	private InterfaceMetricPairRepository pairRepository = new InterfaceMetricPairRepository(RepositoryType.MOCK);
 	private InterfaceMetricsService service = new InterfaceMetricsService(RepositoryType.MOCK);
 	
 	@Test
-	public void clearProcessing() throws Exception{
+	public void paginationNotProccessedMethods() throws Exception {
+
+		//Clear
 		repository.clearProcessing();
+		int total = repository.countAllNotProccessed();
+		assertEquals(47, total);
+
+		//Pagination
+		ConfigProperties.setProperty("interface-metrics.processed.max-result", "10");
+		List<InterfaceMetric> tests = new ArrayList<InterfaceMetric>();
+
+		tests = repository.findAllNotProcessed();
+		assertEquals(10, tests.size());
+		for (InterfaceMetric interfaceMetric : tests) {
+			interfaceMetric.processMethod();
+			repository.updateProcessedMethod(interfaceMetric);
+		}
+
+		tests = repository.findAllNotProcessed();
+		assertEquals(10, tests.size());
+		for (InterfaceMetric interfaceMetric : tests) {
+			interfaceMetric.processMethod();
+			repository.updateProcessedMethod(interfaceMetric);
+		}
+
+		tests = repository.findAllNotProcessed();
+		assertEquals(10, tests.size());
+		for (InterfaceMetric interfaceMetric : tests) {
+			interfaceMetric.processMethod();
+			repository.updateProcessedMethod(interfaceMetric);
+		}
+		
+		tests = repository.findAllNotProcessed();
+		assertEquals(10, tests.size());
+		for (InterfaceMetric interfaceMetric : tests) {
+			interfaceMetric.processMethod();
+			repository.updateProcessedMethod(interfaceMetric);
+		}
+		
+		tests = repository.findAllNotProcessed();
+		assertEquals(7, tests.size());
+		for (InterfaceMetric interfaceMetric : tests) {
+			interfaceMetric.processMethod();
+			repository.updateProcessedMethod(interfaceMetric);
+		}
+		
+		tests = repository.findAllNotProcessed();
+		assertEquals(0, tests.size());
+	}
+
+	@Test
+	public void proccessedMethodsExecute() throws Exception {
+		//Clean
+		service.execute(false, ExecutionType.INTERFACE_METRICS);
 
 		List<InterfaceMetric> tests = repository.findAllOrderedById();
-		assertEquals(26 , tests.size());
-		
+		assertEquals(47 , tests.size());
 		for(InterfaceMetric interfaceMetric : tests){
+			if(!"CRAWLED".equals(interfaceMetric.getProjectType()))
+				continue;
 			assertFalse(interfaceMetric.isProcessed());
 			assertEquals(0 ,interfaceMetric.getTotalParams());
 			assertEquals(0 ,interfaceMetric.getTotalWordsMethod());
@@ -39,55 +95,15 @@ public class InterfaceMetricsServiceTest {
 			assertFalse(interfaceMetric.isStatic());
 			assertFalse(interfaceMetric.isHasTypeSamePackage());
 		}
-	}
 
-	@Test
-	public void countAllNotProccessedMethods() throws Exception {
-		repository.clearProcessing();
-		int total = repository.countAllNotProccessed();
-		assertEquals(26, total);
-	}
-
-	@Test
-	public void paginationNotProccessedMethods() throws Exception {
-
-		repository.clearProcessing();
-
-		ConfigProperties.setProperty("interface-metrics.processed.max-result", "4");
-		List<InterfaceMetric> tests = new ArrayList<InterfaceMetric>();
-
-		tests = repository.findAllNotProcessed();
-		assertEquals(4, tests.size());
-		for (InterfaceMetric interfaceMetric : tests) {
-			interfaceMetric.processMethod();
-			repository.updateProcessedMethod(interfaceMetric);
-		}
-
-		tests = repository.findAllNotProcessed();
-		assertEquals(4, tests.size());
-		for (InterfaceMetric interfaceMetric : tests) {
-			interfaceMetric.processMethod();
-			repository.updateProcessedMethod(interfaceMetric);
-		}
-
-		tests = repository.findAllNotProcessed();
-		assertEquals(4, tests.size());
-		for (InterfaceMetric interfaceMetric : tests) {
-			interfaceMetric.processMethod();
-			repository.updateProcessedMethod(interfaceMetric);
-		}
-	}
-
-	@Test
-	public void proccessedMethodsExecute() throws Exception {
-		repository.clearProcessing();
-		List<InterfaceMetric> tests = repository.findAllOrderedById();
-		assertEquals(26, tests.size());
-
+		//Process
 		service.execute(true, ExecutionType.INTERFACE_METRICS);
 
 		tests = repository.findAllOrderedById();
-		assertEquals(26, tests.size());
+		assertEquals(47 , tests.size());
+		for(InterfaceMetric interfaceMetric : tests){
+			assertTrue(interfaceMetric.isProcessed());
+		}
 
 		// Fqn
 		assertEquals(tests.get(0).getFqn(), "com.sun.nio.zipfs.JarFileSystemProvider.getPath");
@@ -128,7 +144,30 @@ public class InterfaceMetricsServiceTest {
 		assertEquals(tests.get(9).getTotalParams(), 2);
 		assertEquals(tests.get(10).getTotalParams(), 2);
 	}
-	
+
+	@Test
+	public void proccessedParamsExecute() throws Exception {
+		//Clean
+		service.execute(false, ExecutionType.PARAMS);
+		assertEquals(0, paramsRepository.countAll());
+
+		List<InterfaceMetric> tests = repository.findAllOrderedById();
+		assertEquals(47 , tests.size());
+		for(InterfaceMetric interfaceMetric : tests){
+			assertFalse(interfaceMetric.isProcessedParams());
+		}
+		
+		//Process
+		service.execute(true, ExecutionType.PARAMS);
+		assertEquals(117, paramsRepository.countAll());
+
+		tests = repository.findAllOrderedById();
+		assertEquals(47 , tests.size());
+		for(InterfaceMetric interfaceMetric : tests){
+			assertTrue(interfaceMetric.isProcessedParams());
+		}
+	}
+
 	@Test
 	public void processMethodId10() throws Exception {
 		service.execute(true, ExecutionType.INTERFACE_METRICS);
@@ -179,6 +218,14 @@ public class InterfaceMetricsServiceTest {
 		assertEquals(13, pairs.get(0).getInterfaceMetricsB().longValue());
 	}
 	
+	@Test
+	public void verifyTotalParams() throws Exception {
+		int sumAllTotalParams = repository.getSumAllTotalParams();
+		int totalParamsTable = paramsRepository.countAll();
+		
+		assertEquals(sumAllTotalParams, totalParamsTable);
+	}
+
 	@Test
 	public void verifyTotalPairs() throws Exception {
 		

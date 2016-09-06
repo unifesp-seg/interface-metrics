@@ -74,7 +74,7 @@ public class SourcererCCServiceTest {
 		assertEquals(660894, total);
 	}
 
-	@Test
+	//@Test
 	public void clonePairs10Total() throws Exception {
 		int total = repository.countAllNotProccessed10();
 		assertEquals(171046, total);

@@ -1,28 +1,17 @@
 package br.inpe.cap.interfacemetrics.clone.infrastructure;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
 import br.inpe.cap.interfacemetrics.clone.domain.SourcererCCHeader;
 import br.inpe.cap.interfacemetrics.clone.domain.SourcererCCPair;
-import br.inpe.cap.interfacemetrics.infrastructure.util.ConfigProperties;
+import br.inpe.cap.interfacemetrics.infrastructure.BaseRepository;
 
-public class SourcererCCRepository {
+public class SourcererCCRepository extends BaseRepository {
 
 	private static boolean debugMode = true;
-
-	private Connection getConnection() throws Exception {
-		String url = ConfigProperties.getProperty("jdbc.url");
-		String user = ConfigProperties.getProperty("jdbc.user");
-		String pass = ConfigProperties.getProperty("jdbc.pass");
-
-		Connection conn = DriverManager.getConnection(url, user, pass);
-
-		return conn;
-	}
 
 	public Long getEntityId(SourcererCCHeader ccHeader) throws Exception {
 		Connection conn = getConnection();
