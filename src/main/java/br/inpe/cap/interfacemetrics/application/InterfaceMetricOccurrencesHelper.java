@@ -46,12 +46,13 @@ public class InterfaceMetricOccurrencesHelper {
 
 		String expanders = "WordNet , Type";
 		
+		String className = interfaceMetric.getClassName();
 		String methodName = interfaceMetric.getMethodName();
 		String returnType = interfaceMetric.getReturnType();
 		String params = interfaceMetric.getParams();
 		
 		AQEApproach aqeApproach = new AQEApproach(relatedWordsServiceUrl, expanders, relaxReturn, relaxParams, contextRelevants, filterMethodNameTermsByParameter);
-		aqeApproach.loadMethodInterface(methodName, returnType, params);
+		aqeApproach.loadMethodInterface(className, methodName, returnType, params);
 
 		return aqeApproach;
 	}
@@ -103,7 +104,11 @@ public class InterfaceMetricOccurrencesHelper {
 		if(combination.isIgnoreClass())
 			return true;
 
-		String[] aWords = interfaceMetric.getWordsClassName();
+		List<String> aWords = new ArrayList<String>();
+		for(QueryTerm term : aqeApproach.getClassNameTerms()){
+			aWords.addAll(term.getExpandedTerms());
+		}		
+
 		String[] bWords = occurence.getWordsClassName();
 		
 		for(String a : aWords)
