@@ -11,7 +11,7 @@ import br.inpe.cap.interfacemetrics.infrastructure.BaseRepository;
 
 public class SourcererCCRepository extends BaseRepository {
 
-	private static boolean debugMode = true;
+	private static boolean debugMode = false;
 
 	public Long getEntityId(SourcererCCHeader ccHeader) throws Exception {
 		Connection conn = getConnection();

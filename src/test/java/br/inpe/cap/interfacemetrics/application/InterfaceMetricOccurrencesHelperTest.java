@@ -37,7 +37,9 @@ public class InterfaceMetricOccurrencesHelperTest {
 	}
 	
 	@Test
-	public void returnMethodParamsValues(){
+	public void interfaceElements(){
+		assertEquals("net.sf.saxon.tinytree", interfaceMetric.getPackage());
+		assertEquals("WhitespaceTextImpl", interfaceMetric.getClassName());
 		assertEquals("long", interfaceMetric.getReturnType());
 		assertEquals("getLongValue", interfaceMetric.getMethodName());
 		assertEquals("net.sf.saxon.tinytree.TinyTree,int", interfaceMetric.getParams());
@@ -46,6 +48,38 @@ public class InterfaceMetricOccurrencesHelperTest {
 		assertEquals("int", interfaceMetric.getParamsNames()[1]);
 	}
 
+	@Test
+	public void classNameTerms() throws Exception {
+		//http://localhost:8080/related-words-service/GetRelated?word=WhitespaceTextImpl
+		
+		//Whitespace: 0 []
+		//Text: 6 [text, textualMatter, textbook, textEdition, schoolbook, schoolText]
+		//Impl: 0 []
+		
+		List<QueryTerm> terms = helper.getAqeApproach().getClassNameTerms();
+		assertEquals(3, terms.size());
+		assertEquals("whitespace", terms.get(0).getExpandedTerms().get(0));
+		assertEquals("text", terms.get(1).getExpandedTerms().get(0));
+		assertEquals("impl", terms.get(2).getExpandedTerms().get(0));
+
+		//Whitespace
+		assertEquals(1, terms.get(0).getExpandedTerms().size());
+		assertEquals("whitespace", terms.get(0).getExpandedTerms().get(0));
+		
+		//Text
+		assertEquals(6, terms.get(1).getExpandedTerms().size());
+		assertEquals("text", terms.get(1).getExpandedTerms().get(0));
+		assertEquals("textualMatter", terms.get(1).getExpandedTerms().get(1));
+		assertEquals("textbook", terms.get(1).getExpandedTerms().get(2));
+		assertEquals("textEdition", terms.get(1).getExpandedTerms().get(3));
+		assertEquals("schoolbook", terms.get(1).getExpandedTerms().get(4));
+		assertEquals("schoolText", terms.get(1).getExpandedTerms().get(5));
+
+		//Impl
+		assertEquals(1, terms.get(2).getExpandedTerms().size());
+		assertEquals("impl", terms.get(2).getExpandedTerms().get(0));
+	}
+	
 	@Test
 	public void returnTerms() throws Exception {
 		//long, double, float, long, int, Integer, short, byte

@@ -35,6 +35,7 @@ public class InterfaceMetricsServiceTest {
 		assertEquals(47, total);
 
 		//Pagination
+		int maxResultConfigFile = new Integer(ConfigProperties.getProperty("interface-metrics.processed.max-result"));
 		ConfigProperties.setProperty("interface-metrics.processed.max-result", "10");
 		List<InterfaceMetric> tests = new ArrayList<InterfaceMetric>();
 
@@ -75,6 +76,8 @@ public class InterfaceMetricsServiceTest {
 		
 		tests = repository.findAllNotProcessed();
 		assertEquals(0, tests.size());
+		
+		ConfigProperties.setProperty("interface-metrics.processed.max-result", maxResultConfigFile+"");
 	}
 
 	@Test
@@ -229,10 +232,13 @@ public class InterfaceMetricsServiceTest {
 	@Test
 	public void verifyTotalPairs() throws Exception {
 		
+		int incrementPairs = 0;
 		for(OccurrencesCombination combination : OccurrencesCombination.allCombinations()){
 			int sumAllTotalOccurrences = repository.countAllByCombination(combination);
 			int totalPairsTable = pairRepository.countAllByCombination(combination);
 			assertEquals(sumAllTotalOccurrences, totalPairsTable);
+			incrementPairs += totalPairsTable;
 		}
+		assertEquals(pairRepository.countAll(), incrementPairs);
 	}
 }

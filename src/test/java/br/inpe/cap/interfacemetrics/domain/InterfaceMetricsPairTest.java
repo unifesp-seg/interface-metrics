@@ -38,13 +38,6 @@ public class InterfaceMetricsPairTest {
 		assertEquals("p1_c1_w1_t1", combinations.get(15).getName());
 	}
 		
-	
-	@Test
-	public void countAll() throws Exception {
-		int total = repository.countAll();
-		assertEquals(124, total);
-	}
-
 	@Test
 	public void pairsId10() throws Exception {
 		
