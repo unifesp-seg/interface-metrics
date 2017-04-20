@@ -5,10 +5,11 @@ import java.util.List;
 
 public class OccurrencesCombination {
 
-	private boolean differentPackage;
-	private boolean ignoreClass;
-	private boolean expandMethodName;
-	private boolean expandTypes;
+	//Variações usadas no Método: InterfaceMetricOccurrencesHelper.match(...)
+	private boolean differentPackage; // True: Ignora os packages | False: Mesmos packages
+	private boolean ignoreClass;      // True: Ignora as Classes | False: Considera com Expansão Wordnet 
+	private boolean expandMethodName; // True: Considera com Expansão Wordnet | False: Mesmos nomes de Métodos
+	private boolean expandTypes;      // True: Considera com Expansão de Tipos para o Retorno e Parâmetros | False: Mesmos Retorno e Parâmetros
 
 	public OccurrencesCombination(boolean differentPackage, boolean ignoreClass, boolean expandMethodName, boolean expandTypes) {
 		this.differentPackage = differentPackage;

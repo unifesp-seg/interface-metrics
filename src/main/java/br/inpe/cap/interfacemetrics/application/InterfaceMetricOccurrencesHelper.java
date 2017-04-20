@@ -1,3 +1,4 @@
+
 package br.inpe.cap.interfacemetrics.application;
 
 import java.util.ArrayList;
@@ -100,6 +101,7 @@ public class InterfaceMetricOccurrencesHelper {
 //		return combination.isIgnoreClass() ? true : interfaceMetric.getClassName().equals(occurence.getClassName());
 //	}
 
+	//Ignora o nome da Classe, ou Considera usando a expansão Wordnet
 	private boolean matchClassName1(OccurrencesCombination combination, InterfaceMetric occurence) {
 		if(combination.isIgnoreClass())
 			return true;
@@ -119,6 +121,7 @@ public class InterfaceMetricOccurrencesHelper {
 		return false;
 	}
 
+	//Considera exatamente o mesmo nome do método, ou Considera usando a expansão Wordnet
 	private boolean matchMethodName(OccurrencesCombination combination, InterfaceMetric occurence) {
 		if(!combination.isExpandMethodName())
 			return interfaceMetric.getMethodName().equals(occurence.getMethodName());
@@ -135,6 +138,7 @@ public class InterfaceMetricOccurrencesHelper {
 		return match;
 	}
 
+	//Considera exatamente os mesmos retorno e parâmetros, ou Considera usando a expansão de Tipos
 	private boolean matchTypes(OccurrencesCombination combination, InterfaceMetric occurence) {
 		boolean matchReturn = false;
 		boolean matchParams = false;
