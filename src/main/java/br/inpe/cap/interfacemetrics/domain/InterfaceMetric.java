@@ -218,7 +218,7 @@ public class InterfaceMetric {
 	public Integer getOccurrencesTotal(OccurrencesCombination combination) {
 		boolean differentPackage = combination.isDifferentPackage();
 		boolean ignoreClass = combination.isIgnoreClass();
-		boolean expandMethodName = combination.isExpandMethodName();
+		boolean expandMethodName = combination.isIgnoreMethodName();
 		boolean expandTypes = combination.isExpandTypes();
 
 		if (!differentPackage && !ignoreClass && !expandMethodName && !expandTypes) return p0_c0_w0_t0;
@@ -244,7 +244,7 @@ public class InterfaceMetric {
 	public void setOccurrencesTotal(OccurrencesCombination combination, int total) {
 		boolean differentPackage = combination.isDifferentPackage();
 		boolean ignoreClass = combination.isIgnoreClass();
-		boolean expandMethodName = combination.isExpandMethodName();
+		boolean expandMethodName = combination.isIgnoreMethodName();
 		boolean expandTypes = combination.isExpandTypes();
 		
 		     if (!differentPackage && !ignoreClass && !expandMethodName && !expandTypes) p0_c0_w0_t0 = total;

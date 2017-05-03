@@ -123,8 +123,10 @@ public class InterfaceMetricOccurrencesHelper {
 
 	//Considera exatamente o mesmo nome do método, ou Considera usando a expansão Wordnet
 	private boolean matchMethodName(OccurrencesCombination combination, InterfaceMetric occurence) {
-		if(!combination.isExpandMethodName())
-			return interfaceMetric.getMethodName().equals(occurence.getMethodName());
+		//if(!combination.isExpandMethodName()) // ## sf110_semantic_v1.xlsx
+			//return interfaceMetric.getMethodName().equals(occurence.getMethodName()); // ## sf110_semantic_v1.xlsx
+		if(combination.isIgnoreMethodName())
+			return true; // ## sf110_semantic_v2.xlsx 
 
 		if (aqeApproach.getMethodNameTerms().size() != occurence.getTotalWordsMethod())
 			return false;

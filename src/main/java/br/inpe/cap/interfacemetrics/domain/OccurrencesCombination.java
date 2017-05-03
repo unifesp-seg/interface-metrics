@@ -8,13 +8,14 @@ public class OccurrencesCombination {
 	//Variações usadas no Método: InterfaceMetricOccurrencesHelper.match(...)
 	private boolean differentPackage; // True: Ignora os packages | False: Mesmos packages
 	private boolean ignoreClass;      // True: Ignora as Classes | False: Considera com Expansão Wordnet 
-	private boolean expandMethodName; // True: Considera com Expansão Wordnet | False: Mesmos nomes de Métodos
+	//private boolean expandMethodName; // True: Considera com Expansão Wordnet | False: Mesmos nomes de Métodos ## sf110_semantic_v1.xlsx
+	private boolean ignoreMethodName; // True: Ignora os nomes dos Métodos | False: Considera com Expansão Wordnet ## sf110_semantic_v2.xlsx
 	private boolean expandTypes;      // True: Considera com Expansão de Tipos para o Retorno e Parâmetros | False: Mesmos Retorno e Parâmetros
 
-	public OccurrencesCombination(boolean differentPackage, boolean ignoreClass, boolean expandMethodName, boolean expandTypes) {
+	public OccurrencesCombination(boolean differentPackage, boolean ignoreClass, boolean ignoreMethodName, boolean expandTypes) {
 		this.differentPackage = differentPackage;
 		this.ignoreClass = ignoreClass;
-		this.expandMethodName = expandMethodName;
+		this.ignoreMethodName = ignoreMethodName;
 		this.expandTypes = expandTypes;	
 	}
 
@@ -44,7 +45,7 @@ public class OccurrencesCombination {
 	public String getName(){
 		String p = isDifferentPackage() ? "1" : "0";
 		String c = isIgnoreClass() ? "1" : "0";
-		String w = isExpandMethodName() ? "1" : "0";
+		String w = isIgnoreMethodName() ? "1" : "0";
 		String t = isExpandTypes() ? "1" : "0";
 
 		return "p"+p+"_c"+c+"_w"+w+"_t"+t;
@@ -53,7 +54,7 @@ public class OccurrencesCombination {
 	public void printCombination(){
 		String p = isDifferentPackage() ? "DifferentPackage | " : "";
 		String c = isIgnoreClass() ? "IgnoreClass | " : "";
-		String w = " W: " + isExpandMethodName();
+		String w = " W: " + isIgnoreMethodName();
 		String t = " T: " + isExpandTypes();
 
 		System.out.println(p + c + w + t);
@@ -67,8 +68,8 @@ public class OccurrencesCombination {
 		return ignoreClass;
 	}
 
-	public boolean isExpandMethodName() {
-		return expandMethodName;
+	public boolean isIgnoreMethodName() {
+		return ignoreMethodName;
 	}
 
 	public boolean isExpandTypes() {

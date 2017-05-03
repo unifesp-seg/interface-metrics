@@ -1,0 +1,104 @@
+Ter, 02/05/2017 09:53:34 - 
+Ter, 02/05/2017 09:53:34 - Aplicativo iniciado
+Ter, 02/05/2017 09:53:34 - 
+Ter, 02/05/2017 09:53:34 - Service
+Ter, 02/05/2017 09:53:34 - com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'sf110-semantic-v2'
+Ter, 02/05/2017 09:53:34 - 
+Ter, 02/05/2017 09:53:34 - Aplicativo finalizado. Tempo de execucao: 0 segundos.
+Ter, 02/05/2017 09:53:34 - 
+Ter, 02/05/2017 09:54:17 - 
+Ter, 02/05/2017 09:54:17 - Aplicativo iniciado
+Ter, 02/05/2017 09:54:17 - 
+Ter, 02/05/2017 09:54:17 - Service
+Ter, 02/05/2017 09:54:18 - 
+Ter, 02/05/2017 09:54:18 - Aplicativo finalizado. Tempo de execucao: 0 segundos.
+Ter, 02/05/2017 09:54:18 - 
+Ter, 02/05/2017 10:14:24 - 
+Ter, 02/05/2017 10:14:24 - Aplicativo iniciado
+Ter, 02/05/2017 10:14:24 - 
+Ter, 02/05/2017 10:14:24 - Service
+Ter, 02/05/2017 10:14:26 - java.net.ConnectException: Connection refused: connect
+Ter, 02/05/2017 10:14:26 - 
+Ter, 02/05/2017 10:14:26 - Aplicativo finalizado. Tempo de execucao: 1 segundos.
+Ter, 02/05/2017 10:14:26 - 
+Ter, 02/05/2017 10:16:30 - 
+Ter, 02/05/2017 10:16:30 - Aplicativo iniciado
+Ter, 02/05/2017 10:16:30 - 
+Ter, 02/05/2017 10:16:30 - Service
+Ter, 02/05/2017 10:16:32 - java.net.ConnectException: Connection refused: connect
+Ter, 02/05/2017 10:16:32 - 
+Ter, 02/05/2017 10:16:32 - Aplicativo finalizado. Tempo de execucao: 1 segundos.
+Ter, 02/05/2017 10:16:32 - 
+Ter, 02/05/2017 14:13:41 - 
+Ter, 02/05/2017 14:13:41 - Aplicativo iniciado
+Ter, 02/05/2017 14:13:41 - 
+Ter, 02/05/2017 14:13:41 - Service
+Ter, 02/05/2017 14:13:42 - java.net.ConnectException: Connection refused: connect
+Ter, 02/05/2017 14:13:42 - 
+Ter, 02/05/2017 14:13:42 - Aplicativo finalizado. Tempo de execucao: 1 segundos.
+Ter, 02/05/2017 14:13:42 - 
+Ter, 02/05/2017 14:14:38 - 
+Ter, 02/05/2017 14:14:38 - Aplicativo iniciado
+Ter, 02/05/2017 14:14:38 - 
+Ter, 02/05/2017 14:14:38 - Service
+Ter, 02/05/2017 14:14:40 - java.net.ConnectException: Connection refused: connect
+Ter, 02/05/2017 14:14:40 - 
+Ter, 02/05/2017 14:14:40 - Aplicativo finalizado. Tempo de execucao: 1 segundos.
+Ter, 02/05/2017 14:14:40 - 
+Ter, 02/05/2017 14:15:03 - 
+Ter, 02/05/2017 14:15:03 - Aplicativo iniciado
+Ter, 02/05/2017 14:15:03 - 
+Ter, 02/05/2017 14:15:03 - Service
+Ter, 02/05/2017 14:15:05 - java.net.ConnectException: Connection refused: connect
+Ter, 02/05/2017 14:15:05 - 
+Ter, 02/05/2017 14:15:05 - Aplicativo finalizado. Tempo de execucao: 1 segundos.
+Ter, 02/05/2017 14:15:05 - 
+Ter, 02/05/2017 14:18:19 - 
+Ter, 02/05/2017 14:18:19 - Aplicativo iniciado
+Ter, 02/05/2017 14:18:19 - 
+Ter, 02/05/2017 14:18:19 - Service
+Ter, 02/05/2017 14:30:43 - 
+Ter, 02/05/2017 14:30:43 - Aplicativo finalizado. Tempo de execucao: 12 minutos.
+Ter, 02/05/2017 14:30:43 - 
+Ter, 02/05/2017 14:32:44 - 
+Ter, 02/05/2017 14:32:44 - Aplicativo iniciado
+Ter, 02/05/2017 14:32:44 - 
+Ter, 02/05/2017 14:32:44 - Service
+Ter, 02/05/2017 14:34:21 - 
+Ter, 02/05/2017 14:34:21 - Aplicativo finalizado. Tempo de execucao: 1 minutos.
+Ter, 02/05/2017 14:34:21 - 
+Ter, 02/05/2017 14:34:32 - 
+Ter, 02/05/2017 14:34:32 - Aplicativo iniciado
+Ter, 02/05/2017 14:34:32 - 
+Ter, 02/05/2017 14:34:32 - Service
+Ter, 02/05/2017 14:34:32 - 
+Ter, 02/05/2017 14:34:32 - Aplicativo finalizado. Tempo de execucao: 0 segundos.
+Ter, 02/05/2017 14:34:32 - 
+Ter, 02/05/2017 18:27:43 - 
+Ter, 02/05/2017 18:27:43 - Aplicativo iniciado
+Ter, 02/05/2017 18:27:43 - 
+Ter, 02/05/2017 18:27:43 - Service
+Ter, 02/05/2017 18:27:44 - 
+Ter, 02/05/2017 18:27:44 - Aplicativo finalizado. Tempo de execucao: 1 segundos.
+Ter, 02/05/2017 18:27:44 - 
+Ter, 02/05/2017 18:27:52 - 
+Ter, 02/05/2017 18:27:52 - Aplicativo iniciado
+Ter, 02/05/2017 18:27:52 - 
+Ter, 02/05/2017 18:27:52 - Service
+Ter, 02/05/2017 18:40:10 - 
+Ter, 02/05/2017 18:40:10 - Aplicativo finalizado. Tempo de execucao: 12 minutos.
+Ter, 02/05/2017 18:40:10 - 
+Ter, 02/05/2017 19:25:19 - 
+Ter, 02/05/2017 19:25:19 - Aplicativo iniciado
+Ter, 02/05/2017 19:25:19 - 
+Ter, 02/05/2017 19:25:19 - Service
+Ter, 02/05/2017 19:25:20 - 
+Ter, 02/05/2017 19:25:20 - Aplicativo finalizado. Tempo de execucao: 1 segundos.
+Ter, 02/05/2017 19:25:20 - 
+Ter, 02/05/2017 19:25:26 - 
+Ter, 02/05/2017 19:25:26 - Aplicativo iniciado
+Ter, 02/05/2017 19:25:26 - 
+Ter, 02/05/2017 19:25:26 - Service
+Ter, 02/05/2017 19:38:25 - 
+Ter, 02/05/2017 19:38:25 - Aplicativo finalizado. Tempo de execucao: 12 minutos.
+Ter, 02/05/2017 19:38:25 - 
