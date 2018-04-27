@@ -26,8 +26,12 @@ public class Main {
 			do{
 				try{
 
-					//EXECUTE EXECUTE EXECUTE
-					//              dbPrepared, ExecutionType executionType
+					//service.execute(dbPrepared, executionType)
+
+					// 1. ExecutionType.PARAMS
+					service.execute(true, ExecutionType.PARAMS);
+
+					// 2. ExecutionType.INTERFACE_METRICS
 					service.execute(true, ExecutionType.INTERFACE_METRICS);
 
 					communicationsException = false;

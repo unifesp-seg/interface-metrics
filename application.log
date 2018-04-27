@@ -1,50 +1,38 @@
-Ter, 06/06/2017 10:34:26 - 
-Ter, 06/06/2017 10:34:26 - Aplicativo iniciado
-Ter, 06/06/2017 10:34:26 - 
-Ter, 06/06/2017 10:34:26 - Service
-Ter, 06/06/2017 10:34:27 - 
-Ter, 06/06/2017 10:34:27 - Aplicativo finalizado. Tempo de execucao: 1 segundos.
-Ter, 06/06/2017 10:34:27 - 
-Ter, 06/06/2017 10:34:35 - 
-Ter, 06/06/2017 10:34:35 - Aplicativo iniciado
-Ter, 06/06/2017 10:34:35 - 
-Ter, 06/06/2017 10:34:35 - Service
-Ter, 06/06/2017 10:34:36 - 
-Ter, 06/06/2017 10:34:36 - Aplicativo finalizado. Tempo de execucao: 1 segundos.
-Ter, 06/06/2017 10:34:36 - 
-Ter, 06/06/2017 10:34:45 - 
-Ter, 06/06/2017 10:34:45 - Aplicativo iniciado
-Ter, 06/06/2017 10:34:45 - 
-Ter, 06/06/2017 10:34:45 - Service
-Ter, 06/06/2017 10:34:46 - 
-Ter, 06/06/2017 10:34:46 - Aplicativo finalizado. Tempo de execucao: 0 segundos.
-Ter, 06/06/2017 10:34:46 - 
-Ter, 06/06/2017 10:35:03 - 
-Ter, 06/06/2017 10:35:03 - Aplicativo iniciado
-Ter, 06/06/2017 10:35:03 - 
-Ter, 06/06/2017 10:35:03 - Service
-Ter, 06/06/2017 10:35:05 - 
-Ter, 06/06/2017 10:35:05 - Aplicativo finalizado. Tempo de execucao: 1 segundos.
-Ter, 06/06/2017 10:35:05 - 
-Ter, 06/06/2017 10:35:12 - 
-Ter, 06/06/2017 10:35:12 - Aplicativo iniciado
-Ter, 06/06/2017 10:35:12 - 
-Ter, 06/06/2017 10:35:12 - Service
-Ter, 06/06/2017 10:35:13 - java.io.IOException: Server returned HTTP response code: 500 for URL: http://localhost:8080/related-words-service/GetRelated?word=chart
-Ter, 06/06/2017 10:35:13 - 
-Ter, 06/06/2017 10:35:13 - Aplicativo finalizado. Tempo de execucao: 1 segundos.
-Ter, 06/06/2017 10:35:13 - 
-Ter, 06/06/2017 10:36:03 - 
-Ter, 06/06/2017 10:36:03 - Aplicativo iniciado
-Ter, 06/06/2017 10:36:03 - 
-Ter, 06/06/2017 10:36:03 - Service
-Ter, 06/06/2017 11:36:17 - 
-Ter, 06/06/2017 11:36:17 - Aplicativo finalizado. Tempo de execucao: 60 minutos.
-Ter, 06/06/2017 11:36:17 - 
-Ter, 06/06/2017 11:46:42 - 
-Ter, 06/06/2017 11:46:42 - Aplicativo iniciado
-Ter, 06/06/2017 11:46:42 - 
-Ter, 06/06/2017 11:46:42 - Service
-Ter, 06/06/2017 11:46:43 - 
-Ter, 06/06/2017 11:46:43 - Aplicativo finalizado. Tempo de execucao: 1 segundos.
-Ter, 06/06/2017 11:46:43 - 
+Qua, 25/04/2018 01:42:45 - java.io.IOException: Server returned HTTP response code: 500 for URL: http://localhost:8080/related-words-service/GetRelated?word=unity
+Qua, 25/04/2018 01:42:45 - 
+Qua, 25/04/2018 01:42:45 - Aplicativo finalizado. Tempo de execucao: 221 minutos.
+Qua, 25/04/2018 01:42:45 - 
+Qua, 25/04/2018 08:19:46 - 
+Qua, 25/04/2018 08:19:46 - Aplicativo iniciado
+Qua, 25/04/2018 08:19:46 - 
+Qua, 25/04/2018 08:19:46 - Service
+Qua, 25/04/2018 08:19:51 - java.net.ConnectException: Connection refused: connect
+Qua, 25/04/2018 08:19:51 - 
+Qua, 25/04/2018 08:19:51 - Aplicativo finalizado. Tempo de execucao: 4 segundos.
+Qua, 25/04/2018 08:19:51 - 
+Qua, 25/04/2018 08:20:24 - 
+Qua, 25/04/2018 08:20:24 - Aplicativo iniciado
+Qua, 25/04/2018 08:20:24 - 
+Qua, 25/04/2018 08:20:24 - Service
+Qua, 25/04/2018 08:20:31 - java.io.IOException: Server returned HTTP response code: 500 for URL: http://localhost:8080/related-words-service/GetRelated?word=unity
+Qua, 25/04/2018 08:20:31 - 
+Qua, 25/04/2018 08:20:31 - Aplicativo finalizado. Tempo de execucao: 7 segundos.
+Qua, 25/04/2018 08:20:31 - 
+Qua, 25/04/2018 08:22:18 - 
+Qua, 25/04/2018 08:22:18 - Aplicativo iniciado
+Qua, 25/04/2018 08:22:18 - 
+Qua, 25/04/2018 08:22:18 - Service
+Qua, 25/04/2018 16:26:48 - 
+Qua, 25/04/2018 16:26:48 - Aplicativo iniciado
+Qua, 25/04/2018 16:26:48 - 
+Qua, 25/04/2018 16:26:48 - Service
+Qua, 25/04/2018 20:45:18 - 
+Qua, 25/04/2018 20:45:18 - Aplicativo finalizado. Tempo de execucao: 258 minutos.
+Qua, 25/04/2018 20:45:18 - 
+Qua, 25/04/2018 21:09:13 - 
+Qua, 25/04/2018 21:09:13 - Aplicativo iniciado
+Qua, 25/04/2018 21:09:13 - 
+Qua, 25/04/2018 21:09:13 - Service
+Qua, 25/04/2018 21:09:18 - 
+Qua, 25/04/2018 21:09:18 - Aplicativo finalizado. Tempo de execucao: 5 segundos.
+Qua, 25/04/2018 21:09:18 - 
