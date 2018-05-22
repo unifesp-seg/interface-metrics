@@ -1,3 +1,29 @@
+ -- Query para obter os ids a serem processados para a redundância semântica
+ct distinct t.id 
+ from
+ 	(
+	select id from interface_metrics_pairs p, interface_metrics i
+	where p.interface_metrics_a = i.id
+	and return_type in (select type from interface_metrics_types where class in (1, 2, 3))
+	and id in 
+		(
+	  	select interface_metrics_id from interface_metrics_params
+	  	where param in (select type from interface_metrics_types where class in (1, 2, 3))
+	  	and   interface_metrics_id = i.id
+		)
+	union all
+	select id from interface_metrics_pairs p, interface_metrics i
+	where p.interface_metrics_b = i.id
+	and return_type in (select type from interface_metrics_types where class in (1, 2, 3))
+	and id in 
+		(
+	  	select interface_metrics_id from interface_metrics_params
+	  	where param in (select type from interface_metrics_types where class in (1, 2, 3))
+	  	and   interface_metrics_id = i.id
+		)
+	) t;
+	
+
  -- #20 Pares de redundância semântica
 select
         ((CASE WHEN a.result1 = b.result1 THEN 1 else 0 END) +

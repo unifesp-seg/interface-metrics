@@ -76,6 +76,8 @@ CREATE TABLE `interface_metrics_pairs` (
   PRIMARY KEY (`interface_metrics_a`,`interface_metrics_b`,`search_type`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+CREATE INDEX id_index_a ON interface_metrics_pairs (interface_metrics_a) USING BTREE;
+CREATE INDEX id_index_b ON interface_metrics_pairs (interface_metrics_b) USING BTREE;
 
 -- ----------------------------
 -- Table structure for `interface_metrics_pairs_test`
@@ -143,6 +145,18 @@ CREATE TABLE `interface_metrics_test` (
   `p1_c1_w1_t1` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+
+
+-- ----------------------------
+-- Table structure for interface_metrics_params_test
+-- ----------------------------
+DROP TABLE IF EXISTS `interface_metrics_params_test`;
+CREATE TABLE `interface_metrics_params_test` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `interface_metrics_id` bigint(20) NOT NULL,
+  `param` varchar(2048) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3650723 DEFAULT CHARSET=latin1;
 
 
 -- ----------------------------

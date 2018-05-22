@@ -69,6 +69,37 @@ public class InterfaceMetricsService {
 		this.printFinish();
 	}
 
+	public void processMethodsInfo() throws Exception {
+
+		this.setupControllVariables();
+		
+		//Print
+		total = repository.countAllNotProccessedMethodsInfo();
+
+		totalPartial = 0;
+		this.printTotalHeader(total);
+		
+		List<InterfaceMetric> list = null;
+		do {
+			list = repository.findAllNotProcessedMethodsInfo();
+
+			//Print
+			totalPartial += list.size();
+			this.printPartialHeader();
+
+			for (InterfaceMetric interfaceMetric : list) {
+				interfaceMetric.processMethod();
+				repository.updateProcessedMethodInfo(interfaceMetric);
+
+				//Print
+				this.printRecord();
+			}
+		} while (!list.isEmpty()); 
+
+		//Print
+		this.printFinish();
+	}
+
 	private void setupControllVariables() {
 		this.total = 0;
 		this.totalPartial = 0;

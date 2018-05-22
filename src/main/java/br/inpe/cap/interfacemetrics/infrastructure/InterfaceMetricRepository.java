@@ -22,6 +22,49 @@ public class InterfaceMetricRepository extends BaseRepository {
 		table += repositoryType.getSufix();
 	}
 
+	public List<InterfaceMetric> findAllNotProcessedMethodsInfo() throws Exception {
+		Connection conn = getConnection();
+		Statement stmt = conn.createStatement();
+
+		String limit = ConfigProperties.getProperty("interface-metrics.processed.max-result");
+		String sql = "SELECT * FROM " + table + "";
+		sql += " where (total_params is null)";
+		sql += " limit " + limit;
+
+		ResultSet rs = stmt.executeQuery(sql);
+
+		List<InterfaceMetric> list = new ArrayList<InterfaceMetric>();
+
+		while (rs.next()) {
+			InterfaceMetric interfaceMetric = new InterfaceMetric(rs);
+			list.add(interfaceMetric);
+		}
+
+		stmt.close();
+		conn.close();
+
+		return list;
+	}
+
+	public int countAllNotProccessedMethodsInfo() throws Exception {
+		Connection conn = getConnection();
+		Statement stmt = conn.createStatement();
+
+		String sql = "SELECT count(*) as total FROM " + table + "";
+		sql += " where (total_params is null)";
+		ResultSet rs = stmt.executeQuery(sql);
+
+		int total = 0;
+		while (rs.next()) {
+			total = rs.getInt("total");
+		}
+
+		stmt.close();
+		conn.close();
+
+		return total;
+	}
+	
 	public List<InterfaceMetric> findAllNotProcessed() throws Exception {
 		Connection conn = getConnection();
 		Statement stmt = conn.createStatement();
@@ -152,6 +195,34 @@ public class InterfaceMetricRepository extends BaseRepository {
 
 	public void updateProcessedMethod(InterfaceMetric interfaceMetric) throws Exception {
 		updateProcessedMethod(interfaceMetric, false);
+	}
+
+	public void updateProcessedMethodInfo(InterfaceMetric interfaceMetric) throws Exception {
+		String sql = "UPDATE " + table + " SET ";
+		sql += "total_params = ?, ";
+		sql += "total_words_method = ?, ";
+		sql += "total_words_class = ?, ";
+		sql += "only_primitive_types = ?, ";
+		sql += "is_static = ?, ";
+		sql += "has_type_same_package = ? ";
+	
+		sql += "WHERE id = ? ";
+
+		Connection conn = getConnection();
+		PreparedStatement ps = conn.prepareStatement(sql);
+
+		ps.setInt(1, interfaceMetric.getTotalParams());
+		ps.setInt(2, interfaceMetric.getTotalWordsMethod());
+		ps.setInt(3, interfaceMetric.getTotalWordsClass());
+		ps.setInt(4, interfaceMetric.isOnlyPrimitiveTypes() == true ? 1 : 0);
+		ps.setInt(5, interfaceMetric.isStatic() == true ? 1 : 0);
+		ps.setInt(6, interfaceMetric.isHasTypeSamePackage() == true ? 1 : 0);
+		ps.setLong(7, interfaceMetric.getId());
+
+		ps.executeUpdate();
+
+		ps.close();
+		conn.close();
 	}
 
 	private void updateProcessedMethod(InterfaceMetric interfaceMetric, boolean allLines) throws Exception {

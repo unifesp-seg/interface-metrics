@@ -3,7 +3,7 @@ mode: development
 Built-By: adrianocarv
 Class-Path: lib/commons-lang-2.5.jar lib/log4j-1.2.16.jar lib/mysql-co
  nnector-java-5.1.21.jar lib/sourcerer-aqe-1.0.4.jar
-Build-Jdk: 1.8.0_162
+Build-Jdk: 1.8.0_171
 Created-By: Maven Integration for Eclipse
 url: 
 Main-Class: br.adm.b2.batch.core.interfaces.daemon.B2BatchMain
