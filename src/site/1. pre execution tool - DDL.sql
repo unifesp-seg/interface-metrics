@@ -12,6 +12,7 @@ CREATE TABLE `interface_metrics` (
   `modifiers` varchar(255) DEFAULT NULL,
   `fqn` varchar(2048) DEFAULT NULL,
   `params` varchar(2048) DEFAULT NULL,
+  `return_type` varchar(2048) DEFAULT NULL,
   `relation_type` varchar(255) DEFAULT NULL,
   `processed` tinyint(1) DEFAULT NULL,
   `processed_params` tinyint(1) DEFAULT NULL,
@@ -38,19 +39,19 @@ CREATE TABLE `interface_metrics` (
   `p1_c1_w1_t0` int(11) DEFAULT NULL,
   `p1_c1_w1_t1` int(11) DEFAULT NULL,
   `error` tinyint(4) DEFAULT NULL,
-  `result1` text DEFAULT NULL,
-  `result2` text DEFAULT NULL,
-  `result3` text DEFAULT NULL,
-  `result4` text DEFAULT NULL,
-  `exec1` text DEFAULT NULL,
-  `exec2` text DEFAULT NULL,
-  `exec3` text DEFAULT NULL,
-  `exec4` text DEFAULT NULL,
+  `result1` text,
+  `result2` text,
+  `result3` text,
+  `result4` text,
+  `exec1` text,
+  `exec2` text,
+  `exec3` text,
+  `exec4` text,
+  `is_semantics_execution` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `project_id` (`project_id`),
   KEY `entity_id` (`entity_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1825438 DEFAULT CHARSET=latin1;
-
+) ENGINE=MyISAM AUTO_INCREMENT=2063973 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Table structure for `interface_metrics_pairs_inner`
@@ -73,11 +74,15 @@ CREATE TABLE `interface_metrics_pairs` (
   `interface_metrics_b` bigint(20) NOT NULL DEFAULT '0',
   `search_type` varchar(14) NOT NULL,
   `result` int(11) DEFAULT NULL,
-  PRIMARY KEY (`interface_metrics_a`,`interface_metrics_b`,`search_type`)
+  `exec1` smallint(6) DEFAULT NULL,
+  `exec2` smallint(6) DEFAULT NULL,
+  `exec3` smallint(6) DEFAULT NULL,
+  `exec4` smallint(6) DEFAULT NULL,
+  PRIMARY KEY (`interface_metrics_a`,`interface_metrics_b`,`search_type`),
+  KEY `id_index_a` (`interface_metrics_a`) USING BTREE,
+  KEY `id_index_b` (`interface_metrics_b`) USING BTREE
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-CREATE INDEX id_index_a ON interface_metrics_pairs (interface_metrics_a) USING BTREE;
-CREATE INDEX id_index_b ON interface_metrics_pairs (interface_metrics_b) USING BTREE;
 
 -- ----------------------------
 -- Table structure for `interface_metrics_pairs_test`
@@ -99,8 +104,10 @@ CREATE TABLE `interface_metrics_params` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `interface_metrics_id` bigint(20) NOT NULL,
   `param` varchar(2048) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3635229 DEFAULT CHARSET=latin1;
+  `is_class_123` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `interface_metrics_id_index` (`interface_metrics_id`) USING BTREE
+) ENGINE=MyISAM AUTO_INCREMENT=4076499 DEFAULT CHARSET=latin1;
 
 
 -- ----------------------------
@@ -301,20 +308,3 @@ CREATE TABLE `interface_metrics_pairs_clone_10` (
   KEY `entity_id_b` (`entity_id_b`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-
--- ----------------------------
--- Table structure for `interface_metrics_compare`
--- ----------------------------
-DROP TABLE IF EXISTS `interface_metrics_compare`;
-CREATE TABLE `interface_metrics_compare` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `interface_metrics_a` int(11) DEFAULT NULL,
-  `interface_metrics_b` int(11) DEFAULT NULL,
-  `exec1` tinyint(4) DEFAULT NULL,
-  `exec2` tinyint(4) DEFAULT NULL,
-  `exec3` tinyint(4) DEFAULT NULL,
-  `exec4` tinyint(4) DEFAULT NULL,
-  `result` int(11) DEFAULT NULL,
-  `type` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17959 DEFAULT CHARSET=latin1;
