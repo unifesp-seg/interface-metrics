@@ -121,13 +121,25 @@ GROUP BY project_type, project_id, project_name
 order by total desc, project_name
 
  -- #23 SCAM 2017
- -- (6) Qual é o número de métodos no experimento que são redundantes (batem as quatro saídas para as quatro entradas) por projeto?
-select a_project_type, a_project_id, a_project_name, count(*) total, result
-from   v_interface_metrics_pairs
-where  result = 4
-and    search_type = 'p1_c1_w1_t1'
-GROUP BY a_project_type, a_project_id, a_project_name, result
-order by a_project_id
+ -- (6) Qual é o número de MÉTODOS no experimento que são redundantes (batem as quatro saídas para as quatro entradas) por projeto?
+select project_type, project_id, project_name, count(*) total
+from   interface_metrics i
+where  return_type in (select type from interface_metrics_types where class in (1, 2, 3))
+and    id in (
+               select interface_metrics_id from interface_metrics_params
+               where  param in (select type from interface_metrics_types where class in (1, 2, 3))
+               and    interface_metrics_id = i.id
+)
+and    project_type = 'CRAWLED'
+and    id in (
+               select distinct a_id
+               from   v_interface_metrics_pairs
+               where  result = 4
+               and    search_type = 'p1_c1_w1_t1'
+               and    a_id = i.id
+)
+GROUP BY project_type, project_id, project_name
+order by total desc, project_name
 
  -- #24 SCAM 2017
  -- (9) Quais são os pares crawled-crawled para os quais batem as quatro saídas para as quatro entradas?
@@ -159,11 +171,11 @@ and    search_type = 'p1_c1_w1_t1'
 and    b_project_type = 'CRAWLED'
 order by a_error, a_project_id
 
--- #25 SCAM 2017
- -- (10) Qual é o número de métodos no experimento que são redundantes em 1 (batem pelo menos uma das saídas para as mesmas entradas) por projeto?
-select a_project_type, a_project_id, a_project_name, count(*) total
+  -- #25 SCAM 2017
+ -- (10) Qual é o número de PARES no experimento que são redundantes (batem as quatro saídas para as quatro entradas) por projeto?
+select a_project_type, a_project_id, a_project_name, count(*) total, result
 from   v_interface_metrics_pairs
-where  result >= 1
+where  result = 4
 and    search_type = 'p1_c1_w1_t1'
-GROUP BY a_project_type, a_project_id, a_project_name
-order by a_project_id
+GROUP BY a_project_type, a_project_id, a_project_name, result
+order by total desc, a_project_name
