@@ -127,13 +127,43 @@ from   v_interface_metrics_pairs
 where  result = 4
 and    search_type = 'p1_c1_w1_t1'
 GROUP BY a_project_type, a_project_id, a_project_name, result
-order by total desc, a_project_name
+order by a_project_id
 
  -- #24 SCAM 2017
  -- (9) Quais são os pares crawled-crawled para os quais batem as quatro saídas para as quatro entradas?
-select *
+select 
+       result as 'semantic',
+       a_project_name,
+       a_fqn,
+       b_project_name,
+       b_fqn,
+       a_project_id,
+       a_entity_id,
+       a_id,
+       b_project_id,
+       b_entity_id,
+       b_id,
+       a_result1,
+       a_result2,
+       a_result3,
+       a_result4,
+       b_result1,
+       b_result2,
+       b_result3,
+       b_result4,
+       a_error,
+       b_error
 from   v_interface_metrics_pairs
 where  result = 4
 and    search_type = 'p1_c1_w1_t1'
 and    b_project_type = 'CRAWLED'
+order by a_error, a_project_id
 
+-- #25 SCAM 2017
+ -- (10) Qual é o número de métodos no experimento que são redundantes em 1 (batem pelo menos uma das saídas para as mesmas entradas) por projeto?
+select a_project_type, a_project_id, a_project_name, count(*) total
+from   v_interface_metrics_pairs
+where  result >= 1
+and    search_type = 'p1_c1_w1_t1'
+GROUP BY a_project_type, a_project_id, a_project_name
+order by a_project_id
