@@ -122,6 +122,21 @@ order by total desc, project_name
 
  -- #23 SCAM 2017
  -- (6) Qual é o número de MÉTODOS no experimento que são redundantes (batem as quatro saídas para as quatro entradas) por projeto?
+select t22.project_type, t22.project_id, t22.project_name, t23.total redund, t22.total
+from
+(
+select project_type, project_id, project_name, count(*) total
+from   interface_metrics i
+where  return_type in (select type from interface_metrics_types where class in (1, 2, 3))
+and    id in (
+               select interface_metrics_id from interface_metrics_params
+               where  param in (select type from interface_metrics_types where class in (1, 2, 3))
+               and    interface_metrics_id = i.id
+)
+and    project_type = 'CRAWLED'
+GROUP BY project_type, project_id, project_name
+) t22,
+(
 select project_type, project_id, project_name, count(*) total
 from   interface_metrics i
 where  return_type in (select type from interface_metrics_types where class in (1, 2, 3))
@@ -139,7 +154,9 @@ and    id in (
                and    a_id = i.id
 )
 GROUP BY project_type, project_id, project_name
-order by total desc, project_name
+) t23
+where t22.project_id = t23.project_id
+order by t23.total desc, t23.project_name
 
  -- #24 SCAM 2017
  -- (9) Quais são os pares crawled-crawled para os quais batem as quatro saídas para as quatro entradas?
