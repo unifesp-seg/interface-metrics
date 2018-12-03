@@ -39,3 +39,20 @@ GROUP BY total_words_method order by count(*) DESC
 select total_words_class, count(*) total, (count(*) * 100 / (select count(*) total from v_interface_metrics_dif where id in (select distinct a_id from v_interface_metrics_pairs where result = 4 and search_type = 'p1_c1_w1_t1')) ) '%'
 from   v_interface_metrics_dif where id in (select distinct a_id from v_interface_metrics_pairs where result = 4 and search_type = 'p1_c1_w1_t1')
 GROUP BY total_words_class order by count(*) DESC
+
+-- #30 Return profile (métodos redundantes match 4)
+select return_type, count(*) 'total',(count(*) * 100 /
+       (select count(*) total from v_interface_metrics_dif where id in (select distinct a_id from v_interface_metrics_pairs where result = 4 and search_type = 'p1_c1_w1_t1'))) as '%'
+from interface_metrics
+where id in (select distinct a_id from v_interface_metrics_pairs where result = 4 and search_type = 'p1_c1_w1_t1')
+GROUP BY return_type
+
+-- #31 Params profile (métodos redundantes match 4)
+select param, count(*) 'total',(count(*) * 100 / 
+       (select count(*) from interface_metrics_params p, interface_metrics i
+        where p.interface_metrics_id = i.id
+        and i.id in (select distinct a_id from v_interface_metrics_pairs where result = 4 and search_type = 'p1_c1_w1_t1'))) as '%'
+from interface_metrics_params p, interface_metrics i
+where p.interface_metrics_id = i.id
+and i.id in (select distinct a_id from v_interface_metrics_pairs where result = 4 and search_type = 'p1_c1_w1_t1')
+GROUP BY param
