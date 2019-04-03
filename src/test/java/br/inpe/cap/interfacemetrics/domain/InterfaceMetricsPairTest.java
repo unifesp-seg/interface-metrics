@@ -42,7 +42,7 @@ public class InterfaceMetricsPairTest {
 	public void pairsId10() throws Exception {
 		
 		List<InterfaceMetricPair> pairs = repository.getPairs(new InterfaceMetric(10));
-		assertEquals(49, pairs.size());
+		assertEquals(25, pairs.size());
 
 		String name = "p0_c0_w0_t0";
 		List<InterfaceMetricPair> pairsByName = this.getPairsByCombination(pairs, name);

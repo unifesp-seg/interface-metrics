@@ -8,8 +8,8 @@ import java.util.Stack;
 
 import org.apache.commons.lang.StringUtils;
 
-import br.unifesp.ppgcc.sourcereraqe.infrastructure.JavaTermExtractor;
-import br.unifesp.ppgcc.sourcereraqe.infrastructure.QueryTerm;
+import br.unifesp.ict.seg.geniesearchapi.services.searchaqe.infrastructure.JavaTermExtractor;
+import br.unifesp.ict.seg.geniesearchapi.services.searchaqe.infrastructure.QueryTerm;
 
 public class InterfaceMetric {
 

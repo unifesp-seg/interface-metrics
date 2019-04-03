@@ -30,7 +30,7 @@ and e1.modifiers like '%PUBLIC%'
 and e1.modifiers not like '%ABSTRACT%'
 and e1.modifiers like '%STATIC%'
 and e1.params <> '()'
-and e2.fqn <> 'void'
+and e2.fqn <> 'void';
  
 
 -- **************************

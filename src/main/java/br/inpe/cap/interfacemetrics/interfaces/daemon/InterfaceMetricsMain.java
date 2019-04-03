@@ -6,7 +6,7 @@ import br.inpe.cap.interfacemetrics.infrastructure.util.LogUtils;
 
 import com.mysql.jdbc.exceptions.jdbc4.CommunicationsException;
 
-public class Main {
+public class InterfaceMetricsMain {
 
 	private static long startTime = -1;
 	
@@ -37,6 +37,7 @@ public class Main {
 
 					communicationsException = false;
 				} catch (CommunicationsException ex){
+					Thread.sleep(5000);
 					communicationsException = true;
 				}
 			}while(communicationsException);

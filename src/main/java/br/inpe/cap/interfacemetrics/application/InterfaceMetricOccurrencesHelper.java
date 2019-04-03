@@ -11,10 +11,9 @@ import br.inpe.cap.interfacemetrics.domain.OccurrencesCombination;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricPairRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.RepositoryType;
-import br.inpe.cap.interfacemetrics.infrastructure.util.ConfigProperties;
-import br.unifesp.ppgcc.sourcereraqe.infrastructure.AQEApproach;
-import br.unifesp.ppgcc.sourcereraqe.infrastructure.QueryTerm;
-import br.unifesp.ppgcc.sourcereraqe.infrastructure.SourcererQueryBuilder;
+import br.unifesp.ict.seg.geniesearchapi.services.searchaqe.infrastructure.AQEApproach;
+import br.unifesp.ict.seg.geniesearchapi.services.searchaqe.infrastructure.QueryTerm;
+import br.unifesp.ict.seg.geniesearchapi.services.searchaqe.infrastructure.SourcererQueryBuilder;
 
 public class InterfaceMetricOccurrencesHelper {
 
@@ -42,8 +41,6 @@ public class InterfaceMetricOccurrencesHelper {
 		boolean relaxParams = false;
 		boolean contextRelevants = true;
 		boolean filterMethodNameTermsByParameter = false;
-		String relatedWordsServiceUrl = ConfigProperties.getProperty("related.words.service.url");
-
 
 		String expanders = "WordNet , Type";
 		
@@ -52,7 +49,7 @@ public class InterfaceMetricOccurrencesHelper {
 		String returnType = interfaceMetric.getReturnType();
 		String params = interfaceMetric.getParams();
 		
-		AQEApproach aqeApproach = new AQEApproach(relatedWordsServiceUrl, expanders, relaxReturn, relaxParams, contextRelevants, filterMethodNameTermsByParameter);
+		AQEApproach aqeApproach = new AQEApproach(expanders, relaxReturn, relaxParams, contextRelevants, filterMethodNameTermsByParameter);
 		aqeApproach.loadMethodInterface(className, methodName, returnType, params);
 
 		return aqeApproach;
@@ -97,9 +94,10 @@ public class InterfaceMetricOccurrencesHelper {
 			return interfaceMetric.getPackage().equals(occurence.getPackage());
 	}
 
-//	private boolean matchClassName(OccurrencesCombination combination, InterfaceMetric occurence) {
-//		return combination.isIgnoreClass() ? true : interfaceMetric.getClassName().equals(occurence.getClassName());
-//	}
+	//Versão original na qual 
+	private boolean matchClassName(OccurrencesCombination combination, InterfaceMetric occurence) {
+		return combination.isIgnoreClass() ? true : interfaceMetric.getClassName().equals(occurence.getClassName());
+	}
 
 	//Ignora o nome da Classe, ou Considera usando a expansão Wordnet
 	private boolean matchClassName1(OccurrencesCombination combination, InterfaceMetric occurence) {

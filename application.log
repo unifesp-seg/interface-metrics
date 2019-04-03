@@ -1,10 +1,50 @@
-Qua, 16/05/2018 00:42:09 - 
-Qua, 16/05/2018 00:42:09 - Aplicativo finalizado. Tempo de execucao: 1970 minutos.
-Qua, 16/05/2018 00:42:09 - 
-Qua, 16/05/2018 05:48:53 - 
-Qua, 16/05/2018 05:48:53 - Aplicativo iniciado
-Qua, 16/05/2018 05:48:53 - 
-Qua, 16/05/2018 05:48:53 - Service
-Qua, 16/05/2018 05:49:08 - 
-Qua, 16/05/2018 05:49:08 - Aplicativo finalizado. Tempo de execucao: 14 segundos.
-Qua, 16/05/2018 05:49:08 - 
+Mon, 01/04/2019 11:21:53 - 
+Mon, 01/04/2019 11:21:53 - Aplicativo iniciado
+Mon, 01/04/2019 11:21:53 - 
+Mon, 01/04/2019 11:21:53 - Service
+Mon, 01/04/2019 11:21:53 - com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'github_550_ne'
+Mon, 01/04/2019 11:21:53 - 
+Mon, 01/04/2019 11:21:53 - Aplicativo finalizado. Tempo de execucao: 0 segundos.
+Mon, 01/04/2019 11:21:53 - 
+Mon, 01/04/2019 11:22:47 - 
+Mon, 01/04/2019 11:22:47 - Aplicativo iniciado
+Mon, 01/04/2019 11:22:47 - 
+Mon, 01/04/2019 11:22:47 - Service
+Mon, 01/04/2019 11:24:48 - 
+Mon, 01/04/2019 11:24:48 - Aplicativo iniciado
+Mon, 01/04/2019 11:24:48 - 
+Mon, 01/04/2019 11:24:48 - Service
+Mon, 01/04/2019 11:26:13 - 
+Mon, 01/04/2019 11:26:13 - Aplicativo iniciado
+Mon, 01/04/2019 11:26:13 - 
+Mon, 01/04/2019 11:26:13 - Service
+Mon, 01/04/2019 11:26:49 - 
+Mon, 01/04/2019 11:26:49 - Aplicativo iniciado
+Mon, 01/04/2019 11:26:49 - 
+Mon, 01/04/2019 11:26:49 - Service
+Mon, 01/04/2019 11:26:58 - java.io.IOException: Server returned HTTP response code: 500 for URL: http://localhost:8080/related-words-service/GetRelated?word=value
+Mon, 01/04/2019 11:26:58 - 
+Mon, 01/04/2019 11:26:58 - Aplicativo finalizado. Tempo de execucao: 9 segundos.
+Mon, 01/04/2019 11:26:58 - 
+Mon, 01/04/2019 11:29:48 - 
+Mon, 01/04/2019 11:29:48 - Aplicativo iniciado
+Mon, 01/04/2019 11:29:48 - 
+Mon, 01/04/2019 11:29:48 - Service
+Mon, 01/04/2019 11:29:50 - java.io.IOException: Server returned HTTP response code: 500 for URL: http://localhost:8080/related-words-service/GetRelated?word=value
+Mon, 01/04/2019 11:29:50 - 
+Mon, 01/04/2019 11:29:50 - Aplicativo finalizado. Tempo de execucao: 2 segundos.
+Mon, 01/04/2019 11:29:50 - 
+Mon, 01/04/2019 11:31:12 - 
+Mon, 01/04/2019 11:31:12 - Aplicativo iniciado
+Mon, 01/04/2019 11:31:12 - 
+Mon, 01/04/2019 11:31:12 - Service
+Mon, 01/04/2019 11:31:14 - 
+Mon, 01/04/2019 11:31:14 - Aplicativo finalizado. Tempo de execucao: 2 segundos.
+Mon, 01/04/2019 11:31:14 - 
+Mon, 01/04/2019 11:31:26 - 
+Mon, 01/04/2019 11:31:26 - Aplicativo iniciado
+Mon, 01/04/2019 11:31:26 - 
+Mon, 01/04/2019 11:31:26 - Service
+Mon, 01/04/2019 11:31:27 - 
+Mon, 01/04/2019 11:31:27 - Aplicativo finalizado. Tempo de execucao: 0 segundos.
+Mon, 01/04/2019 11:31:27 - 

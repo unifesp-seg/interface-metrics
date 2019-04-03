@@ -68,9 +68,9 @@ public class OccurrencesCombination {
 		return ignoreClass;
 	}
 
-//	public boolean isIgnoreMethodName() {
-//		return ignoreMethodName;
-//	}
+	public boolean isIgnoreMethodName() {
+		return ignoreMethodName;
+	}
 
 	public boolean isExpandTypes() {
 		return expandTypes;

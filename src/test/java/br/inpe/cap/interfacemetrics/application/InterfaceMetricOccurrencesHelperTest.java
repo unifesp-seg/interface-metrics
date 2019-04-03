@@ -1,6 +1,7 @@
 package br.inpe.cap.interfacemetrics.application;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,7 @@ import br.inpe.cap.interfacemetrics.domain.InterfaceMetric;
 import br.inpe.cap.interfacemetrics.domain.OccurrencesCombination;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.RepositoryType;
-import br.unifesp.ppgcc.sourcereraqe.infrastructure.QueryTerm;
+import br.unifesp.ict.seg.geniesearchapi.services.searchaqe.infrastructure.QueryTerm;
 
 public class InterfaceMetricOccurrencesHelperTest {
 

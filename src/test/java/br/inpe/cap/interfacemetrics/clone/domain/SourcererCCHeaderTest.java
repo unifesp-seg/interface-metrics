@@ -81,39 +81,39 @@ public class SourcererCCHeaderTest {
 		assertEquals(5935785, ccHeader.getEntityId().longValue());
 	}
 
-	@Test
-	public void headerId8807() throws Exception{
-		String line = "8807,/home/saini/otavio/sf100-src/0/96/content/newdev/WEB-INF/classes/OAI.java,36,40";
-		SourcererCCHeader cc = new SourcererCCHeader(line);
-
-		cc.loadFromSourceCode();
-		cc.loadFromDB();
-
-		assertEquals("public void doPost(HttpServletRequest request,HttpServletResponse response)", cc.getMethodLine());
-		assertEquals("OAI.doPost", cc.getMethodFQN());
-		assertEquals(2, cc.getMethodParams().size());
-		assertEquals("HttpServletRequest", cc.getMethodParams().get(0));
-		assertEquals("HttpServletResponse", cc.getMethodParams().get(1));
-		
-		assertEquals(-1, cc.getEntityId().longValue());
-	}
+//	@Test
+//	public void headerId8807() throws Exception{
+//		String line = "8807,/home/saini/otavio/sf100-src/0/96/content/newdev/WEB-INF/classes/OAI.java,36,40";
+//		SourcererCCHeader cc = new SourcererCCHeader(line);
+//
+//		cc.loadFromSourceCode();
+//		cc.loadFromDB();
+//
+//		assertEquals("public void doPost(HttpServletRequest request,HttpServletResponse response)", cc.getMethodLine());
+//		assertEquals("OAI.doPost", cc.getMethodFQN());
+//		assertEquals(2, cc.getMethodParams().size());
+//		assertEquals("HttpServletRequest", cc.getMethodParams().get(0));
+//		assertEquals("HttpServletResponse", cc.getMethodParams().get(1));
+//		
+//		assertEquals(-1, cc.getEntityId().longValue());
+//	}
 	
-	@Test
-	public void headerId8777() throws Exception{
-		String line = "8777,/home/saini/otavio/sf100-src/0/96/content/activedev/WEB-INF/classes/UploadUtil.java,97,101";
-		SourcererCCHeader cc = new SourcererCCHeader(line);
-
-		cc.loadFromSourceCode();
-		cc.loadFromDB();
-
-		assertEquals("public void doPost(HttpServletRequest request,HttpServletResponse response)", cc.getMethodLine());
-		assertEquals("UploadUtil.doPost", cc.getMethodFQN());
-		assertEquals(2, cc.getMethodParams().size());
-		assertEquals("HttpServletRequest", cc.getMethodParams().get(0));
-		assertEquals("HttpServletResponse", cc.getMethodParams().get(1));
-		
-		assertEquals(-1, cc.getEntityId().longValue());
-	}
+//	@Test
+//	public void headerId8777() throws Exception{
+//		String line = "8777,/home/saini/otavio/sf100-src/0/96/content/activedev/WEB-INF/classes/UploadUtil.java,97,101";
+//		SourcererCCHeader cc = new SourcererCCHeader(line);
+//
+//		cc.loadFromSourceCode();
+//		cc.loadFromDB();
+//
+//		assertEquals("public void doPost(HttpServletRequest request,HttpServletResponse response)", cc.getMethodLine());
+//		assertEquals("UploadUtil.doPost", cc.getMethodFQN());
+//		assertEquals(2, cc.getMethodParams().size());
+//		assertEquals("HttpServletRequest", cc.getMethodParams().get(0));
+//		assertEquals("HttpServletResponse", cc.getMethodParams().get(1));
+//		
+//		assertEquals(-1, cc.getEntityId().longValue());
+//	}
 	
 	//@Test
 	public void headerId3250() throws Exception{

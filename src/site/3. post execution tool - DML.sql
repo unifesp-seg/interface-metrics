@@ -61,7 +61,7 @@ and e1.modifiers like '%STATIC%';
 
 
 -- **************************
- -- interface_metrics_semantics_ids
+ -- interface_metrics_params
 -- **************************
 update interface_metrics_params
 set is_class_123 = 1
@@ -84,10 +84,17 @@ and i.id in (select interface_metrics_id from interface_metrics_params
 	  	       where  interface_metrics_id = i.id
 	  	       and    is_class_123 = 0);
 
+
+-- **************************
+ -- is_semantics_execution
+-- **************************
 update interface_metrics
 set is_semantics_execution = 1
 where is_semantics_execution = -1;
 
+-- **************************
+ -- interface_metrics_semantics_ids
+-- **************************
 delete from interface_metrics_semantics_ids;
 
 insert into interface_metrics_semantics_ids

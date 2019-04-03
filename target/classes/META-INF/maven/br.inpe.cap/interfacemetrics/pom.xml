@@ -46,11 +46,11 @@
 			<version>5.1.21</version>
 		</dependency>
 
-		<!-- sourcerer-aqe -->
+		<!-- genie-search-api -->
 		<dependency>
-			<groupId>br.unifesp.ppgcc</groupId>
-			<artifactId>sourcerer-aqe</artifactId>
-			<version>1.0.4</version>
+			<groupId>br.unifesp.ict.seg</groupId>
+			<artifactId>genie-search-api</artifactId>
+			<version>1.1.1</version>
 		</dependency>
 
 	</dependencies>
