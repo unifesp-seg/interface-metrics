@@ -8,9 +8,9 @@ import br.unifesp.ict.seg.geniesearchapi.infrastructure.util.GenieSearchAPIConfi
 public abstract class BaseRepository {
 
 	public final Connection getConnection() throws Exception {
-		String url = GenieSearchAPIConfig.DATABASE_URL();
-		String user = GenieSearchAPIConfig.DATABASE_USER();
-		String pass = GenieSearchAPIConfig.DATABASE_PASSWORD();
+		String url = GenieSearchAPIConfig.getDatabaseURL();
+		String user = GenieSearchAPIConfig.getDatabaseUser();
+		String pass = GenieSearchAPIConfig.getDatabasePassword();
 
 		Connection conn = DriverManager.getConnection(url, user, pass);
 

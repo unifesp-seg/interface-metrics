@@ -2,7 +2,9 @@ Manifest-Version: 1.0
 mode: development
 Built-By: adrianocarv
 Class-Path: lib/commons-lang-2.5.jar lib/log4j-1.2.16.jar lib/mysql-co
- nnector-java-5.1.21.jar lib/genie-search-api-1.1.1.jar
+ nnector-java-5.1.21.jar lib/genie-search-api-1.6.5.jar lib/commons-cs
+ v-1.4.jar lib/commons-io-2.5.jar lib/ant-1.10.5.jar lib/ant-launcher-
+ 1.10.5.jar lib/sourcerer-services-1.0.jar lib/jaws-bin-1.0.jar
 Build-Jdk: 1.8.0_201
 Created-By: Maven Integration for Eclipse
 url: 

@@ -382,7 +382,7 @@ public class InterfaceMetric {
 		return params;
 	}
 
-	public void setParams(String params) {
+	void setParams(String params) {
 		this.params = params;
 	}
 

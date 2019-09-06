@@ -24,13 +24,7 @@ where e1.entity_id = r.lhs_eid
 and r.rhs_eid = e2.entity_id
 and r.relation_type = 'RETURNS'
 and e1.project_id = p.project_id
-and e1.entity_type = 'METHOD'
- -- and p.project_type = 'CRAWLED'
-and e1.modifiers like '%PUBLIC%'
-and e1.modifiers not like '%ABSTRACT%'
-and e1.modifiers like '%STATIC%'
-and e1.params <> '()'
-and e2.fqn <> 'void';
+and e1.entity_type = 'METHOD';
  
 
 -- **************************
@@ -482,3 +476,20 @@ INSERT INTO `interface_metrics_params_test` VALUES ('3650719', '1678643', 'boole
 INSERT INTO `interface_metrics_params_test` VALUES ('3650720', '1678643', 'boolean');
 INSERT INTO `interface_metrics_params_test` VALUES ('3650721', '1678643', 'org.hibernate.cfg.Mappings');
 INSERT INTO `interface_metrics_params_test` VALUES ('3650722', '1678643', 'java.util.Map<org.hibernate.annotations.common.reflection.XClass,org.hibernate.cfg.InheritanceState>');
+
+-- ----------------------------------------------------------------------------
+-- Selects para acompanhar a execução de cada etapa do App: interface-metrics
+-- ----------------------------------------------------------------------------
+
+-- 1. Process only method info
+select count(*) from interface_metrics
+where total_params is NULL
+
+-- 2. ExecutionType.PARAMS
+select count(*) from interface_metrics
+where (processed_params <> 1 or processed_params is null)
+
+-- 3. ExecutionType.INTERFACE_METRICS
+select count(*) from interface_metrics where project_type = 'CRAWLED'
+and (processed <> 1 or processed is null)
+

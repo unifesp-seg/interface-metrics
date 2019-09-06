@@ -45,6 +45,11 @@ public class InterfaceMetricsService {
 		}
 		
 		//Print
+		if(executionType.isInterfaceMetrics())
+			System.out.println("\n\n3. ExecutionType.INTERFACE_METRICS\n");
+		else
+			System.out.println("\n\n2. ExecutionType.PARAMS\n");
+
 		total = this.getNotProcessedTotal(executionType);
 		totalPartial = 0;
 		this.printTotalHeader(total);
@@ -74,6 +79,8 @@ public class InterfaceMetricsService {
 		this.setupControllVariables();
 		
 		//Print
+		System.out.println("\n\n1. Process only method info\n");
+
 		total = repository.countAllNotProccessedMethodsInfo();
 
 		totalPartial = 0;

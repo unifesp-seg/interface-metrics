@@ -43,7 +43,7 @@ public class InterfaceMetricParamsRepository extends BaseRepository {
 		Connection conn = getConnection();
 		PreparedStatement ps = null;
 
-		for(String param : interfaceMetric.getParamsNames()){
+		for (String param : interfaceMetric.getParamsNames()) {
 			String sql = "INSERT into " + table + " (interface_metrics_id, param) values (?, ?)";
 			ps = conn.prepareStatement(sql);
 			ps.setLong(1, interfaceMetric.getId());
@@ -51,7 +51,8 @@ public class InterfaceMetricParamsRepository extends BaseRepository {
 			ps.executeUpdate();
 		}
 
-		ps.close();
+		if (ps != null)
+			ps.close();
 		conn.close();
 	}
 
@@ -74,7 +75,7 @@ public class InterfaceMetricParamsRepository extends BaseRepository {
 
 		return params;
 	}
-	
+
 	public int countAll() throws Exception {
 		Connection conn = getConnection();
 		Statement stmt = conn.createStatement();
@@ -92,5 +93,5 @@ public class InterfaceMetricParamsRepository extends BaseRepository {
 
 		return total;
 	}
-	
+
 }

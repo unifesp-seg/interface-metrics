@@ -95,6 +95,7 @@ public class InterfaceMetricOccurrencesHelper {
 	}
 
 	//Versão original na qual 
+	@SuppressWarnings("unused")
 	private boolean matchClassName(OccurrencesCombination combination, InterfaceMetric occurence) {
 		return combination.isIgnoreClass() ? true : interfaceMetric.getClassName().equals(occurence.getClassName());
 	}

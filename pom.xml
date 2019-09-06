@@ -12,7 +12,6 @@
 		<spring.version>3.2.3.RELEASE</spring.version>
 	</properties>
 
-
 	<developers>
 		<developer>
 			<id>adrianocarv</id>
@@ -46,12 +45,72 @@
 			<version>5.1.21</version>
 		</dependency>
 
+		<!-- ************************************************************************************************ -->
 		<!-- genie-search-api -->
 		<dependency>
 			<groupId>br.unifesp.ict.seg</groupId>
 			<artifactId>genie-search-api</artifactId>
-			<version>1.1.1</version>
+			<version>1.6.5</version>
 		</dependency>
+
+		<!-- commons-lang -->
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.5</version>
+		</dependency>
+
+		<!-- log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+
+		<!-- commons-csv -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-csv</artifactId>
+		    <version>1.4</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>2.5</version>
+		</dependency>
+
+		<!-- mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.21</version>
+		</dependency>
+
+		<!-- ant -->
+		<dependency>
+		    <groupId>org.apache.ant</groupId>
+		    <artifactId>ant</artifactId>
+		    <version>1.10.5</version>
+		</dependency>
+
+		<!-- sourcerer-services -->
+		<dependency>
+			<groupId>edu.uci.ics.sourcerer</groupId>
+			<artifactId>sourcerer-services</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<!-- jaws-bin -->
+		<dependency>
+			<groupId>edu.smu.tspell.wordnet</groupId>
+			<artifactId>jaws-bin</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<!-- genie-search-api -->
+		<!-- ************************************************************************************************ -->
 
 	</dependencies>
 
