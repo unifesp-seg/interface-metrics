@@ -91,22 +91,3 @@ and i.id in (select interface_metrics_id from interface_metrics_params
 update interface_metrics
 set is_semantics_execution = 1
 where is_semantics_execution = -1;
-
--- **************************
- -- interface_metrics_semantics_ids
--- **************************
-delete from interface_metrics_semantics_ids;
-
-insert into interface_metrics_semantics_ids
-select distinct t.id 
- from
- 	(
-	select id from interface_metrics_pairs p, interface_metrics i
-	where p.interface_metrics_a = i.id
-	and i.is_semantics_execution = 1
-	union all
-	select id from interface_metrics_pairs p, interface_metrics i
-	where p.interface_metrics_b = i.id
-	and i.is_semantics_execution = 1
-	) t;
-

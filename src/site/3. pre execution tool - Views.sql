@@ -249,3 +249,33 @@ from   interface_metrics_pairs p,
 where  a.id = p.interface_metrics_a
 and    b.id = p.interface_metrics_b;
 
+
+-- **************************
+ -- v_interface_metrics_pairs_test
+-- **************************
+DROP view IF EXISTS v_interface_metrics_pairs_test;
+CREATE view v_interface_metrics_pairs_test as
+select p.search_type,
+       
+       a.project_type a_project_type,
+       a.project_id a_project_id,
+       a.project_name a_project_name,
+       a.entity_id a_entity_id,
+       a.id a_id,
+
+       concat(a.modifiers,' ',a.return_type, ' ', a.fqn, a.params) a_fqn,
+       concat(b.modifiers,' ',b.return_type, ' ', b.fqn, b.params) b_fqn,
+
+       b.id b_id,
+       b.entity_id b_entity_id,
+       b.project_name b_project_name,
+       b.project_id b_project_id,
+       b.project_type b_project_type
+
+from   interface_metrics_pairs_test p,
+       interface_metrics_test a,
+       interface_metrics_test b
+where  a.id = p.interface_metrics_a
+and    b.id = p.interface_metrics_b;
+
+

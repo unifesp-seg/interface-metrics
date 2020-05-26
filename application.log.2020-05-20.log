@@ -1,0 +1,490 @@
+Wed, 20/05/2020 09:26:13 - 
+Wed, 20/05/2020 09:26:13 - Aplicativo iniciado
+Wed, 20/05/2020 09:26:13 - 
+Wed, 20/05/2020 09:26:13 - Service
+Wed, 20/05/2020 09:26:13 - 
+Wed, 20/05/2020 09:26:13 - Genie Search API
+Wed, 20/05/2020 09:26:13 - 
+Wed, 20/05/2020 09:26:13 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Wed, 20/05/2020 09:26:13 - 
+Wed, 20/05/2020 09:26:13 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Wed, 20/05/2020 09:26:13 - database-url = jdbc:mysql://localhost:3306/test_repo
+Wed, 20/05/2020 09:26:13 - database-user = root
+Wed, 20/05/2020 09:26:13 - database-password = ***
+Wed, 20/05/2020 09:26:13 - webserver-url = http://localhost:8080
+Wed, 20/05/2020 09:26:13 - 
+Wed, 20/05/2020 09:26:13 - Genie Search API
+Wed, 20/05/2020 09:26:13 - 
+Wed, 20/05/2020 09:26:13 - 
+Wed, 20/05/2020 09:26:13 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 09:26:13 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 09:26:13 - 
+Wed, 20/05/2020 09:28:18 - 
+Wed, 20/05/2020 09:28:18 - Aplicativo iniciado
+Wed, 20/05/2020 09:28:18 - 
+Wed, 20/05/2020 09:28:18 - Service
+Wed, 20/05/2020 09:28:18 - 
+Wed, 20/05/2020 09:28:18 - Genie Search API
+Wed, 20/05/2020 09:28:18 - 
+Wed, 20/05/2020 09:28:18 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Wed, 20/05/2020 09:28:18 - 
+Wed, 20/05/2020 09:28:18 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Wed, 20/05/2020 09:28:18 - database-url = jdbc:mysql://localhost:3306/test_repo
+Wed, 20/05/2020 09:28:18 - database-user = root
+Wed, 20/05/2020 09:28:18 - database-password = ***
+Wed, 20/05/2020 09:28:18 - webserver-url = http://localhost:8080
+Wed, 20/05/2020 09:28:18 - 
+Wed, 20/05/2020 09:28:18 - Genie Search API
+Wed, 20/05/2020 09:28:18 - 
+Wed, 20/05/2020 09:28:18 - 
+Wed, 20/05/2020 09:28:18 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 09:28:18 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 09:28:18 - 
+Wed, 20/05/2020 09:29:54 - 
+Wed, 20/05/2020 09:29:54 - Aplicativo iniciado
+Wed, 20/05/2020 09:29:54 - 
+Wed, 20/05/2020 09:29:54 - Service
+Wed, 20/05/2020 09:29:54 - 
+Wed, 20/05/2020 09:29:54 - Genie Search API
+Wed, 20/05/2020 09:29:54 - 
+Wed, 20/05/2020 09:29:54 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Wed, 20/05/2020 09:29:54 - 
+Wed, 20/05/2020 09:29:54 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Wed, 20/05/2020 09:29:54 - database-url = jdbc:mysql://localhost:3306/test_repo
+Wed, 20/05/2020 09:29:54 - database-user = root
+Wed, 20/05/2020 09:29:54 - database-password = ***
+Wed, 20/05/2020 09:29:54 - webserver-url = http://localhost:8080
+Wed, 20/05/2020 09:29:54 - 
+Wed, 20/05/2020 09:29:54 - Genie Search API
+Wed, 20/05/2020 09:29:54 - 
+Wed, 20/05/2020 09:29:54 - 
+Wed, 20/05/2020 09:29:54 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 09:29:54 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 09:29:54 - 
+Wed, 20/05/2020 09:36:22 - 
+Wed, 20/05/2020 09:36:22 - Aplicativo iniciado
+Wed, 20/05/2020 09:36:22 - 
+Wed, 20/05/2020 09:36:22 - Service
+Wed, 20/05/2020 09:36:22 - 
+Wed, 20/05/2020 09:36:22 - Genie Search API
+Wed, 20/05/2020 09:36:22 - 
+Wed, 20/05/2020 09:36:22 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Wed, 20/05/2020 09:36:22 - 
+Wed, 20/05/2020 09:36:22 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Wed, 20/05/2020 09:36:22 - database-url = jdbc:mysql://localhost:3306/test_repo
+Wed, 20/05/2020 09:36:22 - database-user = root
+Wed, 20/05/2020 09:36:22 - database-password = ***
+Wed, 20/05/2020 09:36:22 - webserver-url = http://localhost:8080
+Wed, 20/05/2020 09:36:22 - 
+Wed, 20/05/2020 09:36:22 - Genie Search API
+Wed, 20/05/2020 09:36:22 - 
+Wed, 20/05/2020 09:36:24 - 
+Wed, 20/05/2020 09:36:24 - Solr OFFLINE: http://localhost:8080/solr
+Wed, 20/05/2020 09:36:24 - 
+Wed, 20/05/2020 09:36:26 - 
+Wed, 20/05/2020 09:36:26 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 09:36:28 - Solr Index Path configurado: null
+Wed, 20/05/2020 09:36:28 - 
+Wed, 20/05/2020 09:36:35 - 
+Wed, 20/05/2020 09:36:35 - Aplicativo iniciado
+Wed, 20/05/2020 09:36:35 - 
+Wed, 20/05/2020 09:36:35 - Service
+Wed, 20/05/2020 09:36:35 - 
+Wed, 20/05/2020 09:36:35 - Genie Search API
+Wed, 20/05/2020 09:36:35 - 
+Wed, 20/05/2020 09:36:35 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Wed, 20/05/2020 09:36:35 - 
+Wed, 20/05/2020 09:36:35 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Wed, 20/05/2020 09:36:35 - database-url = jdbc:mysql://localhost:3306/test_repo
+Wed, 20/05/2020 09:36:35 - database-user = root
+Wed, 20/05/2020 09:36:35 - database-password = ***
+Wed, 20/05/2020 09:36:35 - webserver-url = http://localhost:8080
+Wed, 20/05/2020 09:36:35 - 
+Wed, 20/05/2020 09:36:35 - Genie Search API
+Wed, 20/05/2020 09:36:35 - 
+Wed, 20/05/2020 09:36:37 - 
+Wed, 20/05/2020 09:36:37 - Solr OFFLINE: http://localhost:8080/solr
+Wed, 20/05/2020 09:36:37 - 
+Wed, 20/05/2020 09:36:39 - 
+Wed, 20/05/2020 09:36:39 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 09:36:41 - Solr Index Path configurado: null
+Wed, 20/05/2020 09:36:41 - 
+Wed, 20/05/2020 09:37:29 - 
+Wed, 20/05/2020 09:37:29 - Aplicativo iniciado
+Wed, 20/05/2020 09:37:29 - 
+Wed, 20/05/2020 09:37:29 - Service
+Wed, 20/05/2020 09:37:30 - 
+Wed, 20/05/2020 09:37:30 - Genie Search API
+Wed, 20/05/2020 09:37:30 - 
+Wed, 20/05/2020 09:37:30 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Wed, 20/05/2020 09:37:30 - 
+Wed, 20/05/2020 09:37:30 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Wed, 20/05/2020 09:37:30 - database-url = jdbc:mysql://localhost:3306/test_repo
+Wed, 20/05/2020 09:37:30 - database-user = root
+Wed, 20/05/2020 09:37:30 - database-password = ***
+Wed, 20/05/2020 09:37:30 - webserver-url = http://localhost:8080
+Wed, 20/05/2020 09:37:30 - 
+Wed, 20/05/2020 09:37:30 - Genie Search API
+Wed, 20/05/2020 09:37:30 - 
+Wed, 20/05/2020 09:37:30 - 
+Wed, 20/05/2020 09:37:30 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 09:37:30 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 09:37:30 - 
+Wed, 20/05/2020 09:38:01 - 
+Wed, 20/05/2020 09:38:01 - Aplicativo iniciado
+Wed, 20/05/2020 09:38:01 - 
+Wed, 20/05/2020 09:38:01 - Service
+Wed, 20/05/2020 09:38:01 - 
+Wed, 20/05/2020 09:38:01 - Genie Search API
+Wed, 20/05/2020 09:38:01 - 
+Wed, 20/05/2020 09:38:01 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Wed, 20/05/2020 09:38:01 - 
+Wed, 20/05/2020 09:38:01 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Wed, 20/05/2020 09:38:01 - database-url = jdbc:mysql://localhost:3306/test_repo
+Wed, 20/05/2020 09:38:01 - database-user = root
+Wed, 20/05/2020 09:38:01 - database-password = ***
+Wed, 20/05/2020 09:38:01 - webserver-url = http://localhost:8080
+Wed, 20/05/2020 09:38:01 - 
+Wed, 20/05/2020 09:38:01 - Genie Search API
+Wed, 20/05/2020 09:38:01 - 
+Wed, 20/05/2020 09:38:02 - 
+Wed, 20/05/2020 09:38:02 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 09:38:02 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 09:38:02 - 
+Wed, 20/05/2020 09:42:30 - 
+Wed, 20/05/2020 09:42:30 - Aplicativo iniciado
+Wed, 20/05/2020 09:42:30 - 
+Wed, 20/05/2020 09:42:30 - Service
+Wed, 20/05/2020 09:42:30 - 
+Wed, 20/05/2020 09:42:31 - Genie Search API
+Wed, 20/05/2020 09:42:31 - 
+Wed, 20/05/2020 09:42:31 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Wed, 20/05/2020 09:42:31 - 
+Wed, 20/05/2020 09:42:31 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Wed, 20/05/2020 09:42:31 - database-url = jdbc:mysql://localhost:3306/test_repo
+Wed, 20/05/2020 09:42:31 - database-user = root
+Wed, 20/05/2020 09:42:31 - database-password = ***
+Wed, 20/05/2020 09:42:31 - webserver-url = http://localhost:8080
+Wed, 20/05/2020 09:42:31 - 
+Wed, 20/05/2020 09:42:31 - Genie Search API
+Wed, 20/05/2020 09:42:31 - 
+Wed, 20/05/2020 09:42:31 - 
+Wed, 20/05/2020 09:42:31 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 09:42:31 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 09:42:31 - 
+Wed, 20/05/2020 09:52:27 - 
+Wed, 20/05/2020 09:52:27 - Aplicativo iniciado
+Wed, 20/05/2020 09:52:27 - 
+Wed, 20/05/2020 09:52:27 - Service
+Wed, 20/05/2020 09:52:27 - 
+Wed, 20/05/2020 09:52:27 - Genie Search API
+Wed, 20/05/2020 09:52:27 - 
+Wed, 20/05/2020 09:52:27 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Wed, 20/05/2020 09:52:27 - 
+Wed, 20/05/2020 09:52:27 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Wed, 20/05/2020 09:52:27 - database-url = jdbc:mysql://localhost:3306/test_repo
+Wed, 20/05/2020 09:52:27 - database-user = root
+Wed, 20/05/2020 09:52:27 - database-password = ***
+Wed, 20/05/2020 09:52:27 - webserver-url = http://localhost:8080
+Wed, 20/05/2020 09:52:27 - 
+Wed, 20/05/2020 09:52:27 - Genie Search API
+Wed, 20/05/2020 09:52:27 - 
+Wed, 20/05/2020 09:52:27 - 
+Wed, 20/05/2020 09:52:27 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 09:52:27 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 09:52:27 - 
+Wed, 20/05/2020 09:57:47 - 
+Wed, 20/05/2020 09:57:47 - Aplicativo iniciado
+Wed, 20/05/2020 09:57:47 - 
+Wed, 20/05/2020 09:57:47 - Service
+Wed, 20/05/2020 09:57:47 - 
+Wed, 20/05/2020 09:57:47 - Genie Search API
+Wed, 20/05/2020 09:57:47 - 
+Wed, 20/05/2020 09:57:47 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Wed, 20/05/2020 09:57:47 - 
+Wed, 20/05/2020 09:57:47 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Wed, 20/05/2020 09:57:47 - database-url = jdbc:mysql://localhost:3306/test_repo
+Wed, 20/05/2020 09:57:47 - database-user = root
+Wed, 20/05/2020 09:57:47 - database-password = ***
+Wed, 20/05/2020 09:57:47 - webserver-url = http://localhost:8080
+Wed, 20/05/2020 09:57:47 - 
+Wed, 20/05/2020 09:57:47 - Genie Search API
+Wed, 20/05/2020 09:57:47 - 
+Wed, 20/05/2020 09:57:47 - 
+Wed, 20/05/2020 09:57:47 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 09:57:47 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 09:57:47 - 
+Wed, 20/05/2020 10:56:34 - 
+Wed, 20/05/2020 10:56:34 - Aplicativo finalizado. Tempo de execucao: 58 minutos.
+Wed, 20/05/2020 10:56:34 - 
+Wed, 20/05/2020 11:06:49 - 
+Wed, 20/05/2020 11:06:49 - Aplicativo iniciado
+Wed, 20/05/2020 11:06:49 - 
+Wed, 20/05/2020 11:06:49 - Service
+Wed, 20/05/2020 11:06:49 - 
+Wed, 20/05/2020 11:06:49 - Genie Search API
+Wed, 20/05/2020 11:06:49 - 
+Wed, 20/05/2020 11:06:49 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Wed, 20/05/2020 11:06:49 - 
+Wed, 20/05/2020 11:06:49 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Wed, 20/05/2020 11:06:49 - database-url = jdbc:mysql://localhost:3306/test_repo
+Wed, 20/05/2020 11:06:49 - database-user = root
+Wed, 20/05/2020 11:06:49 - database-password = ***
+Wed, 20/05/2020 11:06:49 - webserver-url = http://localhost:8080
+Wed, 20/05/2020 11:06:49 - 
+Wed, 20/05/2020 11:06:49 - Genie Search API
+Wed, 20/05/2020 11:06:49 - 
+Wed, 20/05/2020 11:06:49 - 
+Wed, 20/05/2020 11:06:49 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 11:06:49 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 11:06:49 - 
+Wed, 20/05/2020 11:06:53 - 
+Wed, 20/05/2020 11:06:53 - Aplicativo finalizado. Tempo de execucao: 4 segundos.
+Wed, 20/05/2020 11:06:53 - 
+Wed, 20/05/2020 11:07:05 - 
+Wed, 20/05/2020 11:07:05 - Aplicativo iniciado
+Wed, 20/05/2020 11:07:05 - 
+Wed, 20/05/2020 11:07:05 - Service
+Wed, 20/05/2020 11:07:05 - 
+Wed, 20/05/2020 11:07:05 - Genie Search API
+Wed, 20/05/2020 11:07:05 - 
+Wed, 20/05/2020 11:07:05 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Wed, 20/05/2020 11:07:05 - 
+Wed, 20/05/2020 11:07:05 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Wed, 20/05/2020 11:07:05 - database-url = jdbc:mysql://localhost:3306/test_repo
+Wed, 20/05/2020 11:07:05 - database-user = root
+Wed, 20/05/2020 11:07:05 - database-password = ***
+Wed, 20/05/2020 11:07:05 - webserver-url = http://localhost:8080
+Wed, 20/05/2020 11:07:05 - 
+Wed, 20/05/2020 11:07:05 - Genie Search API
+Wed, 20/05/2020 11:07:05 - 
+Wed, 20/05/2020 11:07:05 - 
+Wed, 20/05/2020 11:07:05 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 11:07:05 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Wed, 20/05/2020 11:07:05 - 
+Wed, 20/05/2020 11:17:00 - 
+Wed, 20/05/2020 11:17:00 - Aplicativo finalizado. Tempo de execucao: 9 minutos.
+Wed, 20/05/2020 11:17:00 - 
+Qua, 20/05/2020 11:21:11 - 
+Qua, 20/05/2020 11:21:11 - Aplicativo iniciado
+Qua, 20/05/2020 11:21:11 - 
+Qua, 20/05/2020 11:21:11 - Service
+Qua, 20/05/2020 11:21:11 - 
+Qua, 20/05/2020 11:21:11 - Genie Search API
+Qua, 20/05/2020 11:21:11 - 
+Qua, 20/05/2020 11:21:11 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Qua, 20/05/2020 11:21:11 - 
+Qua, 20/05/2020 11:21:11 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Qua, 20/05/2020 11:21:11 - database-url = jdbc:mysql://localhost:3306/test_repo
+Qua, 20/05/2020 11:21:11 - database-user = root
+Qua, 20/05/2020 11:21:11 - database-password = ***
+Qua, 20/05/2020 11:21:11 - webserver-url = http://localhost:8080
+Qua, 20/05/2020 11:21:11 - 
+Qua, 20/05/2020 11:21:11 - Genie Search API
+Qua, 20/05/2020 11:21:11 - 
+Qua, 20/05/2020 11:21:11 - 
+Qua, 20/05/2020 11:21:11 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 11:21:11 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 11:21:11 - 
+Qua, 20/05/2020 11:21:15 - 
+Qua, 20/05/2020 11:21:15 - Aplicativo finalizado. Tempo de execucao: 4 segundos.
+Qua, 20/05/2020 11:21:15 - 
+Qua, 20/05/2020 11:21:22 - 
+Qua, 20/05/2020 11:21:22 - Aplicativo iniciado
+Qua, 20/05/2020 11:21:22 - 
+Qua, 20/05/2020 11:21:22 - Service
+Qua, 20/05/2020 11:21:22 - 
+Qua, 20/05/2020 11:21:22 - Genie Search API
+Qua, 20/05/2020 11:21:22 - 
+Qua, 20/05/2020 11:21:22 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Qua, 20/05/2020 11:21:22 - 
+Qua, 20/05/2020 11:21:22 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Qua, 20/05/2020 11:21:22 - database-url = jdbc:mysql://localhost:3306/test_repo
+Qua, 20/05/2020 11:21:22 - database-user = root
+Qua, 20/05/2020 11:21:22 - database-password = ***
+Qua, 20/05/2020 11:21:22 - webserver-url = http://localhost:8080
+Qua, 20/05/2020 11:21:22 - 
+Qua, 20/05/2020 11:21:22 - Genie Search API
+Qua, 20/05/2020 11:21:22 - 
+Qua, 20/05/2020 11:21:22 - 
+Qua, 20/05/2020 11:21:22 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 11:21:22 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 11:21:22 - 
+Qua, 20/05/2020 11:21:34 - 
+Qua, 20/05/2020 11:21:34 - Aplicativo finalizado. Tempo de execucao: 11 segundos.
+Qua, 20/05/2020 11:21:34 - 
+Qua, 20/05/2020 11:27:01 - 
+Qua, 20/05/2020 11:27:01 - Genie Search API
+Qua, 20/05/2020 11:27:01 - 
+Qua, 20/05/2020 11:27:01 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Qua, 20/05/2020 11:27:01 - 
+Qua, 20/05/2020 11:27:01 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Qua, 20/05/2020 11:27:01 - database-url = jdbc:mysql://localhost:3306/test_repo
+Qua, 20/05/2020 11:27:01 - database-user = root
+Qua, 20/05/2020 11:27:01 - database-password = ***
+Qua, 20/05/2020 11:27:01 - webserver-url = http://localhost:8080
+Qua, 20/05/2020 11:27:01 - 
+Qua, 20/05/2020 11:27:01 - Genie Search API
+Qua, 20/05/2020 11:27:01 - 
+Qua, 20/05/2020 11:27:01 - 
+Qua, 20/05/2020 11:27:01 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 11:27:01 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 11:27:01 - 
+Qua, 20/05/2020 11:27:49 - 
+Qua, 20/05/2020 11:27:49 - Genie Search API
+Qua, 20/05/2020 11:27:49 - 
+Qua, 20/05/2020 11:27:49 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Qua, 20/05/2020 11:27:49 - 
+Qua, 20/05/2020 11:27:49 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Qua, 20/05/2020 11:27:49 - database-url = jdbc:mysql://localhost:3306/test_repo
+Qua, 20/05/2020 11:27:49 - database-user = root
+Qua, 20/05/2020 11:27:49 - database-password = ***
+Qua, 20/05/2020 11:27:49 - webserver-url = http://localhost:8080
+Qua, 20/05/2020 11:27:49 - 
+Qua, 20/05/2020 11:27:49 - Genie Search API
+Qua, 20/05/2020 11:27:49 - 
+Qua, 20/05/2020 11:27:49 - 
+Qua, 20/05/2020 11:27:49 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 11:27:49 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 11:27:49 - 
+Qua, 20/05/2020 11:28:23 - 
+Qua, 20/05/2020 11:28:23 - Genie Search API
+Qua, 20/05/2020 11:28:23 - 
+Qua, 20/05/2020 11:28:23 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Qua, 20/05/2020 11:28:23 - 
+Qua, 20/05/2020 11:28:23 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Qua, 20/05/2020 11:28:23 - database-url = jdbc:mysql://localhost:3306/test_repo
+Qua, 20/05/2020 11:28:23 - database-user = root
+Qua, 20/05/2020 11:28:23 - database-password = ***
+Qua, 20/05/2020 11:28:23 - webserver-url = http://localhost:8080
+Qua, 20/05/2020 11:28:23 - 
+Qua, 20/05/2020 11:28:23 - Genie Search API
+Qua, 20/05/2020 11:28:23 - 
+Qua, 20/05/2020 11:28:23 - 
+Qua, 20/05/2020 11:28:23 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 11:28:23 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 11:28:23 - 
+Qua, 20/05/2020 11:29:12 - 
+Qua, 20/05/2020 11:29:12 - Genie Search API
+Qua, 20/05/2020 11:29:12 - 
+Qua, 20/05/2020 11:29:12 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Qua, 20/05/2020 11:29:12 - 
+Qua, 20/05/2020 11:29:12 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Qua, 20/05/2020 11:29:12 - database-url = jdbc:mysql://localhost:3306/test_repo
+Qua, 20/05/2020 11:29:12 - database-user = root
+Qua, 20/05/2020 11:29:12 - database-password = ***
+Qua, 20/05/2020 11:29:12 - webserver-url = http://localhost:8080
+Qua, 20/05/2020 11:29:12 - 
+Qua, 20/05/2020 11:29:12 - Genie Search API
+Qua, 20/05/2020 11:29:12 - 
+Qua, 20/05/2020 11:29:12 - 
+Qua, 20/05/2020 11:29:12 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 11:29:12 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 11:29:12 - 
+Qua, 20/05/2020 11:29:16 - 
+Qua, 20/05/2020 11:29:16 - Genie Search API
+Qua, 20/05/2020 11:29:16 - 
+Qua, 20/05/2020 11:29:16 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Qua, 20/05/2020 11:29:16 - 
+Qua, 20/05/2020 11:29:16 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Qua, 20/05/2020 11:29:16 - database-url = jdbc:mysql://localhost:3306/test_repo
+Qua, 20/05/2020 11:29:16 - database-user = root
+Qua, 20/05/2020 11:29:16 - database-password = ***
+Qua, 20/05/2020 11:29:16 - webserver-url = http://localhost:8080
+Qua, 20/05/2020 11:29:16 - 
+Qua, 20/05/2020 11:29:16 - Genie Search API
+Qua, 20/05/2020 11:29:16 - 
+Qua, 20/05/2020 11:29:16 - 
+Qua, 20/05/2020 11:29:16 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 11:29:16 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 11:29:16 - 
+Qua, 20/05/2020 14:00:29 - 
+Qua, 20/05/2020 14:00:29 - Aplicativo iniciado
+Qua, 20/05/2020 14:00:29 - 
+Qua, 20/05/2020 14:00:29 - Service
+Qua, 20/05/2020 14:00:29 - 
+Qua, 20/05/2020 14:00:29 - Genie Search API
+Qua, 20/05/2020 14:00:29 - 
+Qua, 20/05/2020 14:00:29 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Qua, 20/05/2020 14:00:29 - 
+Qua, 20/05/2020 14:00:29 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Qua, 20/05/2020 14:00:29 - database-url = jdbc:mysql://localhost:3306/test_repo
+Qua, 20/05/2020 14:00:29 - database-user = root
+Qua, 20/05/2020 14:00:29 - database-password = ***
+Qua, 20/05/2020 14:00:29 - webserver-url = http://localhost:8080
+Qua, 20/05/2020 14:00:29 - 
+Qua, 20/05/2020 14:00:29 - Genie Search API
+Qua, 20/05/2020 14:00:29 - 
+Qua, 20/05/2020 14:00:29 - 
+Qua, 20/05/2020 14:00:29 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 14:00:29 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 14:00:29 - 
+Qua, 20/05/2020 14:50:39 - 
+Qua, 20/05/2020 14:50:39 - Aplicativo iniciado
+Qua, 20/05/2020 14:50:39 - 
+Qua, 20/05/2020 14:50:39 - Service
+Qua, 20/05/2020 14:50:39 - 
+Qua, 20/05/2020 14:50:39 - Genie Search API
+Qua, 20/05/2020 14:50:39 - 
+Qua, 20/05/2020 14:50:39 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Qua, 20/05/2020 14:50:39 - 
+Qua, 20/05/2020 14:50:39 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Qua, 20/05/2020 14:50:39 - database-url = jdbc:mysql://localhost:3306/test_repo
+Qua, 20/05/2020 14:50:39 - database-user = root
+Qua, 20/05/2020 14:50:39 - database-password = ***
+Qua, 20/05/2020 14:50:39 - webserver-url = http://localhost:8080
+Qua, 20/05/2020 14:50:39 - 
+Qua, 20/05/2020 14:50:39 - Genie Search API
+Qua, 20/05/2020 14:50:39 - 
+Qua, 20/05/2020 14:50:39 - 
+Qua, 20/05/2020 14:50:39 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 14:50:39 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 14:50:39 - 
+Qua, 20/05/2020 14:50:49 - 
+Qua, 20/05/2020 14:50:49 - Aplicativo iniciado
+Qua, 20/05/2020 14:50:49 - 
+Qua, 20/05/2020 14:50:49 - Service
+Qua, 20/05/2020 14:50:49 - 
+Qua, 20/05/2020 14:50:49 - Genie Search API
+Qua, 20/05/2020 14:50:49 - 
+Qua, 20/05/2020 14:50:49 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Qua, 20/05/2020 14:50:49 - 
+Qua, 20/05/2020 14:50:49 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Qua, 20/05/2020 14:50:49 - database-url = jdbc:mysql://localhost:3306/test_repo
+Qua, 20/05/2020 14:50:49 - database-user = root
+Qua, 20/05/2020 14:50:49 - database-password = ***
+Qua, 20/05/2020 14:50:49 - webserver-url = http://localhost:8080
+Qua, 20/05/2020 14:50:49 - 
+Qua, 20/05/2020 14:50:49 - Genie Search API
+Qua, 20/05/2020 14:50:49 - 
+Qua, 20/05/2020 14:50:49 - 
+Qua, 20/05/2020 14:50:49 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 14:50:49 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 14:50:49 - 
+Qua, 20/05/2020 15:37:26 - 
+Qua, 20/05/2020 15:37:26 - Aplicativo finalizado. Tempo de execucao: 46 minutos.
+Qua, 20/05/2020 15:37:26 - 
+Qua, 20/05/2020 15:41:39 - 
+Qua, 20/05/2020 15:41:39 - Aplicativo iniciado
+Qua, 20/05/2020 15:41:39 - 
+Qua, 20/05/2020 15:41:39 - Service
+Qua, 20/05/2020 15:41:39 - 
+Qua, 20/05/2020 15:41:39 - Genie Search API
+Qua, 20/05/2020 15:41:39 - 
+Qua, 20/05/2020 15:41:39 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Qua, 20/05/2020 15:41:39 - 
+Qua, 20/05/2020 15:41:39 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Qua, 20/05/2020 15:41:39 - database-url = jdbc:mysql://localhost:3306/test_repo
+Qua, 20/05/2020 15:41:39 - database-user = root
+Qua, 20/05/2020 15:41:39 - database-password = ***
+Qua, 20/05/2020 15:41:39 - webserver-url = http://localhost:8080
+Qua, 20/05/2020 15:41:39 - 
+Qua, 20/05/2020 15:41:39 - Genie Search API
+Qua, 20/05/2020 15:41:39 - 
+Qua, 20/05/2020 15:41:40 - 
+Qua, 20/05/2020 15:41:40 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 15:41:40 - Solr Index Path configurado: F:\sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Qua, 20/05/2020 15:41:40 - 
+Qua, 20/05/2020 15:41:52 - 
+Qua, 20/05/2020 15:41:52 - Aplicativo finalizado. Tempo de execucao: 12 segundos.
+Qua, 20/05/2020 15:41:52 - 

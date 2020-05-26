@@ -14,24 +14,20 @@ import br.inpe.cap.interfacemetrics.application.InterfaceMetricOccurrencesHelper
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricParamsRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.RepositoryType;
+import br.unifesp.ict.seg.geniesearchapi.infrastructure.util.GenieSearchAPIConfig;
 
 public class InterfaceMetricTest {
 
-	private InterfaceMetricRepository repository = new InterfaceMetricRepository(RepositoryType.MOCK);
+	private InterfaceMetricRepository interfaceMetricRepository = new InterfaceMetricRepository(RepositoryType.MOCK);
 	private InterfaceMetricParamsRepository paramsRepository = new InterfaceMetricParamsRepository(RepositoryType.MOCK);
 
 	private List<InterfaceMetric> tests = new ArrayList<InterfaceMetric>();
 
 	@Before
-	public void setup() throws Exception {
-		tests = repository.findAllOrderedById();
+	public void initialize() throws Exception {
+		GenieSearchAPIConfig.loadProperties();
+		tests = interfaceMetricRepository.findAllOrderedById();
 		assertEquals(47, tests.size());
-		this.processMethodsInfo();
-	}
-
-	private void processMethodsInfo(){
-		for(InterfaceMetric interfaceMetric : tests)
-			interfaceMetric.processMethod();
 	}
 
 	/*
@@ -173,20 +169,20 @@ public class InterfaceMetricTest {
 	
 	@Test()
 	public void compareParamsOrder() throws Exception {
-		InterfaceMetric i01 = repository.findById(1819910);//'(int,java.lang.String,java.lang.String)'
-		InterfaceMetric i02 = repository.findById(1819931);//'(int,java.lang.String,java.lang.String)'
-		InterfaceMetric i03 = repository.findById(1810916);//'(int,int,java.lang.String)'
-		InterfaceMetric i04 = repository.findById(1810924);//'(int,int,java.lang.String)'
-		InterfaceMetric i05 = repository.findById(1812767);//'(java.lang.String,java.lang.String,int)'
-		InterfaceMetric i06 = repository.findById(1812769);//'(java.lang.String,java.lang.String,int)'
-		InterfaceMetric i07 = repository.findById(1813707);//'(java.lang.String,java.lang.Long)'
-		InterfaceMetric i08 = repository.findById(1813753);//'(java.lang.String,java.lang.Long)'
-		InterfaceMetric i09 = repository.findById(1813702);//'(java.lang.String,java.lang.Integer)'
-		InterfaceMetric i10 = repository.findById(1813759);//'(java.lang.String,java.lang.Integer)'
-		InterfaceMetric i11 = repository.findById(1811663);//'(java.lang.String,long)'
-		InterfaceMetric i12 = repository.findById(1811761);//'(java.lang.String,long)'
-		InterfaceMetric i13 = repository.findById(1811541);//'(java.lang.String,int)'
-		InterfaceMetric i14 = repository.findById(1811542);//'(java.lang.String,int)'
+		InterfaceMetric i01 = interfaceMetricRepository.findById(1819910);//'(int,java.lang.String,java.lang.String)'
+		InterfaceMetric i02 = interfaceMetricRepository.findById(1819931);//'(int,java.lang.String,java.lang.String)'
+		InterfaceMetric i03 = interfaceMetricRepository.findById(1810916);//'(int,int,java.lang.String)'
+		InterfaceMetric i04 = interfaceMetricRepository.findById(1810924);//'(int,int,java.lang.String)'
+		InterfaceMetric i05 = interfaceMetricRepository.findById(1812767);//'(java.lang.String,java.lang.String,int)'
+		InterfaceMetric i06 = interfaceMetricRepository.findById(1812769);//'(java.lang.String,java.lang.String,int)'
+		InterfaceMetric i07 = interfaceMetricRepository.findById(1813707);//'(java.lang.String,java.lang.Long)'
+		InterfaceMetric i08 = interfaceMetricRepository.findById(1813753);//'(java.lang.String,java.lang.Long)'
+		InterfaceMetric i09 = interfaceMetricRepository.findById(1813702);//'(java.lang.String,java.lang.Integer)'
+		InterfaceMetric i10 = interfaceMetricRepository.findById(1813759);//'(java.lang.String,java.lang.Integer)'
+		InterfaceMetric i11 = interfaceMetricRepository.findById(1811663);//'(java.lang.String,long)'
+		InterfaceMetric i12 = interfaceMetricRepository.findById(1811761);//'(java.lang.String,long)'
+		InterfaceMetric i13 = interfaceMetricRepository.findById(1811541);//'(java.lang.String,int)'
+		InterfaceMetric i14 = interfaceMetricRepository.findById(1811542);//'(java.lang.String,int)'
 
 		//sameParams isParamsOrder
 		assertTrue(i01.isSameParams(i02.getParamsNames(),true));
@@ -210,20 +206,20 @@ public class InterfaceMetricTest {
 
 	@Test()
 	public void compareExpandedParamsOrder() throws Exception {
-		InterfaceMetric i01 = repository.findById(1819910);//'(int,java.lang.String,java.lang.String)'
-		InterfaceMetric i02 = repository.findById(1819931);//'(int,java.lang.String,java.lang.String)'
-		InterfaceMetric i03 = repository.findById(1810916);//'(int,int,java.lang.String)'
-		InterfaceMetric i04 = repository.findById(1810924);//'(int,int,java.lang.String)'
-		InterfaceMetric i05 = repository.findById(1812767);//'(java.lang.String,java.lang.String,int)'
-		InterfaceMetric i06 = repository.findById(1812769);//'(java.lang.String,java.lang.String,int)'
-		InterfaceMetric i07 = repository.findById(1813707);//'(java.lang.String,java.lang.Long)'
-		InterfaceMetric i08 = repository.findById(1813753);//'(java.lang.String,java.lang.Long)'
-		InterfaceMetric i09 = repository.findById(1813702);//'(java.lang.String,java.lang.Integer)'
-		InterfaceMetric i10 = repository.findById(1813759);//'(java.lang.String,java.lang.Integer)'
-		InterfaceMetric i11 = repository.findById(1811663);//'(java.lang.String,long)'
-		InterfaceMetric i12 = repository.findById(1811761);//'(java.lang.String,long)'
-		InterfaceMetric i13 = repository.findById(1811541);//'(java.lang.String,int)'
-		InterfaceMetric i14 = repository.findById(1811542);//'(java.lang.String,int)'
+		InterfaceMetric i01 = interfaceMetricRepository.findById(1819910);//'(int,java.lang.String,java.lang.String)'
+		InterfaceMetric i02 = interfaceMetricRepository.findById(1819931);//'(int,java.lang.String,java.lang.String)'
+		InterfaceMetric i03 = interfaceMetricRepository.findById(1810916);//'(int,int,java.lang.String)'
+		InterfaceMetric i04 = interfaceMetricRepository.findById(1810924);//'(int,int,java.lang.String)'
+		InterfaceMetric i05 = interfaceMetricRepository.findById(1812767);//'(java.lang.String,java.lang.String,int)'
+		InterfaceMetric i06 = interfaceMetricRepository.findById(1812769);//'(java.lang.String,java.lang.String,int)'
+		InterfaceMetric i07 = interfaceMetricRepository.findById(1813707);//'(java.lang.String,java.lang.Long)'
+		InterfaceMetric i08 = interfaceMetricRepository.findById(1813753);//'(java.lang.String,java.lang.Long)'
+		InterfaceMetric i09 = interfaceMetricRepository.findById(1813702);//'(java.lang.String,java.lang.Integer)'
+		InterfaceMetric i10 = interfaceMetricRepository.findById(1813759);//'(java.lang.String,java.lang.Integer)'
+		InterfaceMetric i11 = interfaceMetricRepository.findById(1811663);//'(java.lang.String,long)'
+		InterfaceMetric i12 = interfaceMetricRepository.findById(1811761);//'(java.lang.String,long)'
+		InterfaceMetric i13 = interfaceMetricRepository.findById(1811541);//'(java.lang.String,int)'
+		InterfaceMetric i14 = interfaceMetricRepository.findById(1811542);//'(java.lang.String,int)'
 
 		@SuppressWarnings("unused")
 		InterfaceMetricOccurrencesHelper helper = new InterfaceMetricOccurrencesHelper(i11, RepositoryType.MOCK);
@@ -255,11 +251,11 @@ public class InterfaceMetricTest {
 
 	@Test()
 	public void getParamsNamesBD() throws Exception {
-		InterfaceMetric i1 = repository.findById(1440377);
-		InterfaceMetric i2 = repository.findById(1440618);
-		InterfaceMetric i3 = repository.findById(1440368);
-		InterfaceMetric i4 = repository.findById(1449408);
-		InterfaceMetric i5 = repository.findById(1678643);
+		InterfaceMetric i1 = interfaceMetricRepository.findById(1440377);
+		InterfaceMetric i2 = interfaceMetricRepository.findById(1440618);
+		InterfaceMetric i3 = interfaceMetricRepository.findById(1440368);
+		InterfaceMetric i4 = interfaceMetricRepository.findById(1449408);
+		InterfaceMetric i5 = interfaceMetricRepository.findById(1678643);
 		
 		assertEquals(i1.getParams(), "java.nio.file.Path,java.nio.file.DirectoryStream$Filter<<?-java.nio.file.Path>>");
 		assertEquals(i2.getParams(), "java.util.Map<com.sun.java.util.jar.pack.Attribute$Layout,com.sun.java.util.jar.pack.Attribute>,int,java.lang.String");
@@ -276,10 +272,10 @@ public class InterfaceMetricTest {
 	
 	@Test()
 	public void processParams() throws Exception {
-		InterfaceMetric i1 = repository.findById(1440361);
-		InterfaceMetric i2 = repository.findById(1440377);
-		InterfaceMetric i3 = repository.findById(1440371);
-		InterfaceMetric i3a = repository.findById(1440618);
+		InterfaceMetric i1 = interfaceMetricRepository.findById(1440361);
+		InterfaceMetric i2 = interfaceMetricRepository.findById(1440377);
+		InterfaceMetric i3 = interfaceMetricRepository.findById(1440371);
+		InterfaceMetric i3a = interfaceMetricRepository.findById(1440618);
 
 		List<String> params = null;
 		

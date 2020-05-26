@@ -29,14 +29,18 @@ public class InterfaceMetricsMain {
 			do {
 				try {
 
+					// clearProcessing
+					//service.clearProcessing(ExecutionType.PARAMS);
+					//service.clearProcessing(ExecutionType.INTERFACE_METRICS);
+
 					// 1. Process only method info
-					service.processMethodsInfo();
+					//service.processMethodsInfo();
 
 					// 2. ExecutionType.PARAMS
-					service.execute(true, ExecutionType.PARAMS);
+					//service.execute(ExecutionType.PARAMS);
 
 					// 3. ExecutionType.INTERFACE_METRICS
-					service.execute(true, ExecutionType.INTERFACE_METRICS);
+					service.execute(ExecutionType.INTERFACE_METRICS);
 
 					communicationsException = false;
 

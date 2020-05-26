@@ -94,13 +94,13 @@ public class InterfaceMetricOccurrencesHelper {
 			return interfaceMetric.getPackage().equals(occurence.getPackage());
 	}
 
-	//Versão original na qual 
+	//Versão original: Ignora o nome da Classe, ou Considera exatamente o mesmo nome da Classe 
 	@SuppressWarnings("unused")
 	private boolean matchClassName(OccurrencesCombination combination, InterfaceMetric occurence) {
 		return combination.isIgnoreClass() ? true : interfaceMetric.getClassName().equals(occurence.getClassName());
 	}
 
-	//Ignora o nome da Classe, ou Considera usando a expansão Wordnet
+	//Ignora o nome da Classe, ou Considera o nome da Classe usando a expansão Wordnet
 	private boolean matchClassName1(OccurrencesCombination combination, InterfaceMetric occurence) {
 		if(combination.isIgnoreClass())
 			return true;

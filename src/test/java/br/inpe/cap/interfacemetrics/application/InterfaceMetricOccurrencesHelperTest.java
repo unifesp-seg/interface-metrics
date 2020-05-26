@@ -13,51 +13,45 @@ import br.inpe.cap.interfacemetrics.domain.InterfaceMetric;
 import br.inpe.cap.interfacemetrics.domain.OccurrencesCombination;
 import br.inpe.cap.interfacemetrics.infrastructure.InterfaceMetricRepository;
 import br.inpe.cap.interfacemetrics.infrastructure.RepositoryType;
+import br.unifesp.ict.seg.geniesearchapi.infrastructure.util.GenieSearchAPIConfig;
 import br.unifesp.ict.seg.geniesearchapi.services.searchaqe.infrastructure.QueryTerm;
 
 public class InterfaceMetricOccurrencesHelperTest {
 
 	
-	private InterfaceMetricRepository repository = new InterfaceMetricRepository(RepositoryType.MOCK);
-	private InterfaceMetric interfaceMetric;
-	private InterfaceMetricOccurrencesHelper helper;
+	private InterfaceMetricRepository interfaceMetricRepository = new InterfaceMetricRepository(RepositoryType.MOCK);
+	private InterfaceMetric interfaceMetricId10;
+	private InterfaceMetricOccurrencesHelper helperId10;
 	
 	@Before
-	public void setup() throws Exception {
-		this.processMethodsInfo();
-		interfaceMetric = repository.findById(10);
-		helper = new InterfaceMetricOccurrencesHelper(interfaceMetric, RepositoryType.MOCK);
-	}
-	
-	private void processMethodsInfo() throws Exception {
-		List<InterfaceMetric> tests = repository.findAllOrderedById();
-		for(InterfaceMetric interfaceMetric : tests){
-			interfaceMetric.processMethod();
-			repository.updateProcessedMethod(interfaceMetric);
-		}
+	public void initialize() throws Exception {
+		GenieSearchAPIConfig.loadProperties();
+		interfaceMetricId10 = interfaceMetricRepository.findById(10);
+		helperId10 = new InterfaceMetricOccurrencesHelper(interfaceMetricId10, RepositoryType.MOCK);
 	}
 	
 	@Test
 	public void interfaceElements(){
-		assertEquals("net.sf.saxon.tinytree", interfaceMetric.getPackage());
-		assertEquals("WhitespaceTextImpl", interfaceMetric.getClassName());
-		assertEquals("long", interfaceMetric.getReturnType());
-		assertEquals("getLongValue", interfaceMetric.getMethodName());
-		assertEquals("net.sf.saxon.tinytree.TinyTree,int", interfaceMetric.getParams());
-		assertEquals(2, interfaceMetric.getParamsNames().length);
-		assertEquals("net.sf.saxon.tinytree.TinyTree", interfaceMetric.getParamsNames()[0]);
-		assertEquals("int", interfaceMetric.getParamsNames()[1]);
+		assertEquals("net.sf.saxon.tinytree", interfaceMetricId10.getPackage());
+		assertEquals("WhitespaceTextImpl", interfaceMetricId10.getClassName());
+		assertEquals("long", interfaceMetricId10.getReturnType());
+		assertEquals("getLongValue", interfaceMetricId10.getMethodName());
+		assertEquals("net.sf.saxon.tinytree.TinyTree,int", interfaceMetricId10.getParams());
+		assertEquals(2, interfaceMetricId10.getParamsNames().length);
+		assertEquals("net.sf.saxon.tinytree.TinyTree", interfaceMetricId10.getParamsNames()[0]);
+		assertEquals("int", interfaceMetricId10.getParamsNames()[1]);
 	}
 
 	@Test
 	public void classNameTerms() throws Exception {
 		//http://localhost:8080/related-words-service/GetRelated?word=WhitespaceTextImpl
 		
+		//fqn: net.sf.saxon.tinytree.WhitespaceTextImpl.getLongValue
 		//Whitespace: 0 []
 		//Text: 6 [text, textualMatter, textbook, textEdition, schoolbook, schoolText]
 		//Impl: 0 []
 		
-		List<QueryTerm> terms = helper.getAqeApproach().getClassNameTerms();
+		List<QueryTerm> terms = helperId10.getAqeApproach().getClassNameTerms();
 		assertEquals(3, terms.size());
 		assertEquals("whitespace", terms.get(0).getExpandedTerms().get(0));
 		assertEquals("text", terms.get(1).getExpandedTerms().get(0));
@@ -84,16 +78,16 @@ public class InterfaceMetricOccurrencesHelperTest {
 	@Test
 	public void returnTerms() throws Exception {
 		//long, double, float, long, int, Integer, short, byte
-		assertEquals(1, helper.getAqeApproach().getReturnTypeTerms().size());
-		assertEquals(8, helper.getAqeApproach().getReturnTypeTerms().get(0).getExpandedTerms().size());
-		assertEquals("long", helper.getAqeApproach().getReturnTypeTerms().get(0).getExpandedTerms().get(0));
-		assertEquals("double", helper.getAqeApproach().getReturnTypeTerms().get(0).getExpandedTerms().get(1));
-		assertEquals("float", helper.getAqeApproach().getReturnTypeTerms().get(0).getExpandedTerms().get(2));
-		assertEquals("long", helper.getAqeApproach().getReturnTypeTerms().get(0).getExpandedTerms().get(3));
-		assertEquals("int", helper.getAqeApproach().getReturnTypeTerms().get(0).getExpandedTerms().get(4));
-		assertEquals("Integer", helper.getAqeApproach().getReturnTypeTerms().get(0).getExpandedTerms().get(5));
-		assertEquals("short", helper.getAqeApproach().getReturnTypeTerms().get(0).getExpandedTerms().get(6));
-		assertEquals("byte", helper.getAqeApproach().getReturnTypeTerms().get(0).getExpandedTerms().get(7));
+		assertEquals(1, helperId10.getAqeApproach().getReturnTypeTerms().size());
+		assertEquals(8, helperId10.getAqeApproach().getReturnTypeTerms().get(0).getExpandedTerms().size());
+		assertEquals("long", helperId10.getAqeApproach().getReturnTypeTerms().get(0).getExpandedTerms().get(0));
+		assertEquals("double", helperId10.getAqeApproach().getReturnTypeTerms().get(0).getExpandedTerms().get(1));
+		assertEquals("float", helperId10.getAqeApproach().getReturnTypeTerms().get(0).getExpandedTerms().get(2));
+		assertEquals("long", helperId10.getAqeApproach().getReturnTypeTerms().get(0).getExpandedTerms().get(3));
+		assertEquals("int", helperId10.getAqeApproach().getReturnTypeTerms().get(0).getExpandedTerms().get(4));
+		assertEquals("Integer", helperId10.getAqeApproach().getReturnTypeTerms().get(0).getExpandedTerms().get(5));
+		assertEquals("short", helperId10.getAqeApproach().getReturnTypeTerms().get(0).getExpandedTerms().get(6));
+		assertEquals("byte", helperId10.getAqeApproach().getReturnTypeTerms().get(0).getExpandedTerms().get(7));
 	}
 	
 	@Test
@@ -102,7 +96,7 @@ public class InterfaceMetricOccurrencesHelperTest {
 		//Long: [long, hanker, yearn, retentive, recollective, tenacious], not [short, unretentive]
 		//Value: 16 [value, prize, treasure, appreciate, respect, ...], not [disrespect, disesteem]
 		
-		List<QueryTerm> terms = helper.getAqeApproach().getMethodNameTerms();
+		List<QueryTerm> terms = helperId10.getAqeApproach().getMethodNameTerms();
 		assertEquals(3, terms.size());
 		assertEquals("get", terms.get(0).getExpandedTerms().get(0));
 		assertEquals("long", terms.get(1).getExpandedTerms().get(0));
@@ -140,7 +134,7 @@ public class InterfaceMetricOccurrencesHelperTest {
 		//[net.sf.saxon.tinytree.TinyTree]
 		//[int, Integer, double, float, long, int, Integer, short, byte]
 		
-		List<QueryTerm> terms = helper.getAqeApproach().getParamsTerms();
+		List<QueryTerm> terms = helperId10.getAqeApproach().getParamsTerms();
 		assertEquals(2, terms.size());
 		assertEquals("net.sf.saxon.tinytree.TinyTree", terms.get(0).getExpandedTerms().get(0));
 		assertEquals("int", terms.get(1).getExpandedTerms().get(0));
@@ -165,14 +159,14 @@ public class InterfaceMetricOccurrencesHelperTest {
 
 	@Test
 	public void occurrences1of16() throws Exception {
-		helper.updateOccurrences();
+		helperId10.updateOccurrences();
 		List<InterfaceMetric> matches = new ArrayList<InterfaceMetric>();
 		
-		matches = helper.getOccurrences(new OccurrencesCombination(false, false, false, false));
+		matches = helperId10.getOccurrences(new OccurrencesCombination(false, false, false, false));
 		assertEquals(1, matches.size());
 		assertEquals(18, matches.get(0).getId().longValue());
 		
-		matches = helper.getOccurrences(new OccurrencesCombination(false, false, false, true));
+		matches = helperId10.getOccurrences(new OccurrencesCombination(false, false, false, true));
 		assertEquals(7, matches.size());
 		assertTrue(matches.contains(new InterfaceMetric(11)));
 		assertTrue(matches.contains(new InterfaceMetric(14)));
@@ -182,13 +176,13 @@ public class InterfaceMetricOccurrencesHelperTest {
 		assertTrue(matches.contains(new InterfaceMetric(22)));
 		assertTrue(matches.contains(new InterfaceMetric(23)));
 		
-		matches = helper.getOccurrences(new OccurrencesCombination(false, false, true, false));
+		matches = helperId10.getOccurrences(new OccurrencesCombination(false, false, true, false));
 		assertEquals(3, matches.size());
 		assertTrue(matches.contains(new InterfaceMetric(12)));
 		assertTrue(matches.contains(new InterfaceMetric(18)));
 		assertTrue(matches.contains(new InterfaceMetric(20)));
 
-		matches = helper.getOccurrences(new OccurrencesCombination(false, false, true, true));
+		matches = helperId10.getOccurrences(new OccurrencesCombination(false, false, true, true));
 		assertEquals(12, matches.size());
 		
 		assertTrue(matches.contains(new InterfaceMetric(11)));
@@ -207,14 +201,14 @@ public class InterfaceMetricOccurrencesHelperTest {
 
 	@Test
 	public void occurrences2of16() throws Exception {
-		helper.updateOccurrences();
+		helperId10.updateOccurrences();
 		List<InterfaceMetric> matches = new ArrayList<InterfaceMetric>();
 		
-		matches = helper.getOccurrences(new OccurrencesCombination(false, true, false, false));
+		matches = helperId10.getOccurrences(new OccurrencesCombination(false, true, false, false));
 		assertEquals(1, matches.size());
 		assertEquals(18, matches.get(0).getId().longValue());
 		
-		matches = helper.getOccurrences(new OccurrencesCombination(false, true, false, true));
+		matches = helperId10.getOccurrences(new OccurrencesCombination(false, true, false, true));
 		assertEquals(7, matches.size());
 		assertTrue(matches.contains(new InterfaceMetric(11)));
 		assertTrue(matches.contains(new InterfaceMetric(14)));
@@ -224,13 +218,13 @@ public class InterfaceMetricOccurrencesHelperTest {
 		assertTrue(matches.contains(new InterfaceMetric(22)));
 		assertTrue(matches.contains(new InterfaceMetric(23)));
 		
-		matches = helper.getOccurrences(new OccurrencesCombination(false, true, true, false));
+		matches = helperId10.getOccurrences(new OccurrencesCombination(false, true, true, false));
 		assertEquals(3, matches.size());
 		assertTrue(matches.contains(new InterfaceMetric(12)));
 		assertTrue(matches.contains(new InterfaceMetric(18)));
 		assertTrue(matches.contains(new InterfaceMetric(20)));
 
-		matches = helper.getOccurrences(new OccurrencesCombination(false, true, true, true));
+		matches = helperId10.getOccurrences(new OccurrencesCombination(false, true, true, true));
 		assertEquals(12, matches.size());
 		assertTrue(matches.contains(new InterfaceMetric(11)));
 		assertTrue(matches.contains(new InterfaceMetric(12)));
@@ -248,38 +242,38 @@ public class InterfaceMetricOccurrencesHelperTest {
 
 	@Test
 	public void occurrences3of16() throws Exception {
-		helper.updateOccurrences();
+		helperId10.updateOccurrences();
 		List<InterfaceMetric> matches = new ArrayList<InterfaceMetric>();
 		
-		matches = helper.getOccurrences(new OccurrencesCombination(true, false, false, false));
+		matches = helperId10.getOccurrences(new OccurrencesCombination(true, false, false, false));
 		assertEquals(0, matches.size());
 		
-		matches = helper.getOccurrences(new OccurrencesCombination(true, false, false, true));
+		matches = helperId10.getOccurrences(new OccurrencesCombination(true, false, false, true));
 		assertEquals(0, matches.size());
 		
-		matches = helper.getOccurrences(new OccurrencesCombination(true, false, true, false));
+		matches = helperId10.getOccurrences(new OccurrencesCombination(true, false, true, false));
 		assertEquals(0, matches.size());
 
-		matches = helper.getOccurrences(new OccurrencesCombination(true, false, true, true));
+		matches = helperId10.getOccurrences(new OccurrencesCombination(true, false, true, true));
 		assertEquals(1, matches.size());
 		assertTrue(matches.contains(new InterfaceMetric(13)));
 	}
 
 	@Test
 	public void occurrences4of16() throws Exception {
-		helper.updateOccurrences();
+		helperId10.updateOccurrences();
 		List<InterfaceMetric> matches = new ArrayList<InterfaceMetric>();
 		
-		matches = helper.getOccurrences(new OccurrencesCombination(true, true, false, false));
+		matches = helperId10.getOccurrences(new OccurrencesCombination(true, true, false, false));
 		assertEquals(0, matches.size());
 		
-		matches = helper.getOccurrences(new OccurrencesCombination(true, true, false, true));
+		matches = helperId10.getOccurrences(new OccurrencesCombination(true, true, false, true));
 		assertEquals(0, matches.size());
 		
-		matches = helper.getOccurrences(new OccurrencesCombination(true, true, true, false));
+		matches = helperId10.getOccurrences(new OccurrencesCombination(true, true, true, false));
 		assertEquals(0, matches.size());
 
-		matches = helper.getOccurrences(new OccurrencesCombination(true, true, true, true));
+		matches = helperId10.getOccurrences(new OccurrencesCombination(true, true, true, true));
 		assertEquals(2, matches.size());
 		assertTrue(matches.contains(new InterfaceMetric(13)));
 		assertTrue(matches.contains(new InterfaceMetric(17)));
@@ -288,10 +282,10 @@ public class InterfaceMetricOccurrencesHelperTest {
 	@Test
 	public void updateOccurrences() throws Exception {
 
-		helper.updateOccurrences();
-		repository.updateProcessedMethod(interfaceMetric);
+		helperId10.updateOccurrences();
+		interfaceMetricRepository.updateProcessedMethod(interfaceMetricId10);
 
-		InterfaceMetric storage = repository.findById(interfaceMetric.getId());
+		InterfaceMetric storage = interfaceMetricRepository.findById(interfaceMetricId10.getId());
 		
 		assertEquals(1 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, false)).intValue());
 		assertEquals(7 , storage.getOccurrencesTotal(new OccurrencesCombination(false, false, false, true)).intValue());

@@ -1,0 +1,112 @@
+Sex, 22/05/2020 09:22:13 - 
+Sex, 22/05/2020 09:22:13 - Aplicativo iniciado
+Sex, 22/05/2020 09:22:13 - 
+Sex, 22/05/2020 09:22:13 - Service
+Sex, 22/05/2020 09:22:13 - 
+Sex, 22/05/2020 09:22:13 - Genie Search API
+Sex, 22/05/2020 09:22:13 - 
+Sex, 22/05/2020 09:22:13 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Sex, 22/05/2020 09:22:13 - 
+Sex, 22/05/2020 09:22:13 - input-repo = F:\Sourcerer_portable\repositories\test_repo
+Sex, 22/05/2020 09:22:13 - database-url = jdbc:mysql://localhost:3306/test_repo
+Sex, 22/05/2020 09:22:13 - database-user = root
+Sex, 22/05/2020 09:22:13 - database-password = ***
+Sex, 22/05/2020 09:22:13 - webserver-url = http://localhost:8080
+Sex, 22/05/2020 09:22:13 - 
+Sex, 22/05/2020 09:22:13 - Genie Search API
+Sex, 22/05/2020 09:22:13 - 
+Sex, 22/05/2020 09:22:13 - 
+Sex, 22/05/2020 09:22:13 - Solr Index Path esperado   : F:\Sourcerer_portable\repositories\test_repo\solr-repo\data\index
+Sex, 22/05/2020 09:22:13 - Solr Index Path configurado: F:\sourcerer_portable\repositories\genie_search_api_test\solr-repo\data\index
+Sex, 22/05/2020 09:22:13 - 
+Sex, 22/05/2020 09:22:27 - 
+Sex, 22/05/2020 09:22:27 - Aplicativo finalizado. Tempo de execucao: 14 segundos.
+Sex, 22/05/2020 09:22:27 - 
+Sex, 22/05/2020 09:32:02 - 
+Sex, 22/05/2020 09:32:02 - Aplicativo iniciado
+Sex, 22/05/2020 09:32:02 - 
+Sex, 22/05/2020 09:32:02 - Service
+Sex, 22/05/2020 09:32:03 - 
+Sex, 22/05/2020 09:32:03 - Genie Search API
+Sex, 22/05/2020 09:32:03 - 
+Sex, 22/05/2020 09:32:03 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Sex, 22/05/2020 09:32:03 - 
+Sex, 22/05/2020 09:32:03 - input-repo = F:\sourcerer_portable\repositories\genie_search_api_test
+Sex, 22/05/2020 09:32:03 - database-url = jdbc:mysql://localhost:3306/genie_search_api_test
+Sex, 22/05/2020 09:32:03 - database-user = root
+Sex, 22/05/2020 09:32:03 - database-password = ***
+Sex, 22/05/2020 09:32:03 - webserver-url = http://localhost:8080
+Sex, 22/05/2020 09:32:03 - 
+Sex, 22/05/2020 09:32:03 - Genie Search API
+Sex, 22/05/2020 09:32:03 - 
+Sex, 22/05/2020 10:54:48 - 
+Sex, 22/05/2020 10:54:48 - Aplicativo iniciado
+Sex, 22/05/2020 10:54:48 - 
+Sex, 22/05/2020 10:54:48 - Service
+Sex, 22/05/2020 10:54:48 - 
+Sex, 22/05/2020 10:54:48 - Genie Search API
+Sex, 22/05/2020 10:54:48 - 
+Sex, 22/05/2020 10:54:48 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Sex, 22/05/2020 10:54:48 - 
+Sex, 22/05/2020 10:54:48 - input-repo = F:\sourcerer_portable\repositories\genie_search_api_test
+Sex, 22/05/2020 10:54:48 - database-url = jdbc:mysql://localhost:3306/genie_search_api_test
+Sex, 22/05/2020 10:54:48 - database-user = root
+Sex, 22/05/2020 10:54:48 - database-password = ***
+Sex, 22/05/2020 10:54:48 - webserver-url = http://localhost:8080
+Sex, 22/05/2020 10:54:48 - 
+Sex, 22/05/2020 10:54:48 - Genie Search API
+Sex, 22/05/2020 10:54:48 - 
+Sex, 22/05/2020 12:30:56 - 
+Sex, 22/05/2020 12:30:56 - Aplicativo iniciado
+Sex, 22/05/2020 12:30:56 - 
+Sex, 22/05/2020 12:30:56 - Service
+Sex, 22/05/2020 12:30:57 - 
+Sex, 22/05/2020 12:30:57 - Genie Search API
+Sex, 22/05/2020 12:30:57 - 
+Sex, 22/05/2020 12:30:57 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Sex, 22/05/2020 12:30:57 - 
+Sex, 22/05/2020 12:30:57 - input-repo = F:\sourcerer_portable\repositories\genie_search_api_test
+Sex, 22/05/2020 12:30:57 - database-url = jdbc:mysql://localhost:3306/genie_search_api_test
+Sex, 22/05/2020 12:30:57 - database-user = root
+Sex, 22/05/2020 12:30:57 - database-password = ***
+Sex, 22/05/2020 12:30:57 - webserver-url = http://localhost:8080
+Sex, 22/05/2020 12:30:57 - 
+Sex, 22/05/2020 12:30:57 - Genie Search API
+Sex, 22/05/2020 12:30:57 - 
+Sex, 22/05/2020 12:32:10 - 
+Sex, 22/05/2020 12:32:10 - Aplicativo iniciado
+Sex, 22/05/2020 12:32:10 - 
+Sex, 22/05/2020 12:32:10 - Service
+Sex, 22/05/2020 12:32:10 - 
+Sex, 22/05/2020 12:32:10 - Genie Search API
+Sex, 22/05/2020 12:32:10 - 
+Sex, 22/05/2020 12:32:10 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Sex, 22/05/2020 12:32:10 - 
+Sex, 22/05/2020 12:32:10 - input-repo = F:\sourcerer_portable\repositories\genie_search_api_test
+Sex, 22/05/2020 12:32:10 - database-url = jdbc:mysql://localhost:3306/genie_search_api_test
+Sex, 22/05/2020 12:32:10 - database-user = root
+Sex, 22/05/2020 12:32:10 - database-password = ***
+Sex, 22/05/2020 12:32:10 - webserver-url = http://localhost:8080
+Sex, 22/05/2020 12:32:10 - 
+Sex, 22/05/2020 12:32:10 - Genie Search API
+Sex, 22/05/2020 12:32:10 - 
+Sex, 22/05/2020 12:34:14 - 
+Sex, 22/05/2020 12:34:14 - Aplicativo iniciado
+Sex, 22/05/2020 12:34:14 - 
+Sex, 22/05/2020 12:34:14 - Service
+Sex, 22/05/2020 12:34:14 - 
+Sex, 22/05/2020 12:34:14 - Genie Search API
+Sex, 22/05/2020 12:34:14 - 
+Sex, 22/05/2020 12:34:14 - Arquivo de configuração: C:/GitHub/interface-metrics/target/classes/geniesearchapi.properties
+Sex, 22/05/2020 12:34:14 - 
+Sex, 22/05/2020 12:34:14 - input-repo = F:\sourcerer_portable\repositories\genie_search_api_test
+Sex, 22/05/2020 12:34:14 - database-url = jdbc:mysql://localhost:3306/genie_search_api_test
+Sex, 22/05/2020 12:34:14 - database-user = root
+Sex, 22/05/2020 12:34:14 - database-password = ***
+Sex, 22/05/2020 12:34:14 - webserver-url = http://localhost:8080
+Sex, 22/05/2020 12:34:14 - 
+Sex, 22/05/2020 12:34:14 - Genie Search API
+Sex, 22/05/2020 12:34:14 - 
+Sex, 22/05/2020 19:25:30 - 
+Sex, 22/05/2020 19:25:30 - Aplicativo finalizado. Tempo de execucao: 411 minutos.
+Sex, 22/05/2020 19:25:30 - 
