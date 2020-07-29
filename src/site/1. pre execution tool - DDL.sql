@@ -51,7 +51,8 @@ CREATE TABLE `interface_metrics` (
   PRIMARY KEY (`id`),
   KEY `project_id` (`project_id`),
   KEY `entity_id` (`entity_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2063973 DEFAULT CHARSET=latin1;
+);
+-- ) ENGINE=MyISAM AUTO_INCREMENT=2063973 DEFAULT CHARSET=latin1;
 
 
 -- ----------------------------
@@ -63,7 +64,8 @@ CREATE TABLE `interface_metrics_pairs_inner` (
   `interface_metrics_b` bigint(20) NOT NULL DEFAULT '0',
   `search_type` varchar(14) NOT NULL,
   PRIMARY KEY (`interface_metrics_a`,`interface_metrics_b`,`search_type`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
+-- ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
 -- ----------------------------
@@ -82,7 +84,8 @@ CREATE TABLE `interface_metrics_pairs` (
   PRIMARY KEY (`interface_metrics_a`,`interface_metrics_b`,`search_type`),
   KEY `id_index_a` (`interface_metrics_a`) USING BTREE,
   KEY `id_index_b` (`interface_metrics_b`) USING BTREE
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
+-- ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
 -- ----------------------------
@@ -96,7 +99,8 @@ CREATE TABLE `interface_metrics_params` (
   `is_class_123` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `interface_metrics_id_index` (`interface_metrics_id`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=4076499 DEFAULT CHARSET=latin1;
+);
+-- ) ENGINE=MyISAM AUTO_INCREMENT=4076499 DEFAULT CHARSET=latin1;
 
 
 -- ----------------------------
@@ -109,7 +113,8 @@ CREATE TABLE `interface_metrics_top` (
   `type` varchar(255) NOT NULL DEFAULT '',
   `total` bigint(20) NOT NULL,
   PRIMARY KEY (`class`,`type`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
+-- ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
 -- ----------------------------
@@ -121,7 +126,8 @@ CREATE TABLE `interface_metrics_types` (
   `description` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
   PRIMARY KEY (`type`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
+-- ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
 -- ----------------------------
@@ -131,7 +137,8 @@ DROP TABLE IF EXISTS `interface_metrics_filter`;
 CREATE TABLE `interface_metrics_filter` (
   `entities_filter` varchar(255) NOT NULL,
   `total` bigint(20) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
+-- ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
 -- ----------------------------
@@ -177,7 +184,8 @@ CREATE TABLE `interface_metrics_inner` (
   PRIMARY KEY (`id`),
   KEY `project_id` (`project_id`),
   KEY `entity_id` (`entity_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1825438 DEFAULT CHARSET=latin1;
+);
+-- ) ENGINE=MyISAM AUTO_INCREMENT=1825438 DEFAULT CHARSET=latin1;
 
 
 -- ----------------------------
@@ -193,7 +201,8 @@ CREATE TABLE `interface_metrics_pairs_clone_10` (
   `processed` tinyint(4) DEFAULT NULL,
   KEY `entity_id_a` (`entity_id_a`),
   KEY `entity_id_b` (`entity_id_b`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
+-- ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
 -- -------------------------------------------------------------------------------------------------------------------------------- 
@@ -241,7 +250,8 @@ CREATE TABLE `interface_metrics_test` (
   `p1_c1_w1_t0` int(11) DEFAULT NULL,
   `p1_c1_w1_t1` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+);
+-- ) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 
 -- ----------------------------
@@ -253,7 +263,8 @@ CREATE TABLE `interface_metrics_params_test` (
   `interface_metrics_id` bigint(20) NOT NULL,
   `param` varchar(2048) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3650723 DEFAULT CHARSET=latin1;
+);
+-- ) ENGINE=MyISAM AUTO_INCREMENT=3650723 DEFAULT CHARSET=latin1;
 
 
 -- ----------------------------
@@ -265,4 +276,5 @@ CREATE TABLE `interface_metrics_pairs_test` (
   `interface_metrics_b` bigint(20) NOT NULL DEFAULT '0',
   `search_type` varchar(14) NOT NULL,
   PRIMARY KEY (`interface_metrics_a`,`interface_metrics_b`,`search_type`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
+-- ) ENGINE=MyISAM DEFAULT CHARSET=latin1;

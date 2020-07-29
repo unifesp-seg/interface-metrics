@@ -1,11 +1,11 @@
 Manifest-Version: 1.0
 mode: development
-Built-By: User
+Built-By: adria
 Class-Path: lib/commons-lang-2.5.jar lib/log4j-1.2.16.jar lib/mysql-co
  nnector-java-5.1.21.jar lib/genie-search-api-1.7.0.jar lib/commons-cs
  v-1.4.jar lib/commons-io-2.5.jar lib/ant-1.10.5.jar lib/ant-launcher-
  1.10.5.jar lib/sourcerer-services-1.0.jar lib/jaws-bin-1.0.jar
-Build-Jdk: 1.8.0_241
+Build-Jdk: 1.8.0_251
 Created-By: Maven Integration for Eclipse
 url: 
 Main-Class: br.adm.b2.batch.core.interfaces.daemon.B2BatchMain

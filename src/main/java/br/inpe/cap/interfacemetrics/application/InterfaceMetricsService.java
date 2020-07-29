@@ -58,8 +58,9 @@ public class InterfaceMetricsService {
 				interfaceMetricRepository.updateProcessedMethodInfo(interfaceMetric);
 
 				//Print
-				this.printRecord();
+				this.printRecord("1/3. processMethodsInfo");
 			}
+			//Thread.sleep(250);
 		} while (!list.isEmpty()); 
 
 		//Print
@@ -107,7 +108,7 @@ public class InterfaceMetricsService {
 				this.process(interfaceMetric, executionType);
 
 				//Print
-				this.printRecord();
+				this.printRecord(executionType.isParams() ? "2/3. " + ExecutionType.PARAMS :  "3/3. " + ExecutionType.INTERFACE_METRICS);
 			}
 		} while (!list.isEmpty()); 
 
@@ -181,7 +182,7 @@ public class InterfaceMetricsService {
 		System.out.println("\nParcela até: " + totalPartial + " de " + total + "...");
 	}
 	
-	private void printRecord(){
+	private void printRecord(String processPrefix){
 		duraction = System.currentTimeMillis() - timestamp;
 		timestamp = System.currentTimeMillis();
 		totalduraction += duraction;
@@ -199,7 +200,7 @@ public class InterfaceMetricsService {
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		String estimateEndMsg = format.format(new Date(timestamp + estimateTime));
 		
-		String recordMsg = "Processado: " + i + " de " + total + " (parcela até " + totalPartial + ")";
+		String recordMsg = processPrefix + ": " + i + " de " + total + " (parcela até " + totalPartial + ")";
 		String timeMsg = " média = " + average + ", tempo estimado = " + estimateTimeMsg + ", conclusão estimada = " + estimateEndMsg + "\r";
 		
 		System.out.print(recordMsg + timeMsg);

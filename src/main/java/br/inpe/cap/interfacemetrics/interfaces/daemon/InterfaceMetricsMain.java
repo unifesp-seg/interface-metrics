@@ -34,10 +34,10 @@ public class InterfaceMetricsMain {
 					//service.clearProcessing(ExecutionType.INTERFACE_METRICS);
 
 					// 1. Process only method info
-					//service.processMethodsInfo();
+					service.processMethodsInfo();
 
 					// 2. ExecutionType.PARAMS
-					//service.execute(ExecutionType.PARAMS);
+					service.execute(ExecutionType.PARAMS);
 
 					// 3. ExecutionType.INTERFACE_METRICS
 					service.execute(ExecutionType.INTERFACE_METRICS);
@@ -45,7 +45,7 @@ public class InterfaceMetricsMain {
 					communicationsException = false;
 
 				} catch (CommunicationsException ex) {
-					Thread.sleep(5000);
+					Thread.sleep(250);
 					communicationsException = true;
 				}
 			} while (communicationsException);
@@ -56,7 +56,7 @@ public class InterfaceMetricsMain {
 		}
 
 		LogUtils.getLogger().info("");
-		LogUtils.getLogger().info("Aplicativo finalizado. Tempo de execucao: " + getDuractionTime());
+		LogUtils.getLogger().info("Aplicativo finalizado. Tempo de execução: " + getDuractionTime());
 		LogUtils.getLogger().info("");
 
 		try {
